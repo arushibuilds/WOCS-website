@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0A0B0D;         /* near-black */
+  --text: #FFFFFF;       /* white */
+  --frost: #9AD7FF;      /* frost blue accent */
+  --muted: #B9C4CF;      /* muted text */
+  --panel: #111318;      /* cards */
+}
+
+.dark {
+  --bg: #0A0B0D;
+  --text: #FFFFFF;
+  --frost: #9AD7FF;
+  --muted: #B9C4CF;
+  --panel: #111318;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-[var(--bg)] text-[var(--text)] antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .frost-border {
+    @apply border border-[rgba(154,215,255,0.12)];
+  }
+  
+  .frost-glow {
+    @apply shadow-[0_0_20px_rgba(154,215,255,0.15)];
+  }
+  
+  .panel {
+    @apply bg-[var(--panel)] frost-border;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-transparent border border-[var(--frost)] text-[var(--frost)] 
+           hover:bg-[var(--frost)] hover:text-[var(--bg)] hover:frost-glow
+           transition-all duration-300 rounded-lg font-medium;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-[var(--panel)] frost-border text-[var(--text)]
+           hover:border-[var(--frost)] hover:frost-glow
+           transition-all duration-300 rounded-lg font-medium;
+  }
+  
+  .stat-pill {
+    @apply px-4 py-2 panel rounded-full text-sm font-semibold
+           flex items-center gap-2 frost-glow;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse,
+  .transition-all,
+  .transition-colors,
+  .transition-opacity {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
