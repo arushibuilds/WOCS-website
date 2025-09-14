@@ -98,18 +98,14 @@ export default function Timeline() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <div className="font-semibold text-[var(--frost)]">Registration Phase</div>
-              <div className="text-[var(--muted)]">October 1 - October 10, 2024</div>
+              <div className="text-[var(--muted)]">October 1 - December 31, 2025</div>
             </div>
             <div className="space-y-2">
               <div className="font-semibold text-[var(--frost)]">Coding Period</div>
-              <div className="text-[var(--muted)]">November 1, 2024 - January 31, 2025</div>
+              <div className="text-[var(--muted)]">November 1, 2025 - January 31, 2025</div>
             </div>
             <div className="space-y-2">
-              <div className="font-semibold text-[var(--frost)]">Evaluation Period</div>
-              <div className="text-[var(--muted)]">February 1 - February 9, 2025</div>
-            </div>
-            <div className="space-y-2">
-              <div className="font-semibold text-[var(--frost)]">Results</div>
+              <div className="font-semibold text-[var(--frost)]">Top Winners</div>
               <div className="text-[var(--muted)]">February 10, 2025</div>
             </div>
           </div>

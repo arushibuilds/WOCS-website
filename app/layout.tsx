@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Winter of Code Social - Open Source Collaboration Event',
-  description: 'Join the largest open source collaboration event this winter. Connect with developers, contribute to meaningful projects, and grow your skills.',
+  description: 'The largest community-driven open source event of the winter.',
   keywords: ['open source', 'coding', 'collaboration', 'winter', 'developers', 'projects'],
   authors: [{ name: 'Code Social Community' }],
   openGraph: {

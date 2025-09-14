@@ -31,11 +31,11 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-[var(--muted)]">
           <div className="stat-pill">
             <span className="text-[var(--frost)]">Registration:</span>
-            Oct 1 - Oct 10, 2024
+            Oct 1 - Dec 31, 2025
           </div>
           <div className="stat-pill">
             <span className="text-[var(--frost)]">Coding Period:</span>
-            Nov 1, 2024 - Jan 31, 2025
+            Nov 1, 2025 - Jan 31, 2025
           </div>
         </div>
 
@@ -101,20 +101,20 @@ export default function Hero() {
         {/* Impact Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
           <div className="stat-pill flex-col">
-            <div className="text-2xl font-bold text-[var(--frost)]">8k+</div>
+            <div className="text-2xl font-bold text-[var(--frost)]">10k+</div>
             <div className="text-sm text-[var(--muted)]">Developers</div>
           </div>
           <div className="stat-pill flex-col">
             <div className="text-2xl font-bold text-[var(--frost)]">1.5k+</div>
-            <div className="text-sm text-[var(--muted)]">Projects</div>
+            <div className="text-sm text-[var(--muted)]">Resources</div>
           </div>
           <div className="stat-pill flex-col">
             <div className="text-2xl font-bold text-[var(--frost)]">500+</div>
-            <div className="text-sm text-[var(--muted)]">Mentors</div>
+            <div className="text-sm text-[var(--muted)]">PRs</div>
           </div>
           <div className="stat-pill flex-col">
             <div className="text-2xl font-bold text-[var(--frost)]">50+</div>
-            <div className="text-sm text-[var(--muted)]">Partners</div>
+            <div className="text-sm text-[var(--muted)]">Events</div>
           </div>
         </div>
       </div>

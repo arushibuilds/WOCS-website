@@ -160,7 +160,7 @@ export default function Sponsors() {
                 <Users size={48} className="mx-auto text-[var(--frost)] mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Reach Top Talent</h3>
                 <p className="text-[var(--muted)]">
-                  Connect with 8k+ passionate developers, from students to experienced professionals.
+                  Connect with 10k+ passionate developers, from students to experienced professionals.
                 </p>
               </div>
               <div className="text-center">

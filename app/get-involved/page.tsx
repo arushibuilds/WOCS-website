@@ -55,7 +55,7 @@ const tabs = [
     title: 'Support Open Source Innovation',
     description: 'Partner with us to support the next generation of developers. Increase your brand visibility while making a positive impact.',
     benefits: [
-      'Brand visibility to 8k+ developers',
+      'Brand visibility to 10k+ developers',
       'Corporate social responsibility',
       'Access to top talent',
       'Community goodwill',
@@ -177,7 +177,7 @@ export default function GetInvolved() {
         {/* Community Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="text-center panel p-6 rounded-lg">
-            <div className="text-3xl font-bold text-[var(--frost)] mb-2">8k+</div>
+            <div className="text-3xl font-bold text-[var(--frost)] mb-2">10k+</div>
             <div className="text-[var(--muted)]">Contributors</div>
           </div>
           <div className="text-center panel p-6 rounded-lg">

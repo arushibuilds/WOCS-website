@@ -15,7 +15,7 @@ export default function Home() {
             Code Social <span className="text-[var(--frost)]">Impact</span>
           </h2>
           <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-            Building communities, fostering collaboration, and creating meaningful impact through open source development.
+            Building community, fostering collaboration, and creating meaningful impact through open source development.
           </p>
         </div>
       </section>
@@ -42,7 +42,7 @@ export default function Home() {
                 Join Discord Community
               </a>
               <div className="text-sm text-[var(--muted)]">
-                Connect • Collaborate • Create
+                Cognize • Connect • Cultivate
               </div>
             </div>
           </div>

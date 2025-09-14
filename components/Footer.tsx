@@ -70,7 +70,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-[rgba(154,215,255,0.12)] text-center">
           <p className="text-[var(--muted)]">
-            &copy; 2024 Code Social Community. Made with ❄️ for the community.
+            &copy; 2025 Code Social Community. Made with ❄️ for the community.
           </p>
         </div>
       </div>
