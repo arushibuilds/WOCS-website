@@ -1,3 +1,4 @@
+import { Users } from 'lucide-react';
 import { Building, Heart, Star, Award, ExternalLink, Check } from 'lucide-react';
 
 const sponsorTiers = [
