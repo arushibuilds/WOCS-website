@@ -16,8 +16,8 @@ export default function Snowfall() {
       x: Math.random(),
       y: Math.random(),
       r: 0.5 + Math.random() * 1.8,
-  s: 0.03 + Math.random() * 0.09,   // speed (even slower)
-      w: Math.random() * 0.8,         // sway
+      s: 0.01 + Math.random() * 0.04,  // slowed down
+      w: Math.random() * 0.8,
       c: Math.random() < 0.12 ? "frost" : "white",
     }));
 
