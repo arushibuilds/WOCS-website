@@ -6,7 +6,7 @@ export default function Footer() {
     { name: 'Resources', href: '/resources' },
     { name: 'FAQs', href: '/faqs' },
     { name: 'Code of Conduct', href: '/code-of-conduct' },
-    { name: 'Privacy Policy', href: '/privacy' },
+  { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms of Service', href: '/terms' },
   ];
 

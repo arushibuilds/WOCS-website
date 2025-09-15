@@ -3,52 +3,30 @@ import { Building, Heart, Star, Award, ExternalLink, Check } from 'lucide-react'
 
 const sponsorTiers = [
   {
-    name: 'Platinum',
-    price: '$5,000+',
+    name: 'Sponsor',
+    price: 'Flexible (Monetary or In-Kind)',
     color: 'from-purple-400 to-pink-400',
     benefits: [
-      'Logo prominently displayed on all materials',
-      'Dedicated social media posts',
-      'Access to participant resume database',
-      'Keynote speaking opportunity',
-      'Custom workshop hosting',
-      'Direct mentor recruitment access'
+      'Logo featured on website & event updates',
+      'Recognition across social media & community spaces',
+      'Visibility in resource/swag posts',
+      'Support helps fund swags, logistics, and contributor programs',
+      'Flexible options: financial support, tool credits, software licenses, swag, or mentorship hours'
     ]
   },
   {
-    name: 'Gold',
-    price: '$2,500+',
-    color: 'from-yellow-400 to-orange-400',
+    name: 'Community Partner',
+    price: 'Non-monetary',
+    color: 'from-green-400 to-blue-400',
     benefits: [
-      'Logo on website and materials',
-      'Social media mentions',
-      'Access to participant networking',
-      'Workshop hosting opportunity',
-      'Recruitment booth access'
-    ]
-  },
-  {
-    name: 'Silver',
-    price: '$1,000+',
-    color: 'from-gray-300 to-gray-500',
-    benefits: [
-      'Logo on website',
-      'Newsletter mentions',
-      'Community forum access',
-      'Talent pipeline access'
-    ]
-  },
-  {
-    name: 'Bronze',
-    price: '$500+',
-    color: 'from-orange-400 to-red-400',
-    benefits: [
-      'Logo on website',
-      'Community recognition',
-      'Event updates'
+      'Logo featured on website',
+      'Cross-promotion & speaker contributions',
+      'Co-hosting rights & mutual promotion'
     ]
   }
 ];
+
+
 
 const inKindSponsors = [
   {
@@ -99,9 +77,9 @@ export default function Sponsors() {
         {/* Sponsor Tiers */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-center mb-12">Sponsorship Tiers</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {sponsorTiers.map((tier, index) => (
-              <div key={tier.name} className="panel p-6 rounded-lg relative overflow-hidden">
+              <div key={tier.name} className="panel p-6 rounded-lg relative overflow-hidden w-full max-w-xs flex flex-col items-center">
                 {/* Gradient accent */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${tier.color}`}></div>
                 
@@ -120,6 +98,17 @@ export default function Sponsors() {
                 </ul>
               </div>
             ))}
+          </div>
+          {/* Info message below sponsorship tiers */}
+          <div className="mt-12 max-w-2xl mx-auto text-center panel p-6 rounded-xl bg-gradient-to-br from-[var(--frost)]/10 to-white/60 shadow-lg">
+            <p className="text-lg font-semibold mb-2">We welcome <span className="text-[var(--frost)]">In-Kind Sponsors</span>, <span className="text-[var(--frost)]">Monetary Sponsors</span>, and <span className="text-[var(--frost)]">Community Partners</span> to support Winter of Code Social.</p>
+            <p className="mb-4 text-[var(--muted)]">Your support helps us empower thousands of contributors worldwide.</p>
+            <div className="text-left md:text-center space-y-2">
+              <div>👉 <span className="font-medium">Interested in sponsoring?</span></div>
+              <div>📩 Reach out directly at <a href="mailto:codesocialcommunity@gmail.com" className="underline text-[var(--frost)]">codesocialcommunity@gmail.com</a></div>
+              <div>👉 <span className="font-medium">Want to collaborate as a community partner?</span></div>
+              <div>📝 Fill out our <a href="#" className="underline text-[var(--frost)]">Community Partner Form</a> to get started.</div>
+            </div>
           </div>
         </div>
 

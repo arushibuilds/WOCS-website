@@ -1,4 +1,6 @@
-"use client";
+'use client';
+
+import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, ExternalLink } from 'lucide-react';
@@ -19,7 +21,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="font-bold text-xl text-[var(--frost)]">
+          <Link href="/" className="flex items-center font-bold text-xl text-[var(--frost)] gap-2">
+            <Image
+              src="/icon.png"
+              alt="Winter of Code Social Logo"
+              width={24}
+              height={24}
+              priority
+            />
             Winter of Code Social
           </Link>
 
@@ -40,15 +49,12 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a
-              href={process.env.NEXT_PUBLIC_LEADERBOARD_URL || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/leaderboard"
               className="btn-primary inline-flex items-center gap-2"
             >
               View Leaderboard
-              <ExternalLink size={16} />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}

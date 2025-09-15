@@ -18,8 +18,8 @@ export default function Hero() {
         {/* Main Heading */}
         <div className="space-y-4">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Winter of Code
-            <span className="block text-[var(--frost)]">Social</span>
+            Winter of
+            <span className="block text-[var(--frost)]">Code Social</span>
           </h1>
           <p className="text-xl md:text-2xl text-[var(--muted)] max-w-3xl mx-auto leading-relaxed">
             Join the largest open source collaboration event this winter. 
@@ -88,13 +88,10 @@ export default function Hero() {
 
           {/* Leaderboard Button */}
           <a
-            href={process.env.NEXT_PUBLIC_LEADERBOARD_URL || '#'}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/leaderboard"
             className="btn-secondary inline-flex items-center gap-2"
           >
             View Leaderboard
-            <ExternalLink size={16} />
           </a>
         </div>
 
