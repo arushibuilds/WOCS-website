@@ -8,60 +8,42 @@ const tabs = [
     name: 'Contributors',
     icon: Code,
     title: 'Start Your Open Source Journey',
-    description: 'Join thousands of developers contributing to meaningful projects. Perfect for students and professionals looking to build their portfolio.',
+    description: 'Build real things with real people. Pick a project, grab an issue, and ship your first PR. Mentors and Project admins are here to help.',
     benefits: [
       'Work on real-world projects',
       'Learn from experienced mentors',
       'Build your GitHub portfolio',
-      'Get recognition certificates',
       'Connect with the global developer community'
     ],
-    formUrl: process.env.NEXT_PUBLIC_FORM_CONTRIBUTOR || '#'
+  formUrl: 'https://forms.gle/UNzHDjYAMkYpoYPy6'
   },
   {
     id: 'mentors',
     name: 'Mentors',
     icon: Users,
     title: 'Guide the Next Generation',
-    description: 'Share your expertise and help shape the future of open source. Mentor passionate developers and make a lasting impact.',
+    description: 'Share your expertise and help shape the future of open source. Guide builders for a few hours each week. You jus need to care enough to help someone ship.',
     benefits: [
       'Share your knowledge and experience',
       'Build leadership skills',
       'Give back to the community',
-      'Expand your professional network',
-      'Gain recognition as a thought leader'
+      'Expand your professional network'
     ],
-    formUrl: process.env.NEXT_PUBLIC_FORM_MENTOR || '#'
+  formUrl: 'https://forms.gle/PWRP2BM4DqGbqh6w5'
   },
   {
     id: 'project-admins',
     name: 'Project Admins',
     icon: Award,
     title: 'Lead Innovative Projects',
-    description: 'Submit your open source project and get contributors to help you build something amazing. Scale your project with community support.',
+    description: 'Have an amazing idea? Submit your project and get contributors to help you build something amazing.',
     benefits: [
       'Get contributors for your project',
-      'Accelerate development',
       'Build a community around your project',
       'Gain project management experience',
       'Increase project visibility'
     ],
-    formUrl: process.env.NEXT_PUBLIC_FORM_PROJECT || '#'
-  },
-  {
-    id: 'sponsors',
-    name: 'Sponsors',
-    icon: Building,
-    title: 'Support Open Source Innovation',
-    description: 'Partner with us to support the next generation of developers. Increase your brand visibility while making a positive impact.',
-    benefits: [
-      'Brand visibility to 10k+ developers',
-      'Corporate social responsibility',
-      'Access to top talent',
-      'Community goodwill',
-      'Networking opportunities'
-    ],
-    formUrl: process.env.NEXT_PUBLIC_FORM_SPONSOR || '#'
+  formUrl: 'https://forms.gle/PT1db4BeP4kQDNrG8'
   }
 ];
 
@@ -79,7 +61,7 @@ export default function GetInvolved() {
             Get <span className="text-[var(--frost)]">Involved</span>
           </h1>
           <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-            Choose your role in the Winter of Code Social community. Every contribution makes a difference.
+            Choose your role in Winter of Code Social. Every contribution, big or small, helps someone move forward.
           </p>
         </div>
 
@@ -127,7 +109,7 @@ export default function GetInvolved() {
                 </ul>
               </div>
 
-              <div className="pt-4">
+              <div className="pt-4 space-y-2">
                 <a
                   href={currentTab.formUrl}
                   target="_blank"
@@ -135,6 +117,24 @@ export default function GetInvolved() {
                   className="btn-primary inline-flex items-center gap-2 text-lg px-8 py-4"
                 >
                   Register as {currentTab.name.slice(0, -1)}
+                  <ExternalLink size={18} />
+                </a>
+                <a
+                  href="https://forms.gle/2KYLfaDDVyCQA6GQA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary inline-flex items-center gap-2 text-lg px-8 py-4 border border-[var(--frost)]"
+                >
+                  Community Partner Form
+                  <ExternalLink size={18} />
+                </a>
+                <a
+                  href="https://forms.gle/WSFhJUNJzGxQ2ZfG8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary inline-flex items-center gap-2 text-lg px-8 py-4 border border-[var(--frost)]"
+                >
+                  Hiring Form
                   <ExternalLink size={18} />
                 </a>
               </div>
@@ -158,8 +158,8 @@ export default function GetInvolved() {
         {/* Join the Team CTA */}
         <div className="mt-16 text-center">
           <div className="panel p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold mb-4">Want to Join Our Core Team?</h3>
-            <p className="text-[var(--muted)] mb-6 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold mb-4">Want to Join Our Team?</h3>
+            <p className="text-[varz(--muted)] mb-6 max-w-2xl mx-auto">
               Help us organize and run Winter of Code Social. Join our team of volunteers and make this event even better.
             </p>
             <a
@@ -174,25 +174,7 @@ export default function GetInvolved() {
           </div>
         </div>
 
-        {/* Community Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center panel p-6 rounded-lg">
-            <div className="text-3xl font-bold text-[var(--frost)] mb-2">10k+</div>
-            <div className="text-[var(--muted)]">Contributors</div>
-          </div>
-          <div className="text-center panel p-6 rounded-lg">
-            <div className="text-3xl font-bold text-[var(--frost)] mb-2">500+</div>
-            <div className="text-[var(--muted)]">Mentors</div>
-          </div>
-          <div className="text-center panel p-6 rounded-lg">
-            <div className="text-3xl font-bold text-[var(--frost)] mb-2">1.5k+</div>
-            <div className="text-[var(--muted)]">Projects</div>
-          </div>
-          <div className="text-center panel p-6 rounded-lg">
-            <div className="text-3xl font-bold text-[var(--frost)] mb-2">50+</div>
-            <div className="text-[var(--muted)]">Sponsors</div>
-          </div>
-        </div>
+      
       </div>
     </div>
   );

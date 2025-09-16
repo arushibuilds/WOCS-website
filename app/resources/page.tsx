@@ -11,46 +11,23 @@ const resources = [
     external: true,
   },
   {
-    title: 'PDF Kit',
-    icon: FileText,
-    link: '#',
-    desc: 'Best practices for open source collaboration.',
-    cta: 'Download PDF Kit (coming soon)',
-    external: false,
-  },
-  {
     title: 'LinkedIn Templates',
-    icon: Linkedin,
+    link: 'https://discord.gg/MSTNyRSPYW',
     link: '#',
     desc: 'Share your progress with our LinkedIn templates.',
-    cta: 'View Templates (coming soon)',
+    cta: 'View Templates',
     external: false,
-  },
-  {
-    title: 'Event Recordings',
-    icon: Video,
-    link: 'https://www.youtube.com/@codesocial',
-    desc: 'Webinars and workshops recordings.',
-    cta: 'YouTube Channel',
-    external: true,
   },
   {
     title: 'Community',
     icon: Users,
-    link: 'https://discord.gg/yourdiscord',
+  link: 'https://discord.gg/MSTNyRSPYW',
     desc: 'Join our Discord & YouTube community.',
     cta: 'Join Discord',
     external: true,
   },
-  {
-    title: 'Swag & Guidelines',
-    icon: Gift,
-    link: '#',
-    desc: 'Download swag/guideline PDFs (coming soon).',
-    cta: 'Download',
-    external: false,
-  },
 ];
+
 
 export default function Resources() {
   return (
@@ -70,6 +47,52 @@ export default function Resources() {
           </div>
         ))}
       </div>
+
+
+
+      {/* Curated Learning Resources */}
+      <div className="mt-10">
+        <h2 className="text-2xl font-bold mb-6 text-center text-[var(--frost)]">Curated Learning Resources</h2>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">
+            <h3 className="text-lg font-semibold mb-2">FreeCodeCamp</h3>
+            <p className="text-[var(--muted)] mb-4">Interactive coding tutorials in web dev, data science, machine learning.</p>
+            <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Visit FreeCodeCamp</a>
+          </div>
+          <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">
+            <h3 className="text-lg font-semibold mb-2">CS50x (Harvard)</h3>
+            <p className="text-[var(--muted)] mb-4">Legendary intro to computer science, free online.</p>
+            <a href="https://cs50.harvard.edu/x/2023/" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Visit CS50x</a>
+          </div>
+          <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">
+            <h3 className="text-lg font-semibold mb-2">MDN Web Docs</h3>
+            <p className="text-[var(--muted)] mb-4">The go-to reference for HTML, CSS, and JavaScript.</p>
+            <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Visit MDN Web Docs</a>
+          </div>
+          <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">
+            <h3 className="text-lg font-semibold mb-2">The Odin Project</h3>
+            <p className="text-[var(--muted)] mb-4">Full free web dev curriculum, project-based.</p>
+            <a href="https://www.theodinproject.com/" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Visit The Odin Project</a>
+          </div>
+          <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">
+            <h3 className="text-lg font-semibold mb-2">GeeksforGeeks</h3>
+            <p className="text-[var(--muted)] mb-4">Practice, explanations, and articles on algorithms, DS, and coding interviews.</p>
+            <a href="https://www.geeksforgeeks.org/" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Visit GeeksforGeeks</a>
+          </div>
+          <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">
+            <h3 className="text-lg font-semibold mb-2">W3Schools</h3>
+            <p className="text-[var(--muted)] mb-4">Beginner-friendly tutorials for web technologies.</p>
+            <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Visit W3Schools</a>
+          </div>
+        </div>
+      </div>
+
+            <div className="mt-8 text-center">
+        <span className="text-lg text-[var(--muted)]">Looking for more resources?&nbsp;
+          <a href="https://codesocial.tech" target="_blank" rel="noopener noreferrer" className="underline text-[var(--frost)] font-semibold">Check Code Social!</a>
+        </span>
+      </div>
+
       <div className="mt-12 text-center">
         <Link href="/" className="btn-secondary inline-block">Back to Home</Link>
       </div>

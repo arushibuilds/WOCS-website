@@ -107,7 +107,7 @@ export default function Sponsors() {
               <div>👉 <span className="font-medium">Interested in sponsoring?</span></div>
               <div>📩 Reach out directly at <a href="mailto:codesocialcommunity@gmail.com" className="underline text-[var(--frost)]">codesocialcommunity@gmail.com</a></div>
               <div>👉 <span className="font-medium">Want to collaborate as a community partner?</span></div>
-              <div>📝 Fill out our <a href="#" className="underline text-[var(--frost)]">Community Partner Form</a> to get started.</div>
+              <div>📝 Fill out our <a href="https://forms.gle/2KYLfaDDVyCQA6GQA" target="_blank" rel="noopener noreferrer" className="underline text-[var(--frost)]">Community Partner Form</a> to get started.</div>
             </div>
           </div>
         </div>
@@ -179,20 +179,12 @@ export default function Sponsors() {
               Join industry leaders in supporting open source innovation. Let's build something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={process.env.NEXT_PUBLIC_FORM_SPONSOR || '#'}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center gap-2"
-              >
-                Become a Sponsor
-                <ExternalLink size={16} />
-              </a>
+
               <a
                 href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'codesocialcommunity@gmail.com'}`}
-                className="btn-secondary inline-flex items-center gap-2"
+                className="btn-secondary inline-flex items-center gap-2 border-2 border-[var(--frost)]"
               >
-                Contact Us
+                Become a Sponsor
               </a>
             </div>
           </div>

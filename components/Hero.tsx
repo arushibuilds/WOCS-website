@@ -1,15 +1,16 @@
 "use client";
 import { useState } from 'react';
-import { ChevronDown, ExternalLink, Users, Code, Award, Building } from 'lucide-react';
+import { ChevronDown, ExternalLink, Users, Code, Award, Building, Star } from 'lucide-react';
 
 export default function Hero() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const roles = [
-    { name: 'Contributors', href: process.env.NEXT_PUBLIC_FORM_CONTRIBUTOR || '#', icon: Code },
-    { name: 'Mentors', href: process.env.NEXT_PUBLIC_FORM_MENTOR || '#', icon: Users },
-    { name: 'Project Admins', href: process.env.NEXT_PUBLIC_FORM_PROJECT || '#', icon: Award },
-    { name: 'Sponsors', href: process.env.NEXT_PUBLIC_FORM_SPONSOR || '#', icon: Building },
+    { name: 'Contributors', href: 'https://forms.gle/UNzHDjYAMkYpoYPy6', icon: Code },
+    { name: 'Mentors', href: 'https://forms.gle/PWRP2BM4DqGbqh6w5', icon: Users },
+    { name: 'Project Admins', href: 'https://forms.gle/PT1db4BeP4kQDNrG8', icon: Award },
+    { name: 'Community Partner', href: 'https://forms.gle/2KYLfaDDVyCQA6GQA', icon: Building },
+    { name: 'Hiring', href: 'https://forms.gle/WSFhJUNJzGxQ2ZfG8', icon: Star },
   ];
 
   return (
@@ -22,8 +23,7 @@ export default function Hero() {
             <span className="block text-[var(--frost)]">Code Social</span>
           </h1>
           <p className="text-xl md:text-2xl text-[var(--muted)] max-w-3xl mx-auto leading-relaxed">
-            Join the largest open source collaboration event this winter. 
-            Code, learn, and build amazing projects together.
+            Whether you’re a beginner or a pro, this winter is your chance to dive into open source, team up, and make an impact.
           </p>
         </div>
 

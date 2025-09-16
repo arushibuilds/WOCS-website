@@ -4,14 +4,14 @@ const timelineEvents = [
   {
     date: 'October 1',
     title: 'Registration Opens',
-    description: 'Projects, Mentors, and Partners can start registering',
+    description: 'Projects and Mentors can start registering. Register as a Project Admin: https://forms.gle/PT1db4BeP4kQDNrG8 | Register as a Mentor: https://forms.gle/PWRP2BM4DqGbqh6w5',
     icon: Users,
     status: 'completed'
   },
   {
     date: 'October 10',
     title: 'Contributor Registration Opens',
-    description: 'Contributors can now register and browse available projects',
+    description: 'Contributors can now register and browse available projects. Register as a Contributor: https://forms.gle/UNzHDjYAMkYpoYPy6',
     icon: Code,
     status: 'completed'
   },
@@ -48,7 +48,7 @@ export default function Timeline() {
             Event <span className="text-[var(--frost)]">Timeline</span>
           </h1>
           <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-            Track the journey from registration to certification. Here's what to expect throughout Winter of Code Social.
+            Track the journey from registration to rewards. Here's what to expect throughout Winter of Code Social.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function Timeline() {
               <div className="text-[var(--muted)]">November 1, 2025 - January 31, 2025</div>
             </div>
             <div className="space-y-2">
-              <div className="font-semibold text-[var(--frost)]">Top Winners</div>
+              <div className="font-semibold text-[var(--frost)]">Announcing Top Winners</div>
               <div className="text-[var(--muted)]">February 10, 2025</div>
             </div>
           </div>

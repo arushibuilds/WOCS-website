@@ -5,54 +5,39 @@ import { Search, Filter, ExternalLink, Star, GitFork } from 'lucide-react';
 interface Project {
   id: string;
   title: string;
-  organization: string;
   description: string;
   tags: string[];
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
   repository: string;
-  stars: number;
-  forks: number;
-  mentors: number;
 }
 
 const projects: Project[] = [
   {
     id: '1',
     title: 'React Component Library',
-    organization: 'OpenUI',
     description: 'Build accessible, customizable React components for modern web applications.',
     tags: ['React', 'TypeScript', 'Accessibility'],
     difficulty: 'Intermediate',
-    repository: 'https://github.com/example/react-components',
-    stars: 1234,
-    forks: 567,
-    mentors: 3
+    repository: 'https://github.com/example/react-components'
   },
   {
     id: '2',
     title: 'Machine Learning Toolkit',
-    organization: 'AI Commons',
     description: 'Develop Python tools for data preprocessing and model evaluation.',
     tags: ['Python', 'Machine Learning', 'Data Science'],
     difficulty: 'Advanced',
-    repository: 'https://github.com/example/ml-toolkit',
-    stars: 2341,
-    forks: 892,
-    mentors: 5
+    repository: 'https://github.com/example/ml-toolkit'
   },
   {
     id: '3',
     title: 'Documentation Website',
-    organization: 'DevDocs',
     description: 'Create beautiful documentation sites with modern design and great UX.',
     tags: ['Next.js', 'Documentation', 'Design'],
     difficulty: 'Beginner',
-    repository: 'https://github.com/example/doc-site',
-    stars: 456,
-    forks: 123,
-    mentors: 2
+    repository: 'https://github.com/example/doc-site'
   },
 ];
+
 
 const difficulties = ['All', 'Beginner', 'Intermediate', 'Advanced'];
 const allTags = ['React', 'TypeScript', 'Python', 'Next.js', 'Machine Learning', 'Documentation', 'Accessibility', 'Data Science', 'Design'];
@@ -65,8 +50,7 @@ export default function Projects() {
 
   const filteredProjects = projects.filter(project => {
     const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.organization.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.description.toLowerCase().includes(searchTerm.toLowerCase());
+                                     project.description.toLowerCase().includes(searchTerm.toLowerCase());
     
     const matchesDifficulty = selectedDifficulty === 'All' || project.difficulty === selectedDifficulty;
     
@@ -102,18 +86,54 @@ export default function Projects() {
             Open Source <span className="text-[var(--frost)]">Projects</span>
           </h1>
           <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-            Discover amazing projects to contribute to. From beginner-friendly to advanced challenges.
+            Jump into real-world coding with projects that welcome everyone, from first-time contributors to seasoned developers. Whether you want to fix a bug, add a feature, or build something entirely new, there’s a place for you here.
           </p>
           
           {/* Submit Project CTA */}
-          <div className="pt-4">
+          <div className="pt-4 space-y-2">
             <a
-              href={process.env.NEXT_PUBLIC_FORM_PROJECT || '#'}
+              href="https://forms.gle/PT1db4BeP4kQDNrG8"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2"
             >
-              Submit a Project
+              Submit a Project (Project Admin Form)
+              <ExternalLink size={16} />
+            </a>
+            <a
+              href="https://forms.gle/UNzHDjYAMkYpoYPy6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]"
+            >
+              Contributor Form
+              <ExternalLink size={16} />
+            </a>
+            <a
+              href="https://forms.gle/PWRP2BM4DqGbqh6w5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]"
+            >
+              Mentor Form
+              <ExternalLink size={16} />
+            </a>
+            <a
+              href="https://forms.gle/2KYLfaDDVyCQA6GQA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]"
+            >
+              Community Partner Form
+              <ExternalLink size={16} />
+            </a>
+            <a
+              href="https://forms.gle/WSFhJUNJzGxQ2ZfG8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]"
+            >
+              Hiring Form
               <ExternalLink size={16} />
             </a>
           </div>
@@ -203,7 +223,6 @@ export default function Projects() {
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-                  <p className="text-[var(--frost)] text-sm">{project.organization}</p>
                 </div>
                 <span className={`px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(project.difficulty)}`}>
                   {project.difficulty}
@@ -227,22 +246,7 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* Stats */}
-              <div className="flex justify-between items-center mb-4 text-sm text-[var(--muted)]">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-1">
-                    <Star size={14} />
-                    {project.stars}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <GitFork size={14} />
-                    {project.forks}
-                  </div>
-                </div>
-                <div className="text-[var(--frost)]">
-                  {project.mentors} mentor{project.mentors !== 1 ? 's' : ''}
-                </div>
-              </div>
+
 
               {/* Action Button */}
               <a
