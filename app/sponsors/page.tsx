@@ -107,7 +107,7 @@ export default function Sponsors() {
               <div>👉 <span className="font-medium">Interested in sponsoring?</span></div>
               <div>📩 Reach out directly at <a href="mailto:codesocialcommunity@gmail.com" className="underline text-[var(--frost)]">codesocialcommunity@gmail.com</a></div>
               <div>👉 <span className="font-medium">Want to collaborate as a community partner?</span></div>
-              <div>📝 Fill out our <a href="https://forms.gle/2KYLfaDDVyCQA6GQA" target="_blank" rel="noopener noreferrer" className="underline text-[var(--frost)]">Community Partner Form</a> to get started.</div>
+              <div>📝 Fill out our <a href="https://forms.gle/2KYLfaDDVyCQA6GQA" className="underline text-[var(--frost)]">Community Partner Form</a> to get started.</div>
             </div>
           </div>
         </div>

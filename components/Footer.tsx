@@ -58,20 +58,12 @@ export default function Footer() {
                 Open Discord
               </a>
               <a
-                href="mailto:codesocialcommunity@gmail.com"
+                href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'codesocialcommunity@gmail.com'}`}
                 className="btn-secondary inline-flex items-center gap-2 w-full sm:w-auto"
               >
                 <Mail size={18} />
                 Email Us
               </a>
-              <div className="space-y-1 mt-4">
-                <h5 className="font-semibold text-[var(--text)]">Registration Forms</h5>
-                <a href="https://forms.gle/UNzHDjYAMkYpoYPy6" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Contributor Form</a>
-                <a href="https://forms.gle/PT1db4BeP4kQDNrG8" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Project Admin Form</a>
-                <a href="https://forms.gle/PWRP2BM4DqGbqh6w5" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Mentor Form</a>
-                <a href="https://forms.gle/2KYLfaDDVyCQA6GQA" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Community Partner Form</a>
-                <a href="https://forms.gle/WSFhJUNJzGxQ2ZfG8" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Hiring Form</a>
-              </div>
             </div>
           </div>
         </div>

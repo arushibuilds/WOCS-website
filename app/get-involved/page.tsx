@@ -109,7 +109,7 @@ export default function GetInvolved() {
                 </ul>
               </div>
 
-              <div className="pt-4 space-y-2">
+              <div className="pt-4">
                 <a
                   href={currentTab.formUrl}
                   target="_blank"
@@ -117,24 +117,6 @@ export default function GetInvolved() {
                   className="btn-primary inline-flex items-center gap-2 text-lg px-8 py-4"
                 >
                   Register as {currentTab.name.slice(0, -1)}
-                  <ExternalLink size={18} />
-                </a>
-                <a
-                  href="https://forms.gle/2KYLfaDDVyCQA6GQA"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary inline-flex items-center gap-2 text-lg px-8 py-4 border border-[var(--frost)]"
-                >
-                  Community Partner Form
-                  <ExternalLink size={18} />
-                </a>
-                <a
-                  href="https://forms.gle/WSFhJUNJzGxQ2ZfG8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary inline-flex items-center gap-2 text-lg px-8 py-4 border border-[var(--frost)]"
-                >
-                  Hiring Form
                   <ExternalLink size={18} />
                 </a>
               </div>
@@ -162,15 +144,15 @@ export default function GetInvolved() {
             <p className="text-[varz(--muted)] mb-6 max-w-2xl mx-auto">
               Help us organize and run Winter of Code Social. Join our team of volunteers and make this event even better.
             </p>
-            <a
-              href={process.env.NEXT_PUBLIC_FORM_TEAM || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-2"
-            >
-              Join the Team
-              <ExternalLink size={16} />
-            </a>
+              <a
+                href="https://discord.gg/MSTNyRSPYW"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-2"
+              >
+                Join the Team
+                <ExternalLink size={16} />
+              </a>
           </div>
         </div>
 

@@ -21,10 +21,10 @@ const faqs = [
     q: 'How will the leaderboard work?',
     a: 'Points for contributions/PRs, updated weekly.'
   },
-    {
-      q: 'How do I find/join a project?',
-      a: 'Browse the Projects page and connect with mentors/admins via Discord (https://discord.gg/MSTNyRSPYW).'
-    },
+  {
+    q: 'How do I find/join a project?',
+    a: 'Browse the Projects page and connect with mentors/admins via Discord.'
+  },
   {
     q: 'How do mentors help?',
     a: 'Mentors review PRs, run sessions, and guide contributors.'
@@ -46,17 +46,6 @@ export default function FAQs() {
             <p className="text-[var(--muted)]">{faq.a}</p>
           </div>
         ))}
-      </div>
-      <div className="mt-12 panel p-6 rounded-xl space-y-2">
-        <h2 className="text-xl font-semibold mb-2">Registration & Contact Links</h2>
-        <a href="https://forms.gle/UNzHDjYAMkYpoYPy6" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Contributor Form</a>
-        <a href="https://forms.gle/PT1db4BeP4kQDNrG8" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Project Admin Form</a>
-        <a href="https://forms.gle/PWRP2BM4DqGbqh6w5" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Mentor Form</a>
-        <a href="https://forms.gle/2KYLfaDDVyCQA6GQA" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Community Partner Form</a>
-        <a href="https://forms.gle/WSFhJUNJzGxQ2ZfG8" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Hiring Form</a>
-        <a href="https://discord.gg/MSTNyRSPYW" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Discord</a>
-        <a href="https://codesocial.tech" target="_blank" rel="noopener noreferrer" className="block text-[var(--muted)] hover:text-[var(--frost)]">Code Social Website</a>
-        <a href="mailto:codesocialcommunity@gmail.com" className="block text-[var(--muted)] hover:text-[var(--frost)]">Email</a>
       </div>
       <div className="mt-10">
         <Link href="/" className="btn-secondary">Back to Home</Link>

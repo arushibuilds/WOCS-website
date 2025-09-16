@@ -4,14 +4,14 @@ const timelineEvents = [
   {
     date: 'October 1',
     title: 'Registration Opens',
-    description: 'Projects and Mentors can start registering. Register as a Project Admin: https://forms.gle/PT1db4BeP4kQDNrG8 | Register as a Mentor: https://forms.gle/PWRP2BM4DqGbqh6w5',
+    description: 'Projects, and Mentors can start registering',
     icon: Users,
     status: 'completed'
   },
   {
     date: 'October 10',
     title: 'Contributor Registration Opens',
-    description: 'Contributors can now register and browse available projects. Register as a Contributor: https://forms.gle/UNzHDjYAMkYpoYPy6',
+    description: 'Contributors can now register and browse available projects',
     icon: Code,
     status: 'completed'
   },

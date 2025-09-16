@@ -49,7 +49,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* CTA Buttons and Links */}
+          {/* CTA Buttons */}
           <div className="hidden md:flex gap-4 items-center flex-nowrap whitespace-nowrap">
             <Link
               href="/leaderboard"
@@ -65,30 +65,6 @@ export default function Navbar() {
             >
               Join Code Social
             </a>
-            <a
-              href="https://discord.gg/MSTNyRSPYW"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]"
-            >
-              Discord
-            </a>
-            <a
-              href="mailto:codesocialcommunity@gmail.com"
-              className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]"
-            >
-              Email
-            </a>
-            <div className="dropdown">
-              <button className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]">Register</button>
-              <div className="dropdown-content absolute bg-white shadow-lg rounded p-2 mt-2 z-50">
-                <a href="https://forms.gle/UNzHDjYAMkYpoYPy6" target="_blank" rel="noopener noreferrer" className="block px-2 py-1 hover:bg-gray-100">Contributor Form</a>
-                <a href="https://forms.gle/PT1db4BeP4kQDNrG8" target="_blank" rel="noopener noreferrer" className="block px-2 py-1 hover:bg-gray-100">Project Admin Form</a>
-                <a href="https://forms.gle/PWRP2BM4DqGbqh6w5" target="_blank" rel="noopener noreferrer" className="block px-2 py-1 hover:bg-gray-100">Mentor Form</a>
-                <a href="https://forms.gle/2KYLfaDDVyCQA6GQA" target="_blank" rel="noopener noreferrer" className="block px-2 py-1 hover:bg-gray-100">Community Partner Form</a>
-                <a href="https://forms.gle/WSFhJUNJzGxQ2ZfG8" target="_blank" rel="noopener noreferrer" className="block px-2 py-1 hover:bg-gray-100">Hiring Form</a>
-              </div>
-            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -120,34 +96,15 @@ export default function Navbar() {
             ))}
             <div className="px-3 py-2">
               <a
-                href="/leaderboard"
+                href={process.env.NEXT_PUBLIC_LEADERBOARD_URL || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center gap-2 w-full justify-center"
                 onClick={() => setIsOpen(false)}
               >
                 View Leaderboard
                 <ExternalLink size={16} />
               </a>
-            </div>
-            <div className="px-3 py-2">
-              <a href="https://codesocial.tech" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2 w-full justify-center border border-[var(--frost)]" onClick={() => setIsOpen(false)}>Join Code Social</a>
-            </div>
-            <div className="px-3 py-2">
-              <a href="https://discord.gg/MSTNyRSPYW" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2 w-full justify-center border border-[var(--frost)]" onClick={() => setIsOpen(false)}>Discord</a>
-            </div>
-            <div className="px-3 py-2">
-              <a href="mailto:codesocialcommunity@gmail.com" className="btn-secondary inline-flex items-center gap-2 w-full justify-center border border-[var(--frost)]" onClick={() => setIsOpen(false)}>Email</a>
-            </div>
-            <div className="px-3 py-2">
-              <div className="dropdown">
-                <button className="btn-secondary inline-flex items-center gap-2 w-full justify-center border border-[var(--frost)]">Register</button>
-                <div className="dropdown-content absolute bg-white shadow-lg rounded p-2 mt-2 z-50">
-                  <a href="https://forms.gle/UNzHDjYAMkYpoYPy6" target="_blank" rel="noopener noreferrer" className="block px-2 py-1 hover:bg-gray-100">Contributor Form</a>
-                  <a href="https://forms.gle/PT1db4BeP4kQDNrG8" target="_blank" rel="noopener noreferrer" className="block px-2 py-1 hover:bg-gray-100">Project Admin Form</a>
-                  <a href="https://forms.gle/PWRP2BM4DqGbqh6w5" target="_blank" rel="noopener noreferrer" className="block px-2 py-1 hover:bg-gray-100">Mentor Form</a>
-                  <a href="https://forms.gle/2KYLfaDDVyCQA6GQA" target="_blank" rel="noopener noreferrer" className="block px-2 py-1 hover:bg-gray-100">Community Partner Form</a>
-                  <a href="https://forms.gle/WSFhJUNJzGxQ2ZfG8" target="_blank" rel="noopener noreferrer" className="block px-2 py-1 hover:bg-gray-100">Hiring Form</a>
-                </div>
-              </div>
             </div>
           </div>
         </div>

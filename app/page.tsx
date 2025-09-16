@@ -34,7 +34,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href={process.env.NEXT_PUBLIC_DISCORD_INVITE || '#'}
+                href="https://discord.gg/MSTNyRSPYW"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"

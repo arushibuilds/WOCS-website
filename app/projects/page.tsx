@@ -90,50 +90,14 @@ export default function Projects() {
           </p>
           
           {/* Submit Project CTA */}
-          <div className="pt-4 space-y-2">
+          <div className="pt-4">
             <a
-              href="https://forms.gle/PT1db4BeP4kQDNrG8"
+              href={process.env.NEXT_PUBLIC_FORM_PROJECT || '#'}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2"
             >
-              Submit a Project (Project Admin Form)
-              <ExternalLink size={16} />
-            </a>
-            <a
-              href="https://forms.gle/UNzHDjYAMkYpoYPy6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]"
-            >
-              Contributor Form
-              <ExternalLink size={16} />
-            </a>
-            <a
-              href="https://forms.gle/PWRP2BM4DqGbqh6w5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]"
-            >
-              Mentor Form
-              <ExternalLink size={16} />
-            </a>
-            <a
-              href="https://forms.gle/2KYLfaDDVyCQA6GQA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]"
-            >
-              Community Partner Form
-              <ExternalLink size={16} />
-            </a>
-            <a
-              href="https://forms.gle/WSFhJUNJzGxQ2ZfG8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]"
-            >
-              Hiring Form
+              Submit a Project
               <ExternalLink size={16} />
             </a>
           </div>
