@@ -5,18 +5,20 @@ const resources = [
   {
     title: 'Quick Start Guide',
     icon: BookOpen,
-    link: '#',
+    link: '/guide-to-open-source.pdf',
     desc: 'How to contribute to open source, GitHub basics, PRs, issues.',
-    cta: 'Coming Soon',
+    cta: 'Download Guide',
     external: false,
+    download: 'CodeSocial-Guide-to-Open-Source.pdf',
   },
   {
     title: 'LinkedIn Templates',
     icon: Linkedin,
-    link: '#',
+    link: '/linkedin-templates.pdf',
     desc: 'LinkedIn templates to share your progress.',
-    cta: 'Coming Soon',
+    cta: 'Download Templates',
     external: false,
+    download: 'CodeSocial-LinkedIn-Templates.pdf',
   },
   {
     title: 'Community',
@@ -41,6 +43,8 @@ export default function Resources() {
             <p className="text-[var(--muted)] mb-4 min-h-[48px]">{res.desc}</p>
             {res.external ? (
               <a href={res.link} target="_blank" rel="noopener noreferrer" className="btn-primary w-full">{res.cta}</a>
+            ) : res.download ? (
+              <a href={res.link} download={res.download} className="btn-primary w-full">{res.cta}</a>
             ) : (
               <a href={res.link} className="btn-secondary w-full cursor-not-allowed opacity-60">{res.cta}</a>
             )}
@@ -56,7 +60,7 @@ export default function Resources() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">
             <h3 className="text-lg font-semibold mb-2">FreeCodeCamp</h3>
-            <p className="text-[var(--muted)] mb-4">Interactive coding tutorials in web dev, data science, machine learning.</p>
+            <p className="text-[var(--muted)] mb-4">Interactive coding tutorials in web dev, data science, AI & ML.</p>
             <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Visit FreeCodeCamp</a>
           </div>
           <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">
@@ -76,7 +80,7 @@ export default function Resources() {
           </div>
           <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">
             <h3 className="text-lg font-semibold mb-2">GeeksforGeeks</h3>
-            <p className="text-[var(--muted)] mb-4">Practice, explanations, and articles on algorithms, DS, and coding interviews.</p>
+            <p className="text-[var(--muted)] mb-4">Practice & learn about algorithms, DS, and coding interviews.</p>
             <a href="https://www.geeksforgeeks.org/" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Visit GeeksforGeeks</a>
           </div>
           <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">

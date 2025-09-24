@@ -145,7 +145,8 @@ export default function GetInvolved() {
               Help us organize and run Winter of Code Social. Join our team of volunteers and make this event even better.
             </p>
               <a
-                href="https://discord.gg/MSTNyRSPYW"
+
+                href="https://forms.gle/WSFhJUNJzGxQ2ZfG8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center gap-2"

@@ -41,7 +41,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           {/* Register Dropdown */}
-          <div className="relative">
+            <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="btn-primary inline-flex items-center gap-2"
@@ -50,40 +50,72 @@ export default function Hero() {
             >
               Register Now
               <ChevronDown 
-                size={18} 
-                className={`transform transition-transform duration-200 ${
-                  isDropdownOpen ? 'rotate-180' : ''
-                }`} 
+              size={18} 
+              className={`transform transition-transform duration-200 ${
+                isDropdownOpen ? 'rotate-180' : ''
+              }`} 
               />
             </button>
 
             {/* Dropdown Menu */}
             {isDropdownOpen && (
               <div className="absolute top-full mt-2 w-64 panel rounded-lg shadow-xl z-50">
-                <div className="p-2">
-                  {roles.map((role) => (
-                    <a
-                      key={role.name}
-                      href={role.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[var(--bg)] transition-colors duration-200 group"
-                      onClick={() => setIsDropdownOpen(false)}
-                    >
-                      <role.icon size={18} className="text-[var(--frost)]" />
-                      <span className="text-[var(--text)] group-hover:text-[var(--frost)]">
-                        {role.name}
-                      </span>
-                      <ExternalLink 
-                        size={14} 
-                        className="ml-auto text-[var(--muted)] group-hover:text-[var(--frost)]" 
-                      />
-                    </a>
-                  ))}
-                </div>
+              <div className="p-2">
+                {/* Contributor Form Link */}
+                <a
+                href="https://forms.gle/UNzHDjYAMkYpoYPy6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[var(--bg)] transition-colors duration-200 group"
+                onClick={() => setIsDropdownOpen(false)}
+                >
+                <Code size={18} className="text-[var(--frost)]" />
+                <span className="text-[var(--text)] group-hover:text-[var(--frost)]">
+                  Contributors
+                </span>
+                <ExternalLink 
+                  size={14} 
+                  className="ml-auto text-[var(--muted)] group-hover:text-[var(--frost)]" 
+                />
+                </a>
+                {/* Mentor Form Link */}
+                <a
+                href="https://forms.gle/PWRP2BM4DqGbqh6w5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[var(--bg)] transition-colors duration-200 group"
+                onClick={() => setIsDropdownOpen(false)}
+                >
+                <Users size={18} className="text-[var(--frost)]" />
+                <span className="text-[var(--text)] group-hover:text-[var(--frost)]">
+                  Mentors
+                </span>
+                <ExternalLink 
+                  size={14} 
+                  className="ml-auto text-[var(--muted)] group-hover:text-[var(--frost)]" 
+                />
+                </a>
+                {/* Project Admin Form Link */}
+                <a
+                href="https://forms.gle/PT1db4BeP4kQDNrG8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[var(--bg)] transition-colors duration-200 group"
+                onClick={() => setIsDropdownOpen(false)}
+                >
+                <Award size={18} className="text-[var(--frost)]" />
+                <span className="text-[var(--text)] group-hover:text-[var(--frost)]">
+                  Project Admins
+                </span>
+                <ExternalLink 
+                  size={14} 
+                  className="ml-auto text-[var(--muted)] group-hover:text-[var(--frost)]" 
+                />
+                </a>
+              </div>
               </div>
             )}
-          </div>
+            </div>
 
           {/* Leaderboard Button */}
           <a

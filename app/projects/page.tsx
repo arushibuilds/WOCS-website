@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { Search, Filter, ExternalLink, Star, GitFork } from 'lucide-react';
+import { Search, ExternalLink } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -14,27 +14,19 @@ interface Project {
 const projects: Project[] = [
   {
     id: '1',
-    title: 'React Component Library',
-    description: 'Build accessible, customizable React components for modern web applications.',
-    tags: ['React', 'TypeScript', 'Accessibility'],
+    title: 'FitFinder',
+    description: 'A smart and community-driven platform where you can discover global scholarships, research programs and more, all based on your profile.',
+    tags: ['React', 'Node.js', 'MongoDB'],
     difficulty: 'Intermediate',
-    repository: 'https://github.com/example/react-components'
+    repository: 'https://github.com/Code-Social/fitfinder'
   },
   {
     id: '2',
-    title: 'Machine Learning Toolkit',
-    description: 'Develop Python tools for data preprocessing and model evaluation.',
-    tags: ['Python', 'Machine Learning', 'Data Science'],
-    difficulty: 'Advanced',
-    repository: 'https://github.com/example/ml-toolkit'
-  },
-  {
-    id: '3',
-    title: 'Documentation Website',
-    description: 'Create beautiful documentation sites with modern design and great UX.',
-    tags: ['Next.js', 'Documentation', 'Design'],
+    title: 'Can I Try This?',
+    description: 'A fun and beginner-friendly platform where you can explore real-world challenges in design, development, writing, data, and more.',
+    tags: ['Vue.js', 'Firebase', 'React', 'TypeScript'],
     difficulty: 'Beginner',
-    repository: 'https://github.com/example/doc-site'
+    repository: 'https://github.com/Code-Social/canitrythis'
   },
 ];
 
@@ -92,7 +84,7 @@ export default function Projects() {
           {/* Submit Project CTA */}
           <div className="pt-4">
             <a
-              href={process.env.NEXT_PUBLIC_FORM_PROJECT || '#'}
+              href={process.env.NEXT_PUBLIC_FORM_PROJECT || 'https://forms.gle/PT1db4BeP4kQDNrG8'}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2"
@@ -116,68 +108,8 @@ export default function Projects() {
               className="w-full pl-10 pr-4 py-3 panel rounded-lg focus:outline-none focus:border-[var(--frost)] transition-colors duration-200"
             />
           </div>
-
-          {/* Filter Toggle */}
-          <div className="text-center">
-            <button
-              onClick={() => setShowFilters(!showFilters)}
-              className="btn-secondary inline-flex items-center gap-2"
-            >
-              <Filter size={18} />
-              Filters
-            </button>
-          </div>
-
-          {/* Filters */}
-          {showFilters && (
-            <div className="panel p-6 rounded-lg space-y-6">
-              {/* Difficulty Filter */}
-              <div>
-                <h3 className="font-semibold mb-3">Difficulty Level</h3>
-                <div className="flex flex-wrap gap-2">
-                  {difficulties.map((difficulty) => (
-                    <button
-                      key={difficulty}
-                      onClick={() => setSelectedDifficulty(difficulty)}
-                      className={`px-3 py-1 rounded-full text-sm transition-colors duration-200 ${
-                        selectedDifficulty === difficulty
-                          ? 'bg-[var(--frost)] text-[var(--bg)]'
-                          : 'bg-[var(--panel)] border border-[var(--muted)] hover:border-[var(--frost)]'
-                      }`}
-                    >
-                      {difficulty}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Tags Filter */}
-              <div>
-                <h3 className="font-semibold mb-3">Technologies</h3>
-                <div className="flex flex-wrap gap-2">
-                  {allTags.map((tag) => (
-                    <button
-                      key={tag}
-                      onClick={() => toggleTag(tag)}
-                      className={`px-3 py-1 rounded-full text-sm transition-colors duration-200 ${
-                        selectedTags.includes(tag)
-                          ? 'bg-[var(--frost)] text-[var(--bg)]'
-                          : 'bg-[var(--panel)] border border-[var(--muted)] hover:border-[var(--frost)]'
-                      }`}
-                    >
-                      {tag}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
         </div>
 
-        {/* Results Count */}
-        <div className="text-center mb-8 text-[var(--muted)]">
-          Found {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''}
-        </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -224,6 +156,13 @@ export default function Projects() {
               </a>
             </div>
           ))}
+        </div>
+
+        {/* More Projects Coming Soon */}
+        <div className="text-center mt-8">
+          <p className="text-lg text-[var(--muted)]">
+            More projects coming soon! Stay tuned for exciting opportunities to work on real-time projects.
+          </p>
         </div>
 
         {/* Empty State */}

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Sponsor {
   name: string;
@@ -79,5 +80,40 @@ export default function LogoWall() {
         </div>
       </div>
     </section>
+  );
+}
+
+export function HomePage() {
+  return (
+    <div>
+      {/* Register Now Dropdown */}
+      <div className="relative inline-block text-left">
+        <button className="btn-dropdown">
+          Register Now
+        </button>
+        <div className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+          <div className="py-1">
+            <Link
+              href="https://forms.gle/UNzHDjYAMkYpoYPy6"
+              className="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >
+              Contributors
+            </Link>
+            <Link
+              href="https://forms.gle/PWRP2BM4DqGbqh6w5"
+              className="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >
+              Mentors
+            </Link>
+            <Link
+              href="https://forms.gle/PT1db4BeP4kQDNrG8"
+              className="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >
+              Project Admins
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

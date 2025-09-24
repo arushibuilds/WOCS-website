@@ -9,7 +9,7 @@ const timelineEvents = [
     status: 'completed'
   },
   {
-    date: 'October 10',
+    date: 'October 1',
     title: 'Contributor Registration Opens',
     description: 'Contributors can now register and browse available projects',
     icon: Code,
