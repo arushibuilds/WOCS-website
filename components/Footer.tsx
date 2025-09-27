@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { MessageCircle, Mail } from 'lucide-react';
+import Image from "next/image";
 
 export default function Footer() {
   const resources = [
@@ -16,9 +17,13 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Logo and Description */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[var(--frost)]">
-              Winter of Code Social
-            </h3>
+            <Image
+          src="/logo.svg"   // ✅ served from public/logo.svg
+          alt="Winter of Code Social"
+          width={160}
+          height={40}
+          className="h-auto w-auto"
+        />
             <p className="text-[var(--muted)] max-w-sm">
               Building the future of open source through community-driven development.
             </p>
