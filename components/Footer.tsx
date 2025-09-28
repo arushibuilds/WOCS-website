@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="space-y-4">
             <Image
-          src="/logo.svg"   // ✅ served from public/logo.svg
+          src="/logo.svg" 
           alt="Winter of Code Social"
           width={160}
           height={40}

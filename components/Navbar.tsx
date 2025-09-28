@@ -24,14 +24,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center font-bold text-xl text-[var(--frost)] gap-2">
             <Image
-              src="/icon.png"
+              src="/logo.svg"
               alt="Winter of Code Social Logo"
-              width={24}
-              height={24}
+              width={340}
+              height={180}
               priority
             />
-            Winter of Code Social
-            <span style={{marginRight: '30px'}}></span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { ChevronDown, ExternalLink, Users, Code, Award, Building } from 'lucide-react';
+import Image from "next/image";
 
 export default function Hero() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -17,10 +18,14 @@ export default function Hero() {
       <div className="max-w-4xl mx-auto text-center space-y-8">
         {/* Main Heading */}
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Winter of
-            <span className="block text-[var(--frost)]">Code Social</span>
-          </h1>
+          <Image
+            src="/main.svg"   
+            alt="Winter of Code Social"
+            width={600}  
+            height={200}  
+            priority
+            className="mx-auto h-auto w-auto"
+          />
           <p className="text-xl md:text-2xl text-[var(--muted)] max-w-3xl mx-auto leading-relaxed">
             Whether you’re a beginner or a pro, this winter is your chance to dive into open source, team up, and make an impact.
           </p>
