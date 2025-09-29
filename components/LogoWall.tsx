@@ -5,15 +5,27 @@ interface Sponsor {
   name: string;
   logo: string;
   website: string;
-  tier: 'platinum' | 'gold' | 'silver' | 'bronze';
+}
+
+interface Partner {
+  name: string;
+  logo: string;
+  website: string;
 }
 
 const sponsors: Sponsor[] = [
   {
+    name: 'ChaChing Social',
+    logo: '/ccl.png',
+    website: 'https://www.chaching.social/',
+  },
+];
+
+const communityPartners: Partner[] = [
+  {
     name: 'Focus Faces',
     logo: '/sp1.png',
     website: 'https://focusfaces.com/',
-    tier: 'platinum'
   },
 ];
 
@@ -22,35 +34,70 @@ export default function LogoWall() {
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">Trusted by Industry Leaders</h2>
-        <p className="text-[var(--muted)] mb-12 max-w-2xl mx-auto">
+        <p className="text-[var(--muted)] mb-16 max-w-2xl mx-auto">
           Join the companies and organizations supporting the next generation of open source developers.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-          {sponsors.map((sponsor) => (
-            <a
-              key={sponsor.name}
-              href={sponsor.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group panel p-6 rounded-lg hover:frost-glow transition-all duration-300 flex items-center justify-center min-h-[120px]"
-            >
-              <div className="text-center space-y-2">
-                <div className="w-16 h-16 mx-auto relative opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
-                  <Image
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    width={64}
-                    height={64}
-                    className="object-contain"
-                  />
+        {/* Sponsors Section */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold mb-8 text-[var(--frost)]">Sponsors</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+            {sponsors.map((sponsor) => (
+              <a
+                key={sponsor.name}
+                href={sponsor.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group panel p-6 rounded-lg hover:frost-glow transition-all duration-300 flex items-center justify-center min-h-[120px]"
+              >
+                <div className="text-center space-y-2">
+                  <div className="w-16 h-16 mx-auto relative opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
+                    <Image
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      width={64}
+                      height={64}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="text-sm font-medium text-[var(--muted)] group-hover:text-[var(--frost)]">
+                    {sponsor.name}
+                  </div>
                 </div>
-                <div className="text-sm font-medium text-[var(--muted)] group-hover:text-[var(--frost)]">
-                  {sponsor.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Community Partners Section */}
+        <div>
+          <h3 className="text-2xl font-semibold mb-8 text-[var(--frost)]">Community Partners</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+            {communityPartners.map((partner) => (
+              <a
+                key={partner.name}
+                href={partner.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group panel p-6 rounded-lg hover:frost-glow transition-all duration-300 flex items-center justify-center min-h-[120px]"
+              >
+                <div className="text-center space-y-2">
+                  <div className="w-16 h-16 mx-auto relative opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={64}
+                      height={64}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="text-sm font-medium text-[var(--muted)] group-hover:text-[var(--frost)]">
+                    {partner.name}
+                  </div>
                 </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -11,24 +11,26 @@ interface Project {
   repository: string;
 }
 
-const projects: Project[] = [
-  {
-    id: '1',
-    title: 'FitFinder',
-    description: 'A smart and community-driven platform where you can discover global scholarships, research programs and more, all based on your profile.',
-    tags: ['React', 'Node.js', 'MongoDB'],
-    difficulty: 'Intermediate',
-    repository: 'https://github.com/Code-Social/fitfinder'
-  },
-  {
-    id: '2',
-    title: 'Can I Try This?',
-    description: 'A fun and beginner-friendly platform where you can explore real-world challenges in design, development, writing, data, and more.',
-    tags: ['Vue.js', 'Firebase', 'React', 'TypeScript'],
-    difficulty: 'Beginner',
-    repository: 'https://github.com/Code-Social/canitrythis'
-  },
-];
+// const projects: Project[] = [
+//   {
+//     id: '1',
+//     title: 'FitFinder',
+//     description: 'A smart and community-driven platform where you can discover global scholarships, research programs and more, all based on your profile.',
+//     tags: ['React', 'Node.js', 'MongoDB'],
+//     difficulty: 'Intermediate',
+//     repository: 'https://github.com/Code-Social/fitfinder'
+//   },
+//   {
+//     id: '2',
+//     title: 'Can I Try This?',
+//     description: 'A fun and beginner-friendly platform where you can explore real-world challenges in design, development, writing, data, and more.',
+//     tags: ['Vue.js', 'Firebase', 'React', 'TypeScript'],
+//     difficulty: 'Beginner',
+//     repository: 'https://github.com/Code-Social/canitrythis'
+//   },
+// ];
+
+const projects: Project[] = [];
 
 
 const difficulties = ['All', 'Beginner', 'Intermediate', 'Advanced'];
@@ -95,9 +97,8 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Search and Filters */}
-        <div className="mb-8 space-y-4">
-          {/* Search Bar */}
+        {/* Search and Filters - Commented out for now */}
+        {/* <div className="mb-8 space-y-4">
           <div className="relative max-w-md mx-auto">
             <Search size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[var(--muted)]" />
             <input
@@ -108,14 +109,13 @@ export default function Projects() {
               className="w-full pl-10 pr-4 py-3 panel rounded-lg focus:outline-none focus:border-[var(--frost)] transition-colors duration-200"
             />
           </div>
-        </div>
+        </div> */}
 
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Projects Grid - Commented out for now */}
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <div key={project.id} className="panel p-6 rounded-lg hover:frost-glow transition-all duration-300">
-              {/* Project Header */}
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
@@ -125,12 +125,10 @@ export default function Projects() {
                 </span>
               </div>
 
-              {/* Description */}
               <p className="text-[var(--muted)] mb-4 line-clamp-3">
                 {project.description}
               </p>
 
-              {/* Tags */}
               <div className="flex flex-wrap gap-1 mb-4">
                 {project.tags.map((tag) => (
                   <span
@@ -142,9 +140,6 @@ export default function Projects() {
                 ))}
               </div>
 
-
-
-              {/* Action Button */}
               <a
                 href={project.repository}
                 target="_blank"
@@ -156,17 +151,17 @@ export default function Projects() {
               </a>
             </div>
           ))}
-        </div>
+        </div> */}
 
-        {/* More Projects Coming Soon */}
+        {/* Projects Available from October 25th */}
         <div className="text-center mt-8">
           <p className="text-lg text-[var(--muted)]">
-            More projects coming soon! Stay tuned for exciting opportunities to work on real-time projects.
+            Projects will be available from October 25th. Stay tuned for exciting opportunities to work on real-world projects!
           </p>
         </div>
 
-        {/* Empty State */}
-        {filteredProjects.length === 0 && (
+        {/* Empty State - Commented out for now */}
+        {/* {filteredProjects.length === 0 && (
           <div className="text-center py-12">
             <div className="text-6xl mb-4">🔍</div>
             <h3 className="text-xl font-semibold mb-2">No projects found</h3>
@@ -184,7 +179,7 @@ export default function Projects() {
               Clear Filters
             </button>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

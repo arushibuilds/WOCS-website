@@ -1,5 +1,6 @@
 import { Users } from 'lucide-react';
 import { Building, Heart, Star, Award, ExternalLink, Check } from 'lucide-react';
+import Image from 'next/image';
 
 const sponsorTiers = [
   {
@@ -52,12 +53,21 @@ const inKindSponsors = [
 ];
 
 const currentSponsors = [
-  { name: 'GitHub', tier: 'Platinum', logo: '🐙' },
-  { name: 'Microsoft', tier: 'Gold', logo: '🏢' },
-  { name: 'Google', tier: 'Gold', logo: '🔍' },
-  { name: 'AWS', tier: 'Silver', logo: '☁️' },
-  { name: 'Vercel', tier: 'Bronze', logo: '▲' },
-  { name: 'Netlify', tier: 'Bronze', logo: '🌊' }
+  { 
+    name: 'ChaChing Social', 
+    logo: '/ccl.png',
+    website: 'https://www.chaching.social/',
+    isImage: true
+  }
+];
+
+const communityPartners = [
+  { 
+    name: 'Focus Faces', 
+    logo: '/sp1.png',
+    website: 'https://focusfaces.com/',
+    isImage: true
+  }
 ];
 
 export default function Sponsors() {
@@ -131,11 +141,66 @@ export default function Sponsors() {
           <h2 className="text-3xl font-bold text-center mb-12">Our Amazing Sponsors</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {currentSponsors.map((sponsor, index) => (
-              <div key={index} className="panel p-6 rounded-lg text-center hover:frost-glow transition-all duration-300">
-                <div className="text-4xl mb-3">{sponsor.logo}</div>
-                <div className="font-semibold text-sm">{sponsor.name}</div>
-                <div className="text-xs text-[var(--muted)] mt-1">{sponsor.tier}</div>
-              </div>
+              <a
+                key={index}
+                href={sponsor.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="panel p-6 rounded-lg text-center hover:frost-glow transition-all duration-300 group"
+              >
+                <div className="mb-3 flex items-center justify-center h-16">
+                  {sponsor.isImage ? (
+                    <Image
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      width={64}
+                      height={64}
+                      className="object-contain opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                    />
+                  ) : (
+                    <div className="text-4xl">{sponsor.logo}</div>
+                  )}
+                </div>
+                <div className="font-semibold text-sm group-hover:text-[var(--frost)] transition-colors">
+                  {sponsor.name}
+                </div>
+                {sponsor.tier && (
+                  <div className="text-xs text-[var(--muted)] mt-1">{sponsor.tier}</div>
+                )}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Community Partners */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold text-center mb-12">Community Partners</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {communityPartners.map((partner, index) => (
+              <a
+                key={index}
+                href={partner.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="panel p-6 rounded-lg text-center hover:frost-glow transition-all duration-300 group"
+              >
+                <div className="mb-3 flex items-center justify-center h-16">
+                  {partner.isImage ? (
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={64}
+                      height={64}
+                      className="object-contain opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                    />
+                  ) : (
+                    <div className="text-4xl">{partner.logo}</div>
+                  )}
+                </div>
+                <div className="font-semibold text-sm group-hover:text-[var(--frost)] transition-colors">
+                  {partner.name}
+                </div>
+              </a>
             ))}
           </div>
         </div>
