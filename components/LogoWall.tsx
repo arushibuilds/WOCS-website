@@ -15,6 +15,12 @@ const sponsors: Sponsor[] = [
     website: 'https://focusfaces.com/',
     tier: 'platinum'
   },
+  {
+    name: 'IntelligenZ Talks',
+    logo: '/sp2.jpg',
+    website: 'https://www.linkedin.com/in/sanskritikadam/',
+    tier: 'gold'
+  },
 ];
 
 export default function LogoWall() {

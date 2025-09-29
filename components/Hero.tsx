@@ -17,14 +17,14 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center space-y-8">
         {/* Main Heading */}
-        <div className="space-y-4">
+        <div className="space-y-2">
           <Image
             src="/main.svg"   
             alt="Winter of Code Social"
-            width={600}  
-            height={200}  
+            width={350}
+            height={120}
             priority
-            className="mx-auto h-auto w-auto"
+            className="mx-auto h-auto w-72 md:w-128"
           />
           <p className="text-xl md:text-2xl text-[var(--muted)] max-w-3xl mx-auto leading-relaxed">
             Whether you’re a beginner or a pro, this winter is your chance to dive into open source, team up, and make an impact.
