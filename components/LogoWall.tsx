@@ -10,40 +10,10 @@ interface Sponsor {
 
 const sponsors: Sponsor[] = [
   {
-    name: 'GitHub',
-    logo: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=200',
-    website: 'https://github.com',
+    name: 'Focus Faces',
+    logo: '/sp1.png',
+    website: 'https://focusfaces.com/',
     tier: 'platinum'
-  },
-  {
-    name: 'Microsoft',
-    logo: 'https://images.pexels.com/photos/11035539/pexels-photo-11035539.jpeg?auto=compress&cs=tinysrgb&w=200',
-    website: 'https://microsoft.com',
-    tier: 'gold'
-  },
-  {
-    name: 'Google',
-    logo: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=200',
-    website: 'https://google.com',
-    tier: 'gold'
-  },
-  {
-    name: 'AWS',
-    logo: 'https://images.pexels.com/photos/11035378/pexels-photo-11035378.jpeg?auto=compress&cs=tinysrgb&w=200',
-    website: 'https://aws.amazon.com',
-    tier: 'silver'
-  },
-  {
-    name: 'Vercel',
-    logo: 'https://images.pexels.com/photos/11035467/pexels-photo-11035467.jpeg?auto=compress&cs=tinysrgb&w=200',
-    website: 'https://vercel.com',
-    tier: 'bronze'
-  },
-  {
-    name: 'Netlify',
-    logo: 'https://images.pexels.com/photos/11035472/pexels-photo-11035472.jpeg?auto=compress&cs=tinysrgb&w=200',
-    website: 'https://netlify.com',
-    tier: 'bronze'
   },
 ];
 
@@ -66,10 +36,14 @@ export default function LogoWall() {
               className="group panel p-6 rounded-lg hover:frost-glow transition-all duration-300 flex items-center justify-center min-h-[120px]"
             >
               <div className="text-center space-y-2">
-                <div className="w-16 h-16 mx-auto bg-[var(--muted)] rounded-lg opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-xs font-bold text-[var(--bg)]">
-                    {sponsor.name.substring(0, 2)}
-                  </span>
+                <div className="w-16 h-16 mx-auto relative opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    width={64}
+                    height={64}
+                    className="object-contain"
+                  />
                 </div>
                 <div className="text-sm font-medium text-[var(--muted)] group-hover:text-[var(--frost)]">
                   {sponsor.name}
