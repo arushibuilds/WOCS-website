@@ -52,7 +52,15 @@ const inKindSponsors = [
   }
 ];
 
-const currentSponsors = [
+interface CurrentSponsor {
+  name: string;
+  logo: string;
+  website: string;
+  isImage: boolean;
+  tier?: string;
+}
+
+const currentSponsors: CurrentSponsor[] = [
   { 
     name: 'ChaChing Social', 
     logo: '/ccl.png',
@@ -61,7 +69,14 @@ const currentSponsors = [
   }
 ];
 
-const communityPartners = [
+interface CommunityPartner {
+  name: string;
+  logo: string;
+  website: string;
+  isImage: boolean;
+}
+
+const communityPartners: CommunityPartner[] = [
   { 
     name: 'Focus Faces', 
     logo: '/sp1.png',

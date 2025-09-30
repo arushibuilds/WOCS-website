@@ -31,7 +31,6 @@ const communityPartners: Partner[] = [
     name: 'IntelligenZ Talks',
     logo: '/sp2.jpg',
     website: 'https://www.linkedin.com/in/sanskritikadam/',
-    tier: 'gold'
   },
 ];
 
