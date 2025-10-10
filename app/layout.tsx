@@ -5,6 +5,7 @@ import { ThemeProvider } from 'next-themes';
 import Snowfall from '@/components/Snowfall';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Script from 'next/script';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -37,6 +38,14 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/icon.png" type="image/png" />
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DS7XFCSFE5"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-DS7XFCSFE5');`}
+        </Script>
       </head>
       <body className={inter.className}>
         <ThemeProvider
