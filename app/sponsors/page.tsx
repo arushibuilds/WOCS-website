@@ -83,6 +83,12 @@ const communityPartners: CommunityPartner[] = [
     website: 'https://focusfaces.com/',
     isImage: true
   }
+  ,{
+    name: 'IntelliGenZ Talks',
+    logo: '/sp2.jpg',
+    website: 'https://linktr.ee/techtalksintelligenz',
+    isImage: true
+  }
 ];
 
 export default function Sponsors() {
