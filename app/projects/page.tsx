@@ -11,26 +11,80 @@ interface Project {
   repository: string;
 }
 
-// const projects: Project[] = [
-//   {
-//     id: '1',
-//     title: 'FitFinder',
-//     description: 'A smart and community-driven platform where you can discover global scholarships, research programs and more, all based on your profile.',
-//     tags: ['React', 'Node.js', 'MongoDB'],
-//     difficulty: 'Intermediate',
-//     repository: 'https://github.com/Code-Social/fitfinder'
-//   },
-//   {
-//     id: '2',
-//     title: 'Can I Try This?',
-//     description: 'A fun and beginner-friendly platform where you can explore real-world challenges in design, development, writing, data, and more.',
-//     tags: ['Vue.js', 'Firebase', 'React', 'TypeScript'],
-//     difficulty: 'Beginner',
-//     repository: 'https://github.com/Code-Social/canitrythis'
-//   },
-// ];
-
-const projects: Project[] = [];
+const projects: Project[] = [
+  {
+    id: '1',
+    title: 'FitFinder',
+    description: 'A smart and community-driven platform where you can discover global scholarships, research programs and more, all based on your profile.',
+    tags: ['React', 'Node.js', 'MongoDB'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/Code-Social/fitfinder'
+  },
+  {
+    id: '2',
+    title: 'Can I Try This?',
+    description: 'A fun and beginner-friendly platform where you can explore real-world challenges in design, development, writing, data, and more.',
+    tags: ['Vue.js', 'Firebase', 'React', 'TypeScript'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/Code-Social/canitrythis'
+  },
+  {
+    id: '3',
+    title: 'Gityzer',
+    description: 'Gityzer is an online tool that reads your GitHub stats and generates a sleek, trendy line for your profile README to summarize and showcase your journey on GitHub.',
+    tags: ['React', 'Next.js', 'Tailwind CSS', 'JavaScript', 'TypeScript'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/vansh-codes/gityzer'
+  },
+  {
+    id: '4',
+    title: 'Veltrian Hybrid AI Database',
+    description: 'A fully local, cloudless AI-hybrid database that lets users upload, clean, visualize, and query data entirely in their browser — no servers, no cloud, no leaks. Designed for speed, privacy, and accessibility.',
+    tags: ['React', 'Vite', 'IndexedDB', 'TensorFlow.js', 'D3.js'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/salonijoshi1980/Veltrian-Hybrid-AI-Database'
+  },
+  {
+    id: '5',
+    title: 'Air Calibre',
+    description: 'Measures air pollution and assists in mitigation using indigenously developed sensors, aligning with Atmanirbhar Bharat. Aims for large-scale social and environmental impact.',
+    tags: ['Python', 'Streamlit', 'Django', 'FastAPI'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/Air-Calibre'
+  },
+  {
+    id: '6',
+    title: 'BYAMN Learning',
+    description: 'A free online learning platform that curates YouTube courses into structured learning paths, tracks progress, provides verified certificates, and makes quality education accessible for all.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/DYHARDx/BYAMN-Learning'
+  },
+  {
+    id: '8',
+    title: 'GuruShish',
+    description: 'A web platform connecting students with qualified tuition teachers for personalized learning. It enables booking based on subject preferences while ensuring small class sizes for focused attention.',
+    tags: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Nest.js', 'Node.js', 'PostgreSQL'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/sailaja-adapa/GuruShish'
+  },
+  {
+    id: '9',
+    title: 'GATEDNET',
+    description: 'A modern MERN-based web platform to streamline communication, management, and engagement within apartment societies using geofencing, live polls, and collaborative tools.',
+    tags: ['MongoDB', 'Express', 'React', 'Node.js'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/guptapratykshh/GATEDNET'
+  },
+  {
+    id: '10',
+    title: 'RepoChat',
+    description: 'A chat app built on top of Gemini AI that lets users enter a GitHub repo URL and chat with the repository about its contents.',
+    tags: ['T3 Stack', 'tRPC', 'Gemini AI'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/trishit78/RepoChat'
+  }
+];
 
 
 const difficulties = ['All', 'Beginner', 'Intermediate', 'Advanced'];
@@ -112,8 +166,7 @@ export default function Projects() {
         </div> */}
 
 
-        {/* Projects Grid - Commented out for now */}
-        {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <div key={project.id} className="panel p-6 rounded-lg hover:frost-glow transition-all duration-300">
               <div className="flex justify-between items-start mb-4">
@@ -151,14 +204,9 @@ export default function Projects() {
               </a>
             </div>
           ))}
-        </div> */}
+        </div> 
 
-        {/* Projects Available from October 25th */}
-        <div className="text-center mt-8">
-          <p className="text-lg text-[var(--muted)]">
-            Projects will be available from October 25th. Stay tuned for exciting opportunities to work on real-world projects!
-          </p>
-        </div>
+        
 
         {/* Empty State - Commented out for now */}
         {/* {filteredProjects.length === 0 && (
