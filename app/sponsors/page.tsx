@@ -88,6 +88,24 @@ const communityPartners: CommunityPartner[] = [
     logo: '/sp2.jpg',
     website: 'https://linktr.ee/techtalksintelligenz',
     isImage: true
+  },
+  {
+    name: 'GDG KJU',
+    logo: '/sp3.png',
+    website: 'https://www.instagram.com/gdg.kristujayanti',
+    isImage: true
+  },
+  {
+    name: 'Chicago Startup Events',
+    logo: '/sp4.png',
+    website: 'https://www.chicagostartupevents.com/',
+    isImage: true
+  },
+  {
+    name: 'GDG PESCOE',
+    logo: '/sp5.png',
+    website: 'https://www.linkedin.com/company/gdgcpescoe/',
+    isImage: true
   }
 ];
 
