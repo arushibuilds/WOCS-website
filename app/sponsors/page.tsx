@@ -106,6 +106,12 @@ const communityPartners: CommunityPartner[] = [
     logo: '/sp5.png',
     website: 'https://www.linkedin.com/company/gdgcpescoe/',
     isImage: true
+  },
+  {
+    name: 'Byte Brigade',
+    logo: '/sp6.png',
+    website: 'https://linktr.ee/ByteBrigade2025',
+    isImage: true
   }
 ];
 
