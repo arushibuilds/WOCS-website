@@ -32,6 +32,26 @@ const communityPartners: Partner[] = [
     logo: '/sp2.jpg',
     website: 'https://www.linkedin.com/in/sanskritikadam/',
   },
+  {
+    name: 'GDG KJU',
+    logo: '/sp3.jpg',
+    website: 'https://www.instagram.com/gdg.kristujayanti',
+  },
+  {
+    name: 'Chicago Startup Events',
+    logo: '/sp4.png',
+    website: 'https://www.chicagostartupevents.com/',
+  },
+  {
+    name: 'GDG PESCOE',
+    logo: '/sp5.jpg',
+    website: 'https://www.linkedin.com/company/gdgcpescoe/',
+  },
+  {
+    name: 'Byte Brigade',
+    logo: '/sp6.jpg',
+    website: 'https://linktr.ee/ByteBrigade2025',
+  }
 ];
 
 export default function LogoWall() {
