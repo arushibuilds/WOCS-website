@@ -34,7 +34,7 @@ const communityPartners: Partner[] = [
   },
   {
     name: 'GDG KJU',
-    logo: '/sp3.jpg',
+    logo: '/sp3.png',
     website: 'https://www.instagram.com/gdg.kristujayanti',
   },
   {
@@ -44,12 +44,12 @@ const communityPartners: Partner[] = [
   },
   {
     name: 'GDG PESCOE',
-    logo: '/sp5.jpg',
+    logo: '/sp5.png',
     website: 'https://www.linkedin.com/company/gdgcpescoe/',
   },
   {
     name: 'Byte Brigade',
-    logo: '/sp6.jpg',
+    logo: '/sp6.png',
     website: 'https://linktr.ee/ByteBrigade2025',
   }
 ];
