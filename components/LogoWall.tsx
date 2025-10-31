@@ -51,6 +51,16 @@ const communityPartners: Partner[] = [
     name: 'Byte Brigade',
     logo: '/sp6.png',
     website: 'https://linktr.ee/ByteBrigade2025',
+  },
+  {
+    name: 'SheFi Chicago',
+    logo: '/sp7.jpg',
+    website: 'https://www.shefi.org/',
+  },
+  {
+    name: 'Code Your Dreams',
+    logo: '/sp8.jpg',
+    website: 'https://www.codeyourdreams.org/',
   }
 ];
 
