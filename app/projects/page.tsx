@@ -83,9 +83,104 @@ const projects: Project[] = [
     tags: ['T3 Stack', 'tRPC', 'Gemini AI'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/trishit78/RepoChat'
+  },
+  {
+    id: '11',
+    title: 'Disease prediction',
+    description: 'A project that applies Bayes\' Theorem to estimate the percentage chance of survival from a disease using historical hospital data. Designed to help understand real-world applications of Bayesian probability in medical diagnosis and survival prediction.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Python', 'Flask'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/aliviahossain/Disease-prediction'
+  },
+  {
+    id: '12',
+    title: 'SaralSeva',
+    description: 'SaralSeva is a 3-tier digital governance platform which enables 24/7 access to government services, tracks applications with unique IDs, automates workflows, manages schemes, and ensures grievance redressal for citizens, employees, and admins.',
+    tags: ['ReactJS', 'Tailwind CSS', 'Vite', 'NodeJS', 'ExpressJS', 'MongoDB'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/eccentriccoder01/SaralSeva'
+  },
+  {
+    id: '13',
+    title: 'Happy trails',
+    description: 'A collaborative platform for creating, sharing, and improving open source project documentation. Aims to enhance the quality and accessibility of documentation for developers and users alike.',
+    tags: ['Flask', 'PostgreSQL', 'JavaScript', 'HTML5', 'CSS3'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/Kavlin-Kaur/Happy-Trails'
+  },
+  {
+    id: '14',
+    title: 'car-transport-service',
+    description: 'Beginner-friendly Car Transport Service. Open for contributions to improve design, features, and functionality.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/Nikhilrsingh/car-transport-service'
+  },
+  {
+    id: '15',
+    title: 'ClinIQ',
+    description: 'ClinIQ is an AI-powered health-tech platform designed to make healthcare more accessible and intelligent. It provides users with instant, personalized symptom analysis using AI, helps them discover verified doctors, and enables seamless appointment booking — all in one place. Built with React, TypeScript, Supabase, and the Gemini API, ClinIQ offers an interactive chat interface, hospital locator, and a responsive user experience. The platform empowers users to make informed health decisions with ease, bridging the gap between patients and healthcare professionals through technology and innovation.',
+    tags: ['React.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Supabase', 'Gemini API'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/akshay0611/ClinIQ'
+  },
+  {
+    id: '16',
+    title: 'Peacebot-AI',
+    description: 'PeaceBot AI is an intelligent and empathetic mental health chatbot designed to provide emotional support, motivational messages, and mindfulness guidance.',
+    tags: ['Python', 'Flask', 'OpenAI API', 'JavaScript', 'HTML', 'CSS'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/Tanyasharma71/peacebot-ai'
+  },
+  {
+    id: '17',
+    title: 'CarbonX',
+    description: 'CarbonX is an advance web3 and Blockchain based Carbon Trading platform which have the ability to buy, retire and offset the carbons credits. CarbonX have AI with the ability to calculate the Carbon Footprints and total number of Carbon Credits required in one Unified Platform, providing the ability to do multiple things which helps in save time.',
+    tags: ['Next.Js', 'Typescript', 'Tailwind Css', 'Blockchain (Eth or polygon, Solitary)', 'AI/ML'],
+    difficulty: 'Advanced',
+    repository: 'https://github.com/AkshitTiwarii/carbonx'
+  },
+  {
+    id: '18', 
+    title: 'Collegedaddy',
+    description: 'College Daddy is a lightweight academic toolkit built with HTML, CSS, and JavaScript. It helps students calculate CGPA and internal marks, access semester-wise notes, and stay organized during exams  all within a simple, responsive interface. Originally developed during end-semester exams to solve real student problems, College Daddy aims to make academic management effortless and accessible for every student.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/mugenkyou/College_daddy'
+  },
+  {
+    id: '19',
+    title: 'Blood-donation',
+    description: 'The Blood Donation Website is a web-based platform designed to connect blood donors with recipients and blood banks efficiently. The system simplifies the process of finding donors, scheduling donations, and managing blood inventory in emergencies.',
+    tags: ['javascript', 'typescript', 'html', 'css'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/darshan-totagi/blood-donation'
+  },
+  {
+    id: '20',
+    title: 'Verdigo Eco friendly Project',
+    description: 'VerdiGo is a comprehensive environmental impact platform that empowers users to track, reduce, and offset their carbon footprint while promoting sustainable living practices.',
+    tags: ['React','Leaflet', 'Tailwind CSS', 'Node.js'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/Meghali54/Verdigo_Eco-friendly_Project'
+  },
+  {
+    id: '21',
+    title: 'Foodie',
+    description: 'Fully Responsive Food Delivery App A sleek, mobile-first food delivery platform built with modern web technologies to ensure seamless user experience across all devices. Designed with accessibility, performance, and scalability in mind, this app empowers users to browse menus, customize orders, and track deliveries with ease',
+    tags: ['JavaScript', 'HTML', 'CSS'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/janavipandole/Hacktoberfest2025-Foodie'
+  },
+  {
+    id: '22',
+    title: 'Roommate',
+    description: 'A shared living space for Roommates out there. Split expenses, track chores and much more.',
+    tags: ['React', 'Typescript', 'Node', 'Postgres', 'Prisma'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/souravseal99/RoomMate'
   }
 ];
-
 
 const difficulties = ['All', 'Beginner', 'Intermediate', 'Advanced'];
 const allTags = ['React', 'TypeScript', 'Python', 'Next.js', 'Machine Learning', 'Documentation', 'Accessibility', 'Data Science', 'Design'];
