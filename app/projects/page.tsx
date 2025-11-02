@@ -46,11 +46,11 @@ const projects: Project[] = [
   },
   {
     id: '5',
-    title: 'Air Calibre',
-    description: 'Measures air pollution and assists in mitigation using indigenously developed sensors, aligning with Atmanirbhar Bharat. Aims for large-scale social and environmental impact.',
-    tags: ['Python', 'Streamlit', 'Django', 'FastAPI'],
+    title: 'History of all flight crash',
+    description: 'A data-driven web app that visualizes global aircraft crash data on an interactive map using Python and Streamlit. It allows users to explore aviation accidents by year, region, aircraft type, and cause, providing valuable insights into safety trends.',
+    tags: ['Python', 'Streamlit', 'Pandas', 'Plotly'],
     difficulty: 'Intermediate',
-    repository: 'https://github.com/Air-Calibre'
+    repository: 'https://github.com/vinaysingh282006/History-of-all-flight-crash-map'
   },
   {
     id: '6',
@@ -179,6 +179,14 @@ const projects: Project[] = [
     tags: ['React', 'Typescript', 'Node', 'Postgres', 'Prisma'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/souravseal99/RoomMate'
+  },
+  {
+    id: '23',
+    title: 'Thread Hopper',
+    description: 'AI-powered web app that transforms long-form content (blog posts, newsletters, scripts) into platform-specific social media posts',
+    tags: ['React', 'Typescript', 'Tailwind CSS', 'Framer Motion', 'Three.js', 'Supabase', 'OpenAI API'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/rishaan007/thread-hopper-js'
   }
 ];
 
