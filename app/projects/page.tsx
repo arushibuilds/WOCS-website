@@ -187,6 +187,22 @@ const projects: Project[] = [
     tags: ['React', 'Typescript', 'Tailwind CSS', 'Framer Motion', 'Three.js', 'Supabase', 'OpenAI API'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/rishaan007/thread-hopper-js'
+  },
+  {
+    id: '24',
+    title: 'Foodogram',
+    description: 'Foodogram is a full-featured online food ordering platform that allows users to browse restaurants, view menus, add items to the cart, and place orders seamlessly.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'Node.js', 'MySQL', 'Git', 'GitHub'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/Mrigakshi-Rathore/Foodogram'
+  },
+  {
+    id: '25',
+    title: 'Celtrix',
+    description: 'An open-source scaffolding tool that helps you set up full-stack projects instantly with one command',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'MongoDB'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/celtrix-os/Celtrix'
   }
 ];
 
