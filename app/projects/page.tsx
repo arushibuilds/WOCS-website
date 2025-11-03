@@ -61,6 +61,14 @@ const projects: Project[] = [
     repository: 'https://github.com/DYHARDx/BYAMN-Learning'
   },
   {
+    id: '7',
+    title: 'NGO World',
+    description: 'NgoWorld is a hub to connect NGOs, Charities, and the world to collaborate and build a better tomorrow.',
+    tags: ['React', 'CSS', 'Express', 'Node.js', 'JavaScript'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/ngoworldcommunity/NGOWorld'
+  },
+  {
     id: '8',
     title: 'GuruShish',
     description: 'A web platform connecting students with qualified tuition teachers for personalized learning. It enables booking based on subject preferences while ensuring small class sizes for focused attention.',
@@ -203,6 +211,38 @@ const projects: Project[] = [
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'MongoDB'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/celtrix-os/Celtrix'
+  },
+  {
+    id: '26',
+    title: 'AI TASK MANAGER',
+    description: 'An enterprise-level AI-driven platform that intelligently classifies, prioritizes, and assigns tasks using NLP and Machine Learning',
+    tags: ['Python', 'Pandas', 'Streamlit', 'Matplotlib', 'Seaborn'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/ABHIJEET-0001/AI_TASK_MANAGER_2.8'
+  },
+  {
+    id: '27',
+    title: 'DevElevate',
+    description: 'DevElevate designed to empower learners and developers through personalized mentorship, intelligent task management, and AI-driven career recommendations.',
+    tags: ['Typescript', 'Tailwind CSS', 'Shadcn UI', 'Axios'],
+    difficulty: 'Advanced',
+    repository: 'https://github.com/abhisek2004/Dev-Elevate'
+  },
+  {
+    id: '28',
+    title: 'CodeMint',
+    description: 'An open-source hub for frontend developers to discover, learn, and contribute components, CSS snippets, UI blocks, effects, and color utilities.',
+    tags: ['Html', 'css', 'js', 'react', 'tailwindcss'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/Roshansuthar1105/codemint'
+  },
+  {
+    id: '29',
+    title: 'Auralis',
+    description: 'A beautiful, modern note-taking application built with Next.js 15, Appwrite, and Gemini AI.',
+    tags: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Appwrite'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/mannubaveja007/Auralis'
   }
 ];
 
