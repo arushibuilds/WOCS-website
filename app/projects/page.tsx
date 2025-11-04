@@ -208,7 +208,7 @@ const projects: Project[] = [
     id: '25',
     title: 'Celtrix',
     description: 'An open-source scaffolding tool that helps you set up full-stack projects instantly with one command',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'MongoDB'],
+    tags: ['javascript', 'nodejs','shell','bash'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/celtrix-os/Celtrix'
   },
