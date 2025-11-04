@@ -124,7 +124,7 @@ export default function Hero() {
 
           {/* Leaderboard Button */}
           <a
-            href="/leaderboard"
+            href="https://wocsleaderboard.netlify.app/"
             className="btn-secondary inline-flex items-center gap-2"
           >
             View Leaderboard
