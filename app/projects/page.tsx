@@ -243,6 +243,14 @@ const projects: Project[] = [
     tags: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Appwrite'],
     difficulty: 'Beginner',
     repository: 'https://github.com/mannubaveja007/Auralis'
+  },
+  {
+    id: '30',
+    title: 'Recodehive',
+    description: 'Helps you to learn and master the skills on data, and encourage you to code on opensource.',
+    tags: ['nextjs', 'css', 'html', 'typescript'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/recodehive/recode-website'
   }
 ];
 

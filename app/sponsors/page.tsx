@@ -124,6 +124,18 @@ const communityPartners: CommunityPartner[] = [
     logo: '/sp8.jpg',
     website: 'https://www.codeyourdreams.org/',
     isImage: true
+  },
+  {
+    name: 'Tenacity',
+    logo: '/sp9.jpg',
+    website: 'https://tenacityai.io/',
+    isImage: true
+  },
+  {
+    name: 'Devnovate',
+    logo: '/sp10.jpg',
+    website: 'https://devnovate.co/',
+    isImage: true
   }
 ];
 
