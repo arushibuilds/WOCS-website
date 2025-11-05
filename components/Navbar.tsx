@@ -50,7 +50,7 @@ export default function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden md:flex gap-4 items-center flex-nowrap whitespace-nowrap">
             <Link
-              href="/leaderboard"
+              href="https://wocsleaderboard.netlify.app/"
               className="btn-primary inline-flex items-center gap-2"
             >
               View Leaderboard
