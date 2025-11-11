@@ -251,6 +251,46 @@ const projects: Project[] = [
     tags: ['nextjs', 'css', 'html', 'typescript'],
     difficulty: 'Beginner',
     repository: 'https://github.com/recodehive/recode-website'
+  },
+  {
+    id: '31',
+    title: 'AssignMe',
+    description: 'AssignMe is an open source web application that helps students complete their assignments by converting digital text into customizable handwritten-style documents.',
+    tags: ['Html', 'Python', 'CSS', 'JavaScript', 'Docker'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/Rajan167030/asignme'
+  },
+  {
+    id: '32',
+    title: 'FoodSaver-AnnyoMitrro',
+    description: 'FoodSaver App is a React-based web application designed to reduce food waste by connecting restaurants with NGOs.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB','Spring Boot'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/bidyut26maji/FoodSaver'
+  },
+  {
+    id: '33',
+    title: 'blood_management_system',
+    description: 'PulseConnect is a blood donation network application that connects blood donors with people in need.',
+    tags: ['reactjs', 'typescript', 'nodejs', 'postgresql'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/basava2005/blood_management_system'
+  },
+  {
+    id: '34',
+    title: 'AlgoFi',
+    description: 'A decentralized NFT marketplace on the Algorand testnet where creators can mint, showcase, and distribute a wide range of NFTs including art, music, and standard digital collectibles.',
+    tags: ['Javascript', 'Python', 'Html', 'CSS'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/denshaw-09/AlgoFi'
+  },
+  {
+    id: '35',
+    title: 'GameHub',
+    description: 'A futuristic browser gaming platform with 5 classic games, glass morphism UI, and smooth animations.',
+    tags: ['Html', 'CSS', 'Javascript'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/kaifansariw/GameHub'
   }
 ];
 
