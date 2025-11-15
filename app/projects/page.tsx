@@ -292,6 +292,47 @@ const projects: Project[] = [
     difficulty: 'Beginner',
     repository: 'https://github.com/kaifansariw/GameHub'
   }
+  ,
+  {
+    id: '36',
+    title: 'RentOrbits',
+    description: 'A modern, responsive car rental website built with React, TypeScript, and Tailwind CSS.',
+    tags: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/Diksha78-bot/RentOrbits'
+  },
+  {
+    id: '37',
+    title: 'LearnX',
+    description: 'A platform where users can pick or create topics and get an AI-generated structured learning path with modules, lessons, and actionable tasks.',
+    tags: ['Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/tilakjain619/LearnX'
+  },
+  {
+    id: '38',
+    title: 'Intelligent Job Recommendation System',
+    description: 'SmartJobMatch is an AI-powered career platform that delivers hyper-personalized job recommendations using semantic matching and a dynamic preference engine.',
+    tags: ['Python', 'Flask', 'MongoDB', 'PostgreSQL', 'Node.js', 'React'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/nitinc264/CredX-AI'
+  },
+  {
+    id: '39',
+    title: 'TourEase',
+    description: 'TourEase is an intelligent travel assistant that offers AI-powered trip planning, real-time safety data, translation, and community insights.',
+    tags: ['React.js', 'Node.js', 'Firebase Auth', 'JWT', 'MongoDB'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/Suhani1234-5/TourEase'
+  },
+  {
+    id: '40',
+    title: 'LearnSpace',
+    description: 'LearnSpace is a collaborative education platform with a kanban board, a whiteboard (upcoming), and a library with community-added reviews.',
+    tags: ['MERN', 'JWT Authentication', 'Socket.io'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/HimanshiSh03/Full-stack01'
+  }
 ];
 
 const difficulties = ['All', 'Beginner', 'Intermediate', 'Advanced'];
