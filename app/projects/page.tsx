@@ -332,7 +332,23 @@ const projects: Project[] = [
     tags: ['MERN', 'JWT Authentication', 'Socket.io'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/HimanshiSh03/Full-stack01'
-  }
+  },
+  {
+    id: '41',
+    title: 'Smart-Resume-Reviewer',
+    description: 'A Python and Streamlit-based web application that analyzes resumes, extracts key details, and provides feedback on structure, content quality, and keyword usage.',
+    tags: ['Python', 'Streamlit', 'HTML', 'CSS'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/SharanyaAchanta/Smart-Resume-Reviewer'
+  },
+  {
+    id: '42',
+    title: 'EduMind – AI Study Assistant',
+    description: 'EduMind is a web platform that helps students organize and enhance their learning with tools like Notes, To-Do List, Timer, Whiteboard, and optional AI-powered study suggestions.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Firebase', 'Cloudinary', 'Gemini API'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/dimpal-yadav/EduMind-AI-Study-Assistant'
+  },
 ];
 
 const difficulties = ['All', 'Beginner', 'Intermediate', 'Advanced'];
