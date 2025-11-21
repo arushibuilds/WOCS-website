@@ -47,7 +47,7 @@ const projects: Project[] = [
   {
     id: '5',
     title: 'History of all flight crash',
-    description: 'A data-driven web app that visualizes global aircraft crash data on an interactive map using Python and Streamlit. It allows users to explore aviation accidents by year, region, aircraft type, and cause, providing valuable insights into safety trends.',
+    description: 'A data-driven web app that visualizes global aircraft crash data on an interactive map using Python and Streamlit.',
     tags: ['Python', 'Streamlit', 'Pandas', 'Plotly'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/vinaysingh282006/History-of-all-flight-crash-map'
@@ -55,301 +55,229 @@ const projects: Project[] = [
   {
     id: '6',
     title: 'BYAMN Learning',
-    description: 'A free online learning platform that curates YouTube courses into structured learning paths, tracks progress, provides verified certificates, and makes quality education accessible for all.',
+    description: 'A free online learning platform that curates YouTube courses into structured learning paths.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
     difficulty: 'Beginner',
     repository: 'https://github.com/DYHARDx/BYAMN-Learning'
   },
   {
     id: '7',
-    title: 'NGO World',
-    description: 'NgoWorld is a hub to connect NGOs, Charities, and the world to collaborate and build a better tomorrow.',
-    tags: ['React', 'CSS', 'Express', 'Node.js', 'JavaScript'],
-    difficulty: 'Intermediate',
-    repository: 'https://github.com/ngoworldcommunity/NGOWorld'
-  },
-  {
-    id: '8',
-    title: 'GuruShish',
-    description: 'A web platform connecting students with qualified tuition teachers for personalized learning. It enables booking based on subject preferences while ensuring small class sizes for focused attention.',
-    tags: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Nest.js', 'Node.js', 'PostgreSQL'],
-    difficulty: 'Intermediate',
-    repository: 'https://github.com/sailaja-adapa/GuruShish'
-  },
-  {
-    id: '9',
-    title: 'GATEDNET',
-    description: 'A modern MERN-based web platform to streamline communication, management, and engagement within apartment societies using geofencing, live polls, and collaborative tools.',
-    tags: ['MongoDB', 'Express', 'React', 'Node.js'],
-    difficulty: 'Intermediate',
-    repository: 'https://github.com/guptapratykshh/GATEDNET'
-  },
-  {
-    id: '10',
-    title: 'RepoChat',
-    description: 'A chat app built on top of Gemini AI that lets users enter a GitHub repo URL and chat with the repository about its contents.',
-    tags: ['T3 Stack', 'tRPC', 'Gemini AI'],
-    difficulty: 'Intermediate',
-    repository: 'https://github.com/trishit78/RepoChat'
-  },
-  {
-    id: '11',
-    title: 'Disease prediction',
-    description: 'A project that applies Bayes\' Theorem to estimate the percentage chance of survival from a disease using historical hospital data. Designed to help understand real-world applications of Bayesian probability in medical diagnosis and survival prediction.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Python', 'Flask'],
-    difficulty: 'Intermediate',
-    repository: 'https://github.com/aliviahossain/Disease-prediction'
-  },
-  {
-    id: '12',
     title: 'SaralSeva',
-    description: 'SaralSeva is a 3-tier digital governance platform which enables 24/7 access to government services, tracks applications with unique IDs, automates workflows, manages schemes, and ensures grievance redressal for citizens, employees, and admins.',
+    description: 'SaralSeva is a 3-tier digital governance platform with automated workflows and grievance redressal.',
     tags: ['ReactJS', 'Tailwind CSS', 'Vite', 'NodeJS', 'ExpressJS', 'MongoDB'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/eccentriccoder01/SaralSeva'
   },
   {
-    id: '13',
+    id: '8',
     title: 'Happy trails',
-    description: 'A collaborative platform for creating, sharing, and improving open source project documentation. Aims to enhance the quality and accessibility of documentation for developers and users alike.',
+    description: 'A collaborative platform for creating and improving open source documentation.',
     tags: ['Flask', 'PostgreSQL', 'JavaScript', 'HTML5', 'CSS3'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/Kavlin-Kaur/Happy-Trails'
   },
   {
-    id: '14',
+    id: '9',
     title: 'car-transport-service',
-    description: 'Beginner-friendly Car Transport Service. Open for contributions to improve design, features, and functionality.',
+    description: 'Beginner-friendly Car Transport Service. Open for improvements.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     difficulty: 'Beginner',
     repository: 'https://github.com/Nikhilrsingh/car-transport-service'
   },
   {
-    id: '15',
-    title: 'ClinIQ',
-    description: 'ClinIQ is an AI-powered health-tech platform designed to make healthcare more accessible and intelligent. It provides users with instant, personalized symptom analysis using AI, helps them discover verified doctors, and enables seamless appointment booking — all in one place. Built with React, TypeScript, Supabase, and the Gemini API, ClinIQ offers an interactive chat interface, hospital locator, and a responsive user experience. The platform empowers users to make informed health decisions with ease, bridging the gap between patients and healthcare professionals through technology and innovation.',
-    tags: ['React.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Supabase', 'Gemini API'],
-    difficulty: 'Intermediate',
-    repository: 'https://github.com/akshay0611/ClinIQ'
-  },
-  {
-    id: '16',
+    id: '10',
     title: 'Peacebot-AI',
-    description: 'PeaceBot AI is an intelligent and empathetic mental health chatbot designed to provide emotional support, motivational messages, and mindfulness guidance.',
+    description: 'An empathetic mental health chatbot for emotional support and mindfulness guidance.',
     tags: ['Python', 'Flask', 'OpenAI API', 'JavaScript', 'HTML', 'CSS'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/Tanyasharma71/peacebot-ai'
   },
   {
-    id: '17',
+    id: '11',
     title: 'CarbonX',
-    description: 'CarbonX is an advance web3 and Blockchain based Carbon Trading platform which have the ability to buy, retire and offset the carbons credits. CarbonX have AI with the ability to calculate the Carbon Footprints and total number of Carbon Credits required in one Unified Platform, providing the ability to do multiple things which helps in save time.',
-    tags: ['Next.Js', 'Typescript', 'Tailwind Css', 'Blockchain (Eth or polygon, Solitary)', 'AI/ML'],
+    description: 'A web3-based carbon trading platform with AI-powered footprint calculations.',
+    tags: ['Next.Js', 'Typescript', 'Tailwind Css', 'Blockchain', 'AI/ML'],
     difficulty: 'Advanced',
     repository: 'https://github.com/AkshitTiwarii/carbonx'
   },
   {
-    id: '18', 
+    id: '12',
     title: 'Collegedaddy',
-    description: 'College Daddy is a lightweight academic toolkit built with HTML, CSS, and JavaScript. It helps students calculate CGPA and internal marks, access semester-wise notes, and stay organized during exams  all within a simple, responsive interface. Originally developed during end-semester exams to solve real student problems, College Daddy aims to make academic management effortless and accessible for every student.',
+    description: 'A lightweight academic toolkit helping students calculate CGPA, access notes, and stay organized.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     difficulty: 'Beginner',
     repository: 'https://github.com/mugenkyou/College_daddy'
   },
   {
-    id: '19',
-    title: 'Blood-donation',
-    description: 'The Blood Donation Website is a web-based platform designed to connect blood donors with recipients and blood banks efficiently. The system simplifies the process of finding donors, scheduling donations, and managing blood inventory in emergencies.',
-    tags: ['javascript', 'typescript', 'html', 'css'],
-    difficulty: 'Beginner',
-    repository: 'https://github.com/darshan-totagi/blood-donation'
-  },
-  {
-    id: '20',
-    title: 'Verdigo Eco friendly Project',
-    description: 'VerdiGo is a comprehensive environmental impact platform that empowers users to track, reduce, and offset their carbon footprint while promoting sustainable living practices.',
-    tags: ['React','Leaflet', 'Tailwind CSS', 'Node.js'],
-    difficulty: 'Intermediate',
-    repository: 'https://github.com/Meghali54/Verdigo_Eco-friendly_Project'
-  },
-  {
-    id: '21',
+    id: '13',
     title: 'Foodie',
-    description: 'Fully Responsive Food Delivery App A sleek, mobile-first food delivery platform built with modern web technologies to ensure seamless user experience across all devices. Designed with accessibility, performance, and scalability in mind, this app empowers users to browse menus, customize orders, and track deliveries with ease',
+    description: 'Fully responsive food delivery app with mobile-first design.',
     tags: ['JavaScript', 'HTML', 'CSS'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/janavipandole/Hacktoberfest2025-Foodie'
   },
   {
-    id: '22',
+    id: '14',
     title: 'Roommate',
-    description: 'A shared living space for Roommates out there. Split expenses, track chores and much more.',
+    description: 'A shared living management platform for splitting expenses and tracking chores.',
     tags: ['React', 'Typescript', 'Node', 'Postgres', 'Prisma'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/souravseal99/RoomMate'
   },
   {
-    id: '23',
+    id: '15',
     title: 'Thread Hopper',
-    description: 'AI-powered web app that transforms long-form content (blog posts, newsletters, scripts) into platform-specific social media posts',
-    tags: ['React', 'Typescript', 'Tailwind CSS', 'Framer Motion', 'Three.js', 'Supabase', 'OpenAI API'],
+    description: 'AI-powered tool that transforms long content into platform-specific social posts.',
+    tags: ['React', 'Typescript', 'Tailwind CSS', 'Framer Motion', 'Supabase', 'OpenAI API'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/rishaan007/thread-hopper-js'
   },
   {
-    id: '24',
+    id: '16',
     title: 'Foodogram',
-    description: 'Foodogram is a full-featured online food ordering platform that allows users to browse restaurants, view menus, add items to the cart, and place orders seamlessly.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'Node.js', 'MySQL', 'Git', 'GitHub'],
+    description: 'Full-featured online food ordering platform.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'Node.js', 'MySQL'],
     difficulty: 'Beginner',
     repository: 'https://github.com/Mrigakshi-Rathore/Foodogram'
   },
   {
-    id: '25',
-    title: 'Celtrix',
-    description: 'An open-source scaffolding tool that helps you set up full-stack projects instantly with one command',
-    tags: ['javascript', 'nodejs','shell','bash'],
-    difficulty: 'Intermediate',
-    repository: 'https://github.com/celtrix-os/Celtrix'
-  },
-  {
-    id: '26',
-    title: 'AI TASK MANAGER',
-    description: 'An enterprise-level AI-driven platform that intelligently classifies, prioritizes, and assigns tasks using NLP and Machine Learning',
+    id: '17',
+    title: 'AI_TASK_MANAGER',
+    description: 'AI-driven platform that classifies, prioritizes, and assigns tasks using NLP and ML.',
     tags: ['Python', 'Pandas', 'Streamlit', 'Matplotlib', 'Seaborn'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/ABHIJEET-0001/AI_TASK_MANAGER_2.8'
   },
   {
-    id: '27',
+    id: '18',
     title: 'DevElevate',
-    description: 'DevElevate designed to empower learners and developers through personalized mentorship, intelligent task management, and AI-driven career recommendations.',
+    description: 'AI-powered mentorship, task management, and career recommendations.',
     tags: ['Typescript', 'Tailwind CSS', 'Shadcn UI', 'Axios'],
     difficulty: 'Advanced',
     repository: 'https://github.com/abhisek2004/Dev-Elevate'
   },
   {
-    id: '28',
-    title: 'CodeMint',
-    description: 'An open-source hub for frontend developers to discover, learn, and contribute components, CSS snippets, UI blocks, effects, and color utilities.',
-    tags: ['Html', 'css', 'js', 'react', 'tailwindcss'],
-    difficulty: 'Beginner',
-    repository: 'https://github.com/Roshansuthar1105/codemint'
+    id: '19',
+    title: 'WordWizard',
+    description: 'A modern text manipulation tool with rich analysis features.',
+    tags: ['React.js', 'Vite', 'Tailwind CSS'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/palchhinparihar/WordWizard'
   },
   {
-    id: '29',
-    title: 'Auralis',
-    description: 'A beautiful, modern note-taking application built with Next.js 15, Appwrite, and Gemini AI.',
-    tags: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Appwrite'],
-    difficulty: 'Beginner',
-    repository: 'https://github.com/mannubaveja007/Auralis'
-  },
-  {
-    id: '30',
-    title: 'Recodehive',
-    description: 'Helps you to learn and master the skills on data, and encourage you to code on opensource.',
+    id: '20',
+    title: 'Recodehive (Recode Website)',
+    description: 'Helps learners master data skills and contribute to open source.',
     tags: ['nextjs', 'css', 'html', 'typescript'],
     difficulty: 'Beginner',
     repository: 'https://github.com/recodehive/recode-website'
   },
   {
-    id: '31',
-    title: 'AssignMe',
-    description: 'AssignMe is an open source web application that helps students complete their assignments by converting digital text into customizable handwritten-style documents.',
-    tags: ['Html', 'Python', 'CSS', 'JavaScript', 'Docker'],
-    difficulty: 'Intermediate',
-    repository: 'https://github.com/Rajan167030/asignme'
-  },
-  {
-    id: '32',
+    id: '21',
     title: 'FoodSaver-AnnyoMitrro',
-    description: 'FoodSaver App is a React-based web application designed to reduce food waste by connecting restaurants with NGOs.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB','Spring Boot'],
+    description: 'A React app connecting restaurants with NGOs to reduce food waste.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'Spring Boot'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/bidyut26maji/FoodSaver'
   },
   {
-    id: '33',
-    title: 'blood_management_system',
-    description: 'PulseConnect is a blood donation network application that connects blood donors with people in need.',
-    tags: ['reactjs', 'typescript', 'nodejs', 'postgresql'],
-    difficulty: 'Intermediate',
-    repository: 'https://github.com/basava2005/blood_management_system'
-  },
-  {
-    id: '34',
+    id: '22',
     title: 'AlgoFi',
-    description: 'A decentralized NFT marketplace on the Algorand testnet where creators can mint, showcase, and distribute a wide range of NFTs including art, music, and standard digital collectibles.',
+    description: 'A decentralized NFT marketplace on the Algorand testnet.',
     tags: ['Javascript', 'Python', 'Html', 'CSS'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/denshaw-09/AlgoFi'
   },
   {
-    id: '35',
+    id: '23',
     title: 'GameHub',
-    description: 'A futuristic browser gaming platform with 5 classic games, glass morphism UI, and smooth animations.',
+    description: 'A futuristic browser gaming platform with glass morphism UI.',
     tags: ['Html', 'CSS', 'Javascript'],
     difficulty: 'Beginner',
     repository: 'https://github.com/kaifansariw/GameHub'
-  }
-  ,
+  },
   {
-    id: '36',
+    id: '24',
     title: 'RentOrbits',
-    description: 'A modern, responsive car rental website built with React, TypeScript, and Tailwind CSS.',
+    description: 'A modern, responsive car rental website.',
     tags: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
     difficulty: 'Beginner',
     repository: 'https://github.com/Diksha78-bot/RentOrbits'
   },
   {
-    id: '37',
+    id: '25',
     title: 'LearnX',
-    description: 'A platform where users can pick or create topics and get an AI-generated structured learning path with modules, lessons, and actionable tasks.',
+    description: 'Get an AI-generated structured learning path based on any topic.',
     tags: ['Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS'],
     difficulty: 'Beginner',
     repository: 'https://github.com/tilakjain619/LearnX'
   },
   {
-    id: '38',
+    id: '26',
     title: 'Intelligent Job Recommendation System',
-    description: 'SmartJobMatch is an AI-powered career platform that delivers hyper-personalized job recommendations using semantic matching and a dynamic preference engine.',
+    description: 'AI-powered platform delivering personalized job recommendations.',
     tags: ['Python', 'Flask', 'MongoDB', 'PostgreSQL', 'Node.js', 'React'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/nitinc264/CredX-AI'
   },
   {
-    id: '39',
+    id: '27',
     title: 'TourEase',
-    description: 'TourEase is an intelligent travel assistant that offers AI-powered trip planning, real-time safety data, translation, and community insights.',
+    description: 'AI-powered travel assistant with planning, safety data, and community insights.',
     tags: ['React.js', 'Node.js', 'Firebase Auth', 'JWT', 'MongoDB'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/Suhani1234-5/TourEase'
   },
   {
-    id: '40',
+    id: '28',
     title: 'LearnSpace',
-    description: 'LearnSpace is a collaborative education platform with a kanban board, a whiteboard (upcoming), and a library with community-added reviews.',
+    description: 'Collaborative education platform with kanban board and library.',
     tags: ['MERN', 'JWT Authentication', 'Socket.io'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/HimanshiSh03/Full-stack01'
   },
   {
-    id: '41',
+    id: '29',
     title: 'Smart-Resume-Reviewer',
-    description: 'A Python and Streamlit-based web application that analyzes resumes, extracts key details, and provides feedback on structure, content quality, and keyword usage.',
+    description: 'Streamlit app that analyzes resumes and provides feedback.',
     tags: ['Python', 'Streamlit', 'HTML', 'CSS'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/SharanyaAchanta/Smart-Resume-Reviewer'
   },
   {
-    id: '42',
+    id: '30',
     title: 'EduMind – AI Study Assistant',
-    description: 'EduMind is a web platform that helps students organize and enhance their learning with tools like Notes, To-Do List, Timer, Whiteboard, and optional AI-powered study suggestions.',
+    description: 'Web platform with notes, tasks, timer, whiteboard, and AI study suggestions.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Firebase', 'Cloudinary', 'Gemini API'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/dimpal-yadav/EduMind-AI-Study-Assistant'
   },
+  {
+    id: '31',
+    title: 'Pixel Phantoms',
+    description: 'Tech club learning platform with modules, tasks, leaderboard, and admin tools.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/sayeeg-11/Pixel_Phantoms'
+  },
+  {
+    id: '32',
+    title: 'LocalMind',
+    description: 'Self-hosted AI platform with full offline capabilities.',
+    tags: ['React', 'Node.js', 'TypeScript', 'Express.js', 'MongoDB', 'Socket.io'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/NexGenStudioDev/LocalMind'
+  },
+  {
+    id: '33',
+    title: 'AssignMe',
+    description: 'AssignMe is an open source web application that helps students complete their assignments by converting digital text into customizable handwritten-style documents.',
+    tags: ['Html', 'Python', 'CSS', 'JavaScript', 'Docker'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/Rajan167030/asignme'
+  }
 ];
+
 
 const difficulties = ['All', 'Beginner', 'Intermediate', 'Advanced'];
 const allTags = ['React', 'TypeScript', 'Python', 'Next.js', 'Machine Learning', 'Documentation', 'Accessibility', 'Data Science', 'Design'];

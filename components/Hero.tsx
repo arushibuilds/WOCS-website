@@ -39,7 +39,7 @@ export default function Hero() {
           </div>
           <div className="stat-pill">
             <span className="text-[var(--frost)]">Coding Period:</span>
-            Nov 1, 2025 - Jan 31, 2025
+            Nov 1, 2025 - Jan 31, 2026
           </div>
         </div>
 
