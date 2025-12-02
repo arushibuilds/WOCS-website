@@ -276,6 +276,23 @@ const projects: Project[] = [
     difficulty: 'Intermediate',
     repository: 'https://github.com/Rajan167030/asignme'
   }
+  ,
+  {
+    id: '34',
+    title: 'EDUPAGE +',
+    description: 'EDUPAGE consolidates CSVs into a single DataFrame for analysis.',
+    tags: ['Python', 'Dash', 'Flask', 'Plotly', 'Pandas', 'NumPy', 'CSV'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/abhishekkumar177/EDUPAGE'
+  },
+  {
+    id: '35',
+    title: 'VMusic',
+    description: 'Music streaming app with indie tracks and Spotify previews.',
+    tags: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Firebase', 'Firestore', 'Vercel', 'Jamendo API', 'Spotify API'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/mr-baraiya/VMusic'
+  }
 ];
 
 

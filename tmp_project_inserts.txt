@@ -1,0 +1,19 @@
+Edits to append:
+{
+  id: '34',
+  title: 'EDUPAGE +',
+  description: 'EDUPAGE is powered by a robust Pandas-based data pipeline that ingests multiple CSVs and consolidates them into a single `student_ledger` DataFrame ("spreadsheet-first"). The pipeline runs as a separate process to keep data-heavy work off the user-facing app. Contributors wanted to help with launching the project and expanding the frontend stack.',
+  tags: ['Python', 'Dash', 'Flask', 'Plotly', 'Pandas', 'NumPy', 'CSV'],
+  difficulty: 'Intermediate',
+  repository: 'https://github.com/abhishekkumar177/EDUPAGE'
+},
+{
+  id: '35',
+  title: 'VMusic',
+  description: 'VMusic is a modern music streaming web app that streams indie music via Jamendo and provides previews via Spotify. It features a responsive UI, floating mini-player, auth (email/Google), liking, search by artist/album/genre, playlists, and admin features for managing tracks.',
+  tags: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Firebase', 'Firestore', 'Vercel', 'Jamendo API', 'Spotify API'],
+  difficulty: 'Intermediate',
+  repository: 'https://github.com/mr-baraiya/VMusic'
+},
+
+Please copy these two objects into the `projects` array at the end of `app/projects/page.tsx`.
