@@ -292,6 +292,22 @@ const projects: Project[] = [
     tags: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Firebase', 'Firestore', 'Vercel', 'Jamendo API', 'Spotify API'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/mr-baraiya/VMusic'
+  },
+  {
+    id: '36',
+    title: 'Face-Based-Attendance-Attribute-System',
+    description: 'Python-based Face Recognition Attendance System with Age, Gender, and Emotion Detection using OpenCV and Deep Learning.',
+    tags: ['OpenCV', 'NumPy', 'TensorFlow', 'Keras', 'dlib', 'face-recognition', 'SQLite', 'HTML', 'CSS', 'JavaScript', 'Flask', 'Python'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/AnshulSharma9340/Face-Based-Attendance-Attribute-System'
+  },
+  {
+    id: '37',
+    title: 'Event Manager',
+    description: 'Full-stack Event Management System with MERN stack for browsing events, making bookings, and managing user profiles.',
+    tags: ['Express', 'React', 'Node.js', 'MongoDB'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/Deven14125/Event_Manager'
   }
 ];
 
