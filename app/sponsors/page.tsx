@@ -66,6 +66,12 @@ const currentSponsors: CurrentSponsor[] = [
     logo: '/ccl.png',
     website: 'https://www.chaching.social/',
     isImage: true
+  },
+  { 
+    name: 'Code Your Dreams',
+    logo: '/sp8.jpg',
+    website: 'https://www.codeyourdreams.org/',
+    isImage: true
   }
 ];
 
@@ -117,12 +123,6 @@ const communityPartners: CommunityPartner[] = [
     name: 'SheFi Chicago',
     logo: '/sp7.jpg',
     website: 'https://www.shefi.org/',
-    isImage: true
-  },
-  {
-    name: 'Code Your Dreams',
-    logo: '/sp8.jpg',
-    website: 'https://www.codeyourdreams.org/',
     isImage: true
   },
   {

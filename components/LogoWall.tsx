@@ -32,46 +32,6 @@ const communityPartners: Partner[] = [
     logo: '/sp2.jpg',
     website: 'https://www.linkedin.com/in/sanskritikadam/',
   },
-  {
-    name: 'GDG KJU',
-    logo: '/sp3.png',
-    website: 'https://www.instagram.com/gdg.kristujayanti',
-  },
-  {
-    name: 'Chicago Startup Events',
-    logo: '/sp4.png',
-    website: 'https://www.chicagostartupevents.com/',
-  },
-  {
-    name: 'GDG PESCOE',
-    logo: '/sp5.png',
-    website: 'https://www.linkedin.com/company/gdgcpescoe/',
-  },
-  {
-    name: 'Byte Brigade',
-    logo: '/sp6.png',
-    website: 'https://linktr.ee/ByteBrigade2025',
-  },
-  {
-    name: 'SheFi Chicago',
-    logo: '/sp7.jpg',
-    website: 'https://www.shefi.org/',
-  },
-  {
-    name: 'Code Your Dreams',
-    logo: '/sp8.jpg',
-    website: 'https://www.codeyourdreams.org/',
-  },
-  {
-    name: 'Tenacity',
-    logo: '/sp9.jpg',
-    website: 'https://tenacityai.io/',
-  },
-  {
-    name: 'Devnovate',
-    logo: '/sp10.jpg',
-    website: 'https://devnovate.co/',
-  }
 ];
 
 export default function LogoWall() {
