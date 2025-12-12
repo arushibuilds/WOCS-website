@@ -308,6 +308,22 @@ const projects: Project[] = [
     tags: ['Express', 'React', 'Node.js', 'MongoDB'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/Deven14125/Event_Manager'
+  },
+  {
+    id: '38',
+    title: 'Magnamite-OTT',
+    description: 'Cinematic, responsive OTT streaming platform with a dark theme and smooth navigation.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/DivaQueen-dev/Magnamite_Ott'
+  },
+  {
+    id: '39',
+    title: 'Jan Suraksha',
+    description: 'Full-stack digital safety platform with auth, admin dashboard, and automated CI/CD to modernize FIR processes.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'MySQL'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/Anjalijagta/jan_suraksha'
   }
 ];
 

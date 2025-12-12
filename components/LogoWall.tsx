@@ -74,36 +74,7 @@ export default function LogoWall() {
           </div>
         </div>
 
-        {/* Community Partners Section */}
-        <div>
-          <h3 className="text-2xl font-semibold mb-8 text-[var(--frost)]">Community Partners</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            {communityPartners.map((partner) => (
-              <a
-                key={partner.name}
-                href={partner.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group panel p-6 rounded-lg hover:frost-glow transition-all duration-300 flex items-center justify-center min-h-[120px]"
-              >
-                <div className="text-center space-y-2">
-                  <div className="w-16 h-16 mx-auto relative opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
-                    <Image
-                      src={partner.logo}
-                      alt={partner.name}
-                      width={64}
-                      height={64}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="text-sm font-medium text-[var(--muted)] group-hover:text-[var(--frost)]">
-                    {partner.name}
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
+        {/* Community Partners Section intentionally omitted on homepage */}
       </div>
     </section>
   );
