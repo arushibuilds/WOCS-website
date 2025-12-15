@@ -324,6 +324,22 @@ const projects: Project[] = [
     tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'MySQL'],
     difficulty: 'Beginner',
     repository: 'https://github.com/Anjalijagta/jan_suraksha'
+  },
+  {
+    id: '40',
+    title: 'Smart Expiry Guardian – AI Food Expiry Tracker',
+    description: 'AI-powered expiry-tracking system with barcode/OCR intake, reminders, storage awareness, and health-risk alerts.',
+    tags: ['React', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'OCR', 'Barcode'],
+    difficulty: 'Advanced',
+    repository: 'https://github.com/Muskan121622/expiry-shine-dash'
+  },
+  {
+    id: '41',
+    title: 'QueerConnect SA',
+    description: 'Community platform supporting LGBTQ+ connections, resources, and safe-space engagement across South Asia.',
+    tags: ['React', 'Firebase', 'Firestore', 'JavaScript', 'HTML', 'CSS'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/wellnut24/queerconnect-sa'
   }
 ];
 
