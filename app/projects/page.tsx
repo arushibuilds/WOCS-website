@@ -363,7 +363,7 @@ const projects: Project[] = [
     description: 'Open-source MERN-based platform with notes sharing, attendance tracking, canteen ordering, lost-and-found, SOS alerts, and an interactive campus map. Built with modular architecture ideal for open-source collaboration.',
     tags: ['React', 'Tailwind CSS', 'Bootstrap', 'TypeScript', 'Next.js', 'Node.js', 'Express.js', 'Python', 'MongoDB', 'JWT', 'Cookies', 'Leaflet', 'OpenStreetMap', 'Web Push', 'Gemini API'],
     difficulty: 'Intermediate',
-    repository: 'https://github.com/Shubham-cyber-prog/Smart-Campus'
+    repository: 'https://github.com/Shubham-cyber-prog/Smart-Campus.git'
   }
 ];
 
