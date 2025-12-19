@@ -340,6 +340,30 @@ const projects: Project[] = [
     tags: ['React', 'Firebase', 'Firestore', 'JavaScript', 'HTML', 'CSS'],
     difficulty: 'Intermediate',
     repository: 'https://github.com/wellnut24/queerconnect-sa'
+  },
+  {
+    id: '42',
+    title: 'Innovision: Adaptive Learning Interface',
+    description: 'InnoVision is an AI-powered adaptive learning platform that dynamically generates personalized courses from any topic. It features interactive chapters, gamified tasks, OAuth authentication, XP-based progression, and real-time progress tracking with a journey map visualization.',
+    tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Shadcn UI', 'Framer Motion', 'Firebase', 'Auth.js', 'Gemini API', 'EmailJS', 'Lucide Icons', 'OAuth'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/ItsVikasA/Innovision7'
+  },
+  {
+    id: '43',
+    title: 'CryptoHub',
+    description: 'A modern crypto tracking platform to explore real-time prices, view coin analytics, and stay updated with market trends in an intuitive interface.',
+    tags: ['React', 'JavaScript', 'Tailwind CSS', 'REST API', 'Vite'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/KaranUnique/CryptoHub'
+  },
+  {
+    id: '44',
+    title: 'Smart Campus App – A Modern Campus Management & Student Utility Platform',
+    description: 'Open-source MERN-based platform with notes sharing, attendance tracking, canteen ordering, lost-and-found, SOS alerts, and an interactive campus map. Built with modular architecture ideal for open-source collaboration.',
+    tags: ['React', 'Tailwind CSS', 'Bootstrap', 'TypeScript', 'Next.js', 'Node.js', 'Express.js', 'Python', 'MongoDB', 'JWT', 'Cookies', 'Leaflet', 'OpenStreetMap', 'Web Push', 'Gemini API'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/Shubham-cyber-prog/Smart-Campus'
   }
 ];
 
