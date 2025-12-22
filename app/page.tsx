@@ -15,8 +15,8 @@ export default function Home() {
           <div className="panel rounded-2xl p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center">
             <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/WOCS-session1.jpg"
-                alt="Introduction to GitHub session poster"
+                src="/wocs-session2.png"
+                alt="Autonomous Engineering session poster with Jeremy Alston"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 480px, 100vw"
@@ -32,24 +32,25 @@ export default function Home() {
 
               <div className="space-y-2">
                 <p className="text-sm text-[var(--muted)]">Winter of Code Social</p>
-                <h2 className="text-3xl md:text-4xl font-bold">Introduction to GitHub</h2>
+                <h2 className="text-3xl md:text-4xl font-bold">Autonomous Engineering with Opulentia AI</h2>
                 <p className="text-lg text-[var(--muted)]">
                   with{' '}
                   <a
-                    href="https://www.linkedin.com/in/kartik-chilkoti/"
+                    href="https://www.linkedin.com/in/jeremy-alston-303670139/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[var(--frost)] hover:underline"
                   >
-                    Kartik Chilkoti
+                    Jeremy Alston
                   </a>
+                  , Founder & Chief AI Researcher at Opulentia AI
                 </p>
               </div>
 
               <div className="space-y-2 text-[var(--muted)]">
                 <div className="flex items-center gap-2">
                   <Clock size={16} className="text-[var(--frost)]" />
-                  <span>08:00 PM IST • Sat, 13 Dec 2025</span>
+                  <span>08:30 PM IST | 09:00 AM CST • Tue, 23 Dec 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin size={16} className="text-[var(--frost)]" />
@@ -58,12 +59,12 @@ export default function Home() {
               </div>
 
               <p className="text-[var(--muted)] leading-relaxed">
-                Learn GitHub fundamentals, repo workflows, and collaboration basics to make your first contributions confidently.
+                Autonomous engineering is no longer a concept, it is happening now. Join us for insights into Agentic General Intelligence and how Opulentia is enabling people to achieve what once felt impossible. Backed by NVIDIA, AWS, and Daytona.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href={process.env.NEXT_PUBLIC_SESSION_LINK || 'https://depaul.zoom.us/j/98300194855'}
+                  href={process.env.NEXT_PUBLIC_SESSION_LINK || 'https://depaul.zoom.us/j/93744600941'}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center justify-center gap-2"
@@ -74,7 +75,7 @@ export default function Home() {
                 <a
                   href={
                     process.env.NEXT_PUBLIC_SESSION_CAL ||
-                    'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Introduction%20to%20GitHub%20%E2%80%94%20Winter%20of%20Code%20Social&dates=20251213T143000Z/20251213T153000Z&details=Learn%20GitHub%20fundamentals,%20branching,%20pull%20requests,%20and%20meet%20others.%20Join%20live:%20https%3A%2F%2Fdepaul.zoom.us%2Fj%2F98300194855&location=Online%20(Zoom)'
+                    'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Autonomous%20Engineering%20with%20Opulentia%20AI%20%E2%80%94%20Winter%20of%20Code%20Social&dates=20251223T150000Z/20251223T160000Z&details=Join%20Jeremy%20Alston,%20Founder%20and%20Chief%20AI%20Researcher%20at%20Opulentia,%20for%20insights%20into%20Agentic%20General%20Intelligence.%20Backed%20by%20NVIDIA,%20AWS,%20and%20Daytona.%20Join%20live:%20https%3A%2F%2Fdepaul.zoom.us%2Fj%2F93744600941&location=Online%20(Zoom)'
                   }
                   target="_blank"
                   rel="noopener noreferrer"
