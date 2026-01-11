@@ -124,7 +124,7 @@ export default function Home() {
               <div className="space-y-2 text-[var(--muted)]">
                 <div className="flex items-center gap-2">
                   <Clock size={16} className="text-[var(--frost)]" />
-                  <span>08:30 PM IST • Thu, 15 Jan 2026</span>
+                  <span>08:30 PM IST • Thu, 14 Jan 2026</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin size={16} className="text-[var(--frost)]" />
@@ -149,7 +149,7 @@ export default function Home() {
                 <a
                   href={
                     process.env.NEXT_PUBLIC_SESSION_CAL_2 ||
-                    'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Modern%20API%20Workflows%20for%20Developers%20%E2%80%94%20Winter%20of%20Code%20Social&dates=20260115T020000Z/20260115T030000Z&details=Master%20modern%20API%20development%20and%20workflow%20best%20practices%20with%20Ganesh%20Patil.%20Join%20live:%20https%3A%2F%2Fdepaul.zoom.us%2Fj%2F98036060173&location=Online%20(Zoom)'
+                    'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Modern%20API%20Workflows%20for%20Developers%20%E2%80%94%20Winter%20of%20Code%20Social&dates=20260114T150000Z/20260114T160000Z&details=Master%20modern%20API%20development%20and%20workflow%20best%20practices%20with%20Ganesh%20Patil.%20Join%20live:%20https%3A%2F%2Fdepaul.zoom.us%2Fj%2F98036060173&location=Online%20(Zoom)'
                   }
                   target="_blank"
                   rel="noopener noreferrer"
