@@ -1,25 +1,36 @@
 # sb1-jpwo1vwy
 
-This project was created and pushed to GitHub using [Bolt to GitHub](https://github.com/mamertofabian/bolt-to-github) Chrome Extension.
-
 WEBSITE - https://woc.codesocial.tech/
 
-## Description
+## Run locally
 
-[Add your project description here]
+Requires [Node.js](https://nodejs.org/) 18 or newer.
 
-## Installation
+**1. Clone the repository**
 
-[Add installation instructions here]
+```bash
+git clone https://github.com/arushi2610/sb1-jpwo1vwy.git
+cd sb1-jpwo1vwy
+```
 
-## Usage
+**2. Install dependencies**
 
-[Add usage instructions here]
+```bash
+npm install
+```
 
-## Contributing
+**3. Set up environment variables**
 
-[Add contribution guidelines here]
+```bash
+cp .env.example .env.local
+```
 
-## License
+On Windows PowerShell: `Copy-Item .env.example .env.local`
 
-[Add license information here]
+**4. Start the dev server**
+
+```bash
+npm run dev
+```
+
+Open http://localhost:3000.
