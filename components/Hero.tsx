@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { ChevronDown, ExternalLink, Users, Code, Award, Building } from 'lucide-react';
 import Image from "next/image";
+import AnimatedCounter from './AnimatedCounter';
 
 export default function Hero() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -35,11 +36,15 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-[var(--muted)]">
           <div className="stat-pill">
             <span className="text-[var(--frost)]">Registration:</span>
-            Oct 1 - Dec 31, 2025
+            Oct 1 - Dec 31, 2026
           </div>
           <div className="stat-pill">
             <span className="text-[var(--frost)]">Coding Period:</span>
-            Nov 1, 2025 - Jan 31, 2026
+            Nov 1, 2026 - Jan 31, 2027
+          </div>
+          <div className="stat-pill">
+            <span className="text-[var(--frost)]">Certificates:</span>
+            Feb 10, 2027
           </div>
         </div>
 
@@ -68,7 +73,7 @@ export default function Hero() {
               <div className="p-2">
                 {/* Contributor Form Link */}
                 <a
-                href="https://forms.gle/UNzHDjYAMkYpoYPy6"
+                href="https://forms.gle/oi7tGi6jieeFDMxL9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[var(--bg)] transition-colors duration-200 group"
@@ -85,7 +90,7 @@ export default function Hero() {
                 </a>
                 {/* Mentor Form Link */}
                 <a
-                href="https://forms.gle/PWRP2BM4DqGbqh6w5"
+                href="https://forms.gle/ajbo3poma75onXWWA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[var(--bg)] transition-colors duration-200 group"
@@ -102,7 +107,7 @@ export default function Hero() {
                 </a>
                 {/* Project Admin Form Link */}
                 <a
-                href="https://forms.gle/PT1db4BeP4kQDNrG8"
+                href="https://forms.gle/28NPGQ65L6JJp7Du8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[var(--bg)] transition-colors duration-200 group"
@@ -134,19 +139,27 @@ export default function Hero() {
         {/* Impact Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
           <div className="stat-pill flex-col">
-            <div className="text-2xl font-bold text-[var(--frost)]">10k+</div>
+            <div className="text-2xl font-bold text-[var(--frost)]">
+              <AnimatedCounter value={10000} duration={2000} suffix="+" />
+            </div>
             <div className="text-sm text-[var(--muted)]">Developers</div>
           </div>
           <div className="stat-pill flex-col">
-            <div className="text-2xl font-bold text-[var(--frost)]">1.5k+</div>
+            <div className="text-2xl font-bold text-[var(--frost)]">
+              <AnimatedCounter value={1500} duration={2000} suffix="+" />
+            </div>
             <div className="text-sm text-[var(--muted)]">Resources</div>
           </div>
           <div className="stat-pill flex-col">
-            <div className="text-2xl font-bold text-[var(--frost)]">500+</div>
+            <div className="text-2xl font-bold text-[var(--frost)]">
+              <AnimatedCounter value={500} duration={2000} suffix="+" />
+            </div>
             <div className="text-sm text-[var(--muted)]">PRs</div>
           </div>
           <div className="stat-pill flex-col">
-            <div className="text-2xl font-bold text-[var(--frost)]">50+</div>
+            <div className="text-2xl font-bold text-[var(--frost)]">
+              <AnimatedCounter value={50} duration={2000} suffix="+" />
+            </div>
             <div className="text-sm text-[var(--muted)]">Events</div>
           </div>
         </div>

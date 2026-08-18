@@ -15,7 +15,7 @@ const tabs = [
       'Build your GitHub portfolio',
       'Connect with the global developer community'
     ],
-  formUrl: 'https://forms.gle/UNzHDjYAMkYpoYPy6'
+  formUrl: 'https://forms.gle/oi7tGi6jieeFDMxL9'
   },
   {
     id: 'mentors',
@@ -29,7 +29,7 @@ const tabs = [
       'Give back to the community',
       'Expand your professional network'
     ],
-  formUrl: 'https://forms.gle/PWRP2BM4DqGbqh6w5'
+  formUrl: 'https://forms.gle/ajbo3poma75onXWWA'
   },
   {
     id: 'project-admins',
@@ -43,7 +43,7 @@ const tabs = [
       'Gain project management experience',
       'Increase project visibility'
     ],
-  formUrl: 'https://forms.gle/PT1db4BeP4kQDNrG8'
+  formUrl: 'https://forms.gle/28NPGQ65L6JJp7Du8'
   }
 ];
 

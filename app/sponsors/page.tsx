@@ -61,18 +61,20 @@ interface CurrentSponsor {
 }
 
 const currentSponsors: CurrentSponsor[] = [
-  { 
-    name: 'ChaChing Social', 
-    logo: '/ccl.png',
-    website: 'https://www.chaching.social/',
-    isImage: true
-  },
-  { 
-    name: 'Code Your Dreams',
-    logo: '/sp8.jpg',
-    website: 'https://www.codeyourdreams.org/',
-    isImage: true
-  }
+  // TODO: Re-add sponsors for 2026 when secured
+  // Previous sponsors (2025):
+  // { 
+  //   name: 'ChaChing Social', 
+  //   logo: '/ccl.png',
+  //   website: 'https://www.chaching.social/',
+  //   isImage: true
+  // },
+  // { 
+  //   name: 'Code Your Dreams',
+  //   logo: '/sp8.jpg',
+  //   website: 'https://www.codeyourdreams.org/',
+  //   isImage: true
+  // }
 ];
 
 interface CommunityPartner {
@@ -83,60 +85,62 @@ interface CommunityPartner {
 }
 
 const communityPartners: CommunityPartner[] = [
-  { 
-    name: 'Focus Faces', 
-    logo: '/sp1.png',
-    website: 'https://focusfaces.com/',
-    isImage: true
-  }
-  ,{
-    name: 'IntelliGenZ Talks',
-    logo: '/sp2.jpg',
-    website: 'https://linktr.ee/techtalksintelligenz',
-    isImage: true
-  },
-  {
-    name: 'GDG KJU',
-    logo: '/sp3.png',
-    website: 'https://www.instagram.com/gdg.kristujayanti',
-    isImage: true
-  },
-  {
-    name: 'Chicago Startup Events',
-    logo: '/sp4.png',
-    website: 'https://www.chicagostartupevents.com/',
-    isImage: true
-  },
-  {
-    name: 'GDG PESCOE',
-    logo: '/sp5.png',
-    website: 'https://www.linkedin.com/company/gdgcpescoe/',
-    isImage: true
-  },
-  {
-    name: 'Byte Brigade',
-    logo: '/sp6.png',
-    website: 'https://linktr.ee/ByteBrigade2025',
-    isImage: true
-  },
-  {
-    name: 'SheFi Chicago',
-    logo: '/sp7.jpg',
-    website: 'https://www.shefi.org/',
-    isImage: true
-  },
-  {
-    name: 'Tenacity',
-    logo: '/sp9.jpg',
-    website: 'https://tenacityai.io/',
-    isImage: true
-  },
-  {
-    name: 'Devnovate',
-    logo: '/sp10.jpg',
-    website: 'https://devnovate.co/',
-    isImage: true
-  }
+  // TODO: Re-add community partners for 2026 when secured
+  // Previous partners (2025):
+  // { 
+  //   name: 'Focus Faces', 
+  //   logo: '/sp1.png',
+  //   website: 'https://focusfaces.com/',
+  //   isImage: true
+  // },
+  // {
+  //   name: 'IntelliGenZ Talks',
+  //   logo: '/sp2.jpg',
+  //   website: 'https://linktr.ee/techtalksintelligenz',
+  //   isImage: true
+  // },
+  // {
+  //   name: 'GDG KJU',
+  //   logo: '/sp3.png',
+  //   website: 'https://www.instagram.com/gdg.kristujayanti',
+  //   isImage: true
+  // },
+  // {
+  //   name: 'Chicago Startup Events',
+  //   logo: '/sp4.png',
+  //   website: 'https://www.chicagostartupevents.com/',
+  //   isImage: true
+  // },
+  // {
+  //   name: 'GDG PESCOE',
+  //   logo: '/sp5.png',
+  //   website: 'https://www.linkedin.com/company/gdgcpescoe/',
+  //   isImage: true
+  // },
+  // {
+  //   name: 'Byte Brigade',
+  //   logo: '/sp6.png',
+  //   website: 'https://linktr.ee/ByteBrigade2025',
+  //   isImage: true
+  // },
+  // {
+  //   name: 'SheFi Chicago',
+  //   logo: '/sp7.jpg',
+  //   website: 'https://www.shefi.org/',
+  //   isImage: true
+  // },
+  // {
+  //   name: 'Tenacity',
+  //   logo: '/sp9.jpg',
+  //   website: 'https://tenacityai.io/',
+  //   isImage: true
+  // },
+  // {
+  //   name: 'Devnovate',
+  //   logo: '/sp10.jpg',
+  //   website: 'https://devnovate.co/',
+  //   isImage: true
+  // }
 ];
 
 export default function Sponsors() {
@@ -205,74 +209,8 @@ export default function Sponsors() {
           </div>
         </div>
 
-        {/* Current Sponsors */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Amazing Sponsors</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {currentSponsors.map((sponsor, index) => (
-              <a
-                key={index}
-                href={sponsor.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="panel p-6 rounded-lg text-center hover:frost-glow transition-all duration-300 group"
-              >
-                <div className="mb-3 flex items-center justify-center h-16">
-                  {sponsor.isImage ? (
-                    <Image
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      width={64}
-                      height={64}
-                      className="object-contain opacity-60 group-hover:opacity-80 transition-opacity duration-300"
-                    />
-                  ) : (
-                    <div className="text-4xl">{sponsor.logo}</div>
-                  )}
-                </div>
-                <div className="font-semibold text-sm group-hover:text-[var(--frost)] transition-colors">
-                  {sponsor.name}
-                </div>
-                {sponsor.tier && (
-                  <div className="text-xs text-[var(--muted)] mt-1">{sponsor.tier}</div>
-                )}
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Community Partners */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">Community Partners</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {communityPartners.map((partner, index) => (
-              <a
-                key={index}
-                href={partner.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="panel p-6 rounded-lg text-center hover:frost-glow transition-all duration-300 group"
-              >
-                <div className="mb-3 flex items-center justify-center h-16">
-                  {partner.isImage ? (
-                    <Image
-                      src={partner.logo}
-                      alt={partner.name}
-                      width={64}
-                      height={64}
-                      className="object-contain opacity-60 group-hover:opacity-80 transition-opacity duration-300"
-                    />
-                  ) : (
-                    <div className="text-4xl">{partner.logo}</div>
-                  )}
-                </div>
-                <div className="font-semibold text-sm group-hover:text-[var(--frost)] transition-colors">
-                  {partner.name}
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
+        {/* Current Sponsors - Coming soon for 2026 - will be uncommented when secured */}
+        {/* Community Partners - Coming soon for 2026 - will be uncommented when secured */}
 
         {/* Why Sponsor */}
         <div className="mb-20">
