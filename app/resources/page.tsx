@@ -27,15 +27,9 @@ const resources = [
     desc: 'Join our Discord & YouTube community.',
     cta: 'Join Discord',
     external: true,
-  },
-  {
-    title: 'WOCS.Opulentia.AI',
-    icon: Gift,
-    link: 'https://wocs.opulentia.ai',
-    desc: 'Explore Opulentia AI resources for agentic intelligence and autonomous engineering.',
-    cta: 'Visit WOCS.Opulentia.AI',
-    external: true,
-  },
+  }
+  
+
 ];
 
 

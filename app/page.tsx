@@ -13,7 +13,7 @@ export default function Home() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="panel rounded-2xl p-8 md:p-12 text-center space-y-6">
-            <div className="text-6xl mb-4">📚</div>
+            <div className="text-6xl mb-4"></div>
             <h2 className="text-3xl md:text-4xl font-bold">
               Sessions & Workshops <span className="text-[var(--frost)]">Coming Soon</span>
             </h2>

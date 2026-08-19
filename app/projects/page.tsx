@@ -82,7 +82,7 @@ export default function Projects() {
         {/* Coming Soon Section */}
         <div className="flex flex-col items-center justify-center py-24">
           <div className="text-center space-y-6">
-            <div className="text-7xl mb-6">🚀</div>
+            <div className="text-7xl mb-6"></div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Projects Coming <span className="text-[var(--frost)]">Soon</span>
             </h2>
