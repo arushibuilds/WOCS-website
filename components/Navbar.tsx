@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, ExternalLink } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +50,7 @@ export default function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden md:flex gap-4 items-center flex-nowrap whitespace-nowrap">
             <Link
-              href="https://wocsleaderboard.netlify.app/"
+              href="/leaderboard"
               className="btn-primary inline-flex items-center gap-2"
             >
               View Leaderboard
@@ -93,16 +93,13 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="px-3 py-2">
-              <a
-                href={process.env.NEXT_PUBLIC_LEADERBOARD_URL || '#'}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/leaderboard"
                 className="btn-primary inline-flex items-center gap-2 w-full justify-center"
                 onClick={() => setIsOpen(false)}
               >
                 View Leaderboard
-                <ExternalLink size={16} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

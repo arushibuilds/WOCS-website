@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { ChevronDown, ExternalLink, Users, Code, Award, Building } from 'lucide-react';
 import Image from "next/image";
+import Link from 'next/link';
 import AnimatedCounter from './AnimatedCounter';
 
 export default function Hero() {
@@ -128,12 +129,12 @@ export default function Hero() {
             </div>
 
           {/* Leaderboard Button */}
-          <a
-            href="https://wocsleaderboard.netlify.app/"
+          <Link
+            href="/leaderboard"
             className="btn-secondary inline-flex items-center gap-2"
           >
             View Leaderboard
-          </a>
+          </Link>
         </div>
 
         {/* Impact Stats */}
