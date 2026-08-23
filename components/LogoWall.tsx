@@ -14,24 +14,11 @@ interface Partner {
 }
 
 const sponsors: Sponsor[] = [
-  {
-    name: 'ChaChing Social',
-    logo: '/ccl.png',
-    website: 'https://www.chaching.social/',
-  },
+  // Coming soon - will add new sponsors for 2026
 ];
 
 const communityPartners: Partner[] = [
-  {
-    name: 'Focus Faces',
-    logo: '/sp1.png',
-    website: 'https://focusfaces.com/',
-  },
-  {
-    name: 'IntelligenZ Talks',
-    logo: '/sp2.jpg',
-    website: 'https://www.linkedin.com/in/sanskritikadam/',
-  },
+  // Coming soon - will add new community partners for 2026
 ];
 
 export default function LogoWall() {
@@ -44,35 +31,37 @@ export default function LogoWall() {
         </p>
 
         {/* Sponsors Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-[var(--frost)]">Sponsors</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            {sponsors.map((sponsor) => (
-              <a
-                key={sponsor.name}
-                href={sponsor.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group panel p-6 rounded-lg hover:frost-glow transition-all duration-300 flex items-center justify-center min-h-[120px]"
-              >
-                <div className="text-center space-y-2">
-                  <div className="w-16 h-16 mx-auto relative opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
-                    <Image
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      width={64}
-                      height={64}
-                      className="object-contain"
-                    />
+        {sponsors.length > 0 && (
+          <div className="mb-16">
+            <h3 className="text-2xl font-semibold mb-8 text-[var(--frost)]">Sponsors</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+              {sponsors.map((sponsor) => (
+                <a
+                  key={sponsor.name}
+                  href={sponsor.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group panel p-6 rounded-lg hover:frost-glow transition-all duration-300 flex items-center justify-center min-h-[120px]"
+                >
+                  <div className="text-center space-y-2">
+                    <div className="w-16 h-16 mx-auto relative opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
+                      <Image
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        width={64}
+                        height={64}
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="text-sm font-medium text-[var(--muted)] group-hover:text-[var(--frost)]">
+                      {sponsor.name}
+                    </div>
                   </div>
-                  <div className="text-sm font-medium text-[var(--muted)] group-hover:text-[var(--frost)]">
-                    {sponsor.name}
-                  </div>
-                </div>
-              </a>
-            ))}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Community Partners Section intentionally omitted on homepage */}
       </div>
@@ -91,19 +80,19 @@ export function HomePage() {
         <div className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
           <div className="py-1">
             <Link
-              href="https://forms.gle/UNzHDjYAMkYpoYPy6"
+              href="https://forms.gle/oi7tGi6jieeFDMxL9"
               className="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >
               Contributors
             </Link>
             <Link
-              href="https://forms.gle/PWRP2BM4DqGbqh6w5"
+              href="https://forms.gle/ajbo3poma75onXWWA"
               className="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >
               Mentors
             </Link>
             <Link
-              href="https://forms.gle/PT1db4BeP4kQDNrG8"
+              href="https://forms.gle/28NPGQ65L6JJp7Du8"
               className="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >
               Project Admins

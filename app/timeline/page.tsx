@@ -2,35 +2,35 @@ import { Calendar, Users, Code, Award } from 'lucide-react';
 
 const timelineEvents = [
   {
-    date: 'October 1',
+    date: 'October 1, 2026',
     title: 'Registration Opens',
     description: 'Projects, and Mentors can start registering',
     icon: Users,
     status: 'completed'
   },
   {
-    date: 'October 1',
+    date: 'October 1, 2026',
     title: 'Contributor Registration Opens',
     description: 'Contributors can now register and browse available projects',
     icon: Code,
     status: 'completed'
   },
   {
-    date: 'November 1',
+    date: 'November 1, 2026',
     title: 'Coding Period Begins',
     description: 'The official coding period starts. Let the collaboration begin!',
     icon: Code,
     status: 'active'
   },
   {
-    date: 'January 31',
+    date: 'January 31, 2027',
     title: 'Coding Period Ends',
     description: 'Final submissions and project evaluations',
     icon: Calendar,
     status: 'upcoming'
   },
   {
-    date: 'February 10',
+    date: 'February 10, 2027',
     title: 'Certificates Awarded',
     description: 'Recognition and certificates distributed to participants',
     icon: Award,
@@ -98,15 +98,15 @@ export default function Timeline() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <div className="font-semibold text-[var(--frost)]">Registration Phase</div>
-              <div className="text-[var(--muted)]">October 1 - December 31, 2025</div>
+              <div className="text-[var(--muted)]">October 1 - December 31, 2026</div>
             </div>
             <div className="space-y-2">
               <div className="font-semibold text-[var(--frost)]">Coding Period</div>
-              <div className="text-[var(--muted)]">November 1, 2025 - January 31, 2025</div>
+              <div className="text-[var(--muted)]">November 1, 2026 - January 31, 2027</div>
             </div>
             <div className="space-y-2">
               <div className="font-semibold text-[var(--frost)]">Announcing Top Winners</div>
-              <div className="text-[var(--muted)]">February 10, 2025</div>
+              <div className="text-[var(--muted)]">February 10, 2027</div>
             </div>
           </div>
         </div>
