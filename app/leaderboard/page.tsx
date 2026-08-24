@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { Search, Trophy, Medal, Award, GitPullRequest, Star, Info, ExternalLink } from 'lucide-react';
+import { Search, Trophy, ExternalLink } from 'lucide-react';
 
 interface Contributor {
   username: string;
@@ -12,12 +12,11 @@ interface Contributor {
 }
 
 /**
- * Set to false before the event goes live to show the "coming soon" state,
- * or replace `sampleContributors` with the real standings.
+ * The full leaderboard UI below is kept intact but hidden until the real
+ * standings are connected. Flip this to true (and swap `sampleContributors`
+ * for the live data) when the leaderboard goes live on November 5, 2026.
  */
-const SHOW_SAMPLE_DATA = true;
-
-const LAST_UPDATED = 'Updated weekly during the coding period';
+const SHOW_SAMPLE_DATA = false;
 
 const sampleContributors: Contributor[] = [
   { username: 'contributor-one', name: 'Contributor One', projects: 4, prs: 21, points: 460 },
@@ -35,9 +34,9 @@ const sampleContributors: Contributor[] = [
 const contributors: Contributor[] = SHOW_SAMPLE_DATA ? sampleContributors : [];
 
 const pointsSystem = [
-  { level: 'Beginner', points: '10 pts', description: 'Docs, typo fixes, and good-first-issue PRs' },
-  { level: 'Intermediate', points: '25 pts', description: 'Bug fixes, tests, and small feature work' },
-  { level: 'Advanced', points: '50 pts', description: 'Major features, refactors, and architecture work' },
+  { level: 'Beginner', points: '2 pts', description: 'Docs, typo fixes, and good-first-issue PRs' },
+  { level: 'Intermediate', points: '5 pts', description: 'Bug fixes, tests, and small feature work' },
+  { level: 'Advanced', points: '11 pts', description: 'Major features, refactors, and architecture work' },
 ];
 
 const getLevelColor = (level: string) => {
@@ -48,8 +47,6 @@ const getLevelColor = (level: string) => {
     default: return 'text-[var(--muted)] bg-[var(--muted)]/20';
   }
 };
-
-const podiumIcons = [Trophy, Medal, Award];
 
 const getInitials = (name: string) =>
   name
@@ -83,10 +80,6 @@ export default function Leaderboard() {
       .sort((a, b) => (sortBy === 'points' ? b.points - a.points : b.prs - a.prs));
   }, [ranked, searchTerm, sortBy]);
 
-  const podium = ranked.slice(0, 3);
-  const totalPRs = ranked.reduce((sum, contributor) => sum + contributor.prs, 0);
-  const totalPoints = ranked.reduce((sum, contributor) => sum + contributor.points, 0);
-
   return (
     <div className="min-h-screen pt-20 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,88 +91,10 @@ export default function Leaderboard() {
           <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
             Every merged pull request earns points. Track how the community is working together during Winter of Code Social.
           </p>
-
-          {/* Stats */}
-          <div className="flex flex-wrap gap-4 justify-center items-center pt-4">
-            <div className="stat-pill">
-              <Star size={16} className="text-[var(--frost)]" />
-              <span className="text-[var(--frost)]">{ranked.length}</span>
-              Contributors
-            </div>
-            <div className="stat-pill">
-              <GitPullRequest size={16} className="text-[var(--frost)]" />
-              <span className="text-[var(--frost)]">{totalPRs}</span>
-              Merged PRs
-            </div>
-            <div className="stat-pill">
-              <Trophy size={16} className="text-[var(--frost)]" />
-              <span className="text-[var(--frost)]">{totalPoints}</span>
-              Points Awarded
-            </div>
-          </div>
-
-          <div className="text-sm text-[var(--muted)]">{LAST_UPDATED}</div>
         </div>
 
         {ranked.length > 0 ? (
           <>
-            {SHOW_SAMPLE_DATA && (
-              <div className="panel rounded-xl p-4 mb-12 flex items-start gap-3">
-                <Info size={18} className="text-[var(--frost)] mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-[var(--muted)]">
-                  <span className="text-[var(--frost)] font-semibold">Preview:</span> these are
-                  placeholder standings so you can see the layout. Live rankings begin when the
-                  coding period opens on November 1, 2026.
-                </p>
-              </div>
-            )}
-
-            {/* Podium */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {podium.map((contributor, index) => {
-                const Icon = podiumIcons[index];
-                return (
-                  <div
-                    key={contributor.username}
-                    className={`panel rounded-2xl p-6 text-center space-y-4 transition-all duration-300 ${
-                      index === 0 ? 'frost-glow md:-translate-y-4 border-[var(--frost)]' : ''
-                    }`}
-                  >
-                    <div className="flex justify-center">
-                      <div
-                        className={`w-16 h-16 rounded-full flex items-center justify-center ${
-                          index === 0
-                            ? 'bg-[var(--frost)] text-[var(--bg)]'
-                            : 'bg-[var(--panel)] border-2 border-[var(--frost)] text-[var(--frost)]'
-                        }`}
-                      >
-                        <Icon size={28} />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-sm text-[var(--muted)] mb-1">Rank #{contributor.rank}</div>
-                      <h3 className="text-xl font-semibold">{contributor.name}</h3>
-                      <div className="text-sm text-[var(--muted)]">@{contributor.username}</div>
-                    </div>
-                    <div className="flex justify-center gap-6 pt-2">
-                      <div>
-                        <div className="text-2xl font-bold text-[var(--frost)]">
-                          {contributor.points}
-                        </div>
-                        <div className="text-xs text-[var(--muted)]">Points</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-[var(--frost)]">
-                          {contributor.prs}
-                        </div>
-                        <div className="text-xs text-[var(--muted)]">PRs</div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
             {/* Search and Sort */}
             <div className="flex flex-col md:flex-row gap-4 mb-8">
               <div className="relative flex-1">
@@ -297,9 +212,12 @@ export default function Leaderboard() {
                 Leaderboard Coming <span className="text-[var(--frost)]">Soon</span>
               </h2>
               <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-                Rankings go live once the coding period begins on{' '}
-                <strong>November 1, 2026</strong>. Register early, find a project, and get your
+                The leaderboard will be available on{' '}
+                <strong>November 5, 2026</strong>. Register early, find a project, and get your
                 first pull request ready.
+              </p>
+              <p className="text-lg text-[var(--frost)] font-semibold">
+                📅 Live from November 5, 2026
               </p>
               <div className="pt-4">
                 <Link href="/projects" className="btn-primary inline-flex items-center gap-2">
