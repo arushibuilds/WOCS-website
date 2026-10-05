@@ -1,6 +1,13 @@
-import { Users } from 'lucide-react';
-import { Building, Heart, Star, Award, ExternalLink, Check } from 'lucide-react';
-import Image from 'next/image';
+import { Users, Building, Heart, Star, Check } from 'lucide-react';
+import { CONTACT_EMAIL, FORM_COMMUNITY_PARTNER } from '@/lib/links';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Sponsors',
+  description: 'Sponsor or partner with Winter of Code Social to support the next generation of open source developers.',
+  alternates: { canonical: '/sponsors' },
+};
+
 
 const sponsorTiers = [
   {
@@ -52,96 +59,8 @@ const inKindSponsors = [
   }
 ];
 
-interface CurrentSponsor {
-  name: string;
-  logo: string;
-  website: string;
-  isImage: boolean;
-  tier?: string;
-}
-
-const currentSponsors: CurrentSponsor[] = [
-  // TODO: Re-add sponsors for 2026 when secured
-  // Previous sponsors (2025):
-  // { 
-  //   name: 'ChaChing Social', 
-  //   logo: '/ccl.png',
-  //   website: 'https://www.chaching.social/',
-  //   isImage: true
-  // },
-  // { 
-  //   name: 'Code Your Dreams',
-  //   logo: '/sp8.jpg',
-  //   website: 'https://www.codeyourdreams.org/',
-  //   isImage: true
-  // }
-];
-
-interface CommunityPartner {
-  name: string;
-  logo: string;
-  website: string;
-  isImage: boolean;
-}
-
-const communityPartners: CommunityPartner[] = [
-  // TODO: Re-add community partners for 2026 when secured
-  // Previous partners (2025):
-  // { 
-  //   name: 'Focus Faces', 
-  //   logo: '/sp1.png',
-  //   website: 'https://focusfaces.com/',
-  //   isImage: true
-  // },
-  // {
-  //   name: 'IntelliGenZ Talks',
-  //   logo: '/sp2.jpg',
-  //   website: 'https://linktr.ee/techtalksintelligenz',
-  //   isImage: true
-  // },
-  // {
-  //   name: 'GDG KJU',
-  //   logo: '/sp3.png',
-  //   website: 'https://www.instagram.com/gdg.kristujayanti',
-  //   isImage: true
-  // },
-  // {
-  //   name: 'Chicago Startup Events',
-  //   logo: '/sp4.png',
-  //   website: 'https://www.chicagostartupevents.com/',
-  //   isImage: true
-  // },
-  // {
-  //   name: 'GDG PESCOE',
-  //   logo: '/sp5.png',
-  //   website: 'https://www.linkedin.com/company/gdgcpescoe/',
-  //   isImage: true
-  // },
-  // {
-  //   name: 'Byte Brigade',
-  //   logo: '/sp6.png',
-  //   website: 'https://linktr.ee/ByteBrigade2025',
-  //   isImage: true
-  // },
-  // {
-  //   name: 'SheFi Chicago',
-  //   logo: '/sp7.jpg',
-  //   website: 'https://www.shefi.org/',
-  //   isImage: true
-  // },
-  // {
-  //   name: 'Tenacity',
-  //   logo: '/sp9.jpg',
-  //   website: 'https://tenacityai.io/',
-  //   isImage: true
-  // },
-  // {
-  //   name: 'Devnovate',
-  //   logo: '/sp10.jpg',
-  //   website: 'https://devnovate.co/',
-  //   isImage: true
-  // }
-];
+// TODO: add 2026 sponsors and community partners here once secured, then render
+// them above "Why Sponsor". 2025 logos are still in /public (ccl.png, sp1-sp10).
 
 export default function Sponsors() {
   return (
@@ -168,7 +87,7 @@ export default function Sponsors() {
                 
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-bold mb-2">{tier.name}</h3>
-                  <div className="text-2xl font-bold text-[var(--frost)]">{tier.price}</div>
+                  <div className="text-xl font-bold text-[var(--frost)]">{tier.price}</div>
                 </div>
 
                 <ul className="space-y-3">
@@ -183,14 +102,14 @@ export default function Sponsors() {
             ))}
           </div>
           {/* Info message below sponsorship tiers */}
-          <div className="mt-12 max-w-2xl mx-auto text-center panel p-6 rounded-xl bg-gradient-to-br from-[var(--frost)]/10 to-white/60 shadow-lg">
+          <div className="mt-12 max-w-2xl mx-auto text-center panel p-6 rounded-xl bg-gradient-to-br from-[var(--frost)]/10 to-transparent shadow-lg">
             <p className="text-lg font-semibold mb-2">We welcome <span className="text-[var(--frost)]">In-Kind Sponsors</span>, <span className="text-[var(--frost)]">Monetary Sponsors</span>, and <span className="text-[var(--frost)]">Community Partners</span> to support Winter of Code Social.</p>
             <p className="mb-4 text-[var(--muted)]">Your support helps us empower thousands of contributors worldwide.</p>
             <div className="text-left md:text-center space-y-2">
-              <div>👉 <span className="font-medium">Interested in sponsoring?</span></div>
-              <div>📩 Reach out directly at <a href="mailto:codesocialcommunity@gmail.com" className="underline text-[var(--frost)]">codesocialcommunity@gmail.com</a></div>
-              <div>👉 <span className="font-medium">Want to collaborate as a community partner?</span></div>
-              <div>📝 Fill out our <a href="https://forms.gle/2KYLfaDDVyCQA6GQA" className="underline text-[var(--frost)]">Community Partner Form</a> to get started.</div>
+              <div><span aria-hidden="true">👉</span> <span className="font-medium">Interested in sponsoring?</span></div>
+              <div><span aria-hidden="true">📩</span> Reach out directly at <a href={`mailto:${CONTACT_EMAIL}`} className="underline text-[var(--frost)]">{CONTACT_EMAIL}</a></div>
+              <div><span aria-hidden="true">👉</span> <span className="font-medium">Want to collaborate as a community partner?</span></div>
+              <div><span aria-hidden="true">📝</span> Fill out our <a href={FORM_COMMUNITY_PARTNER} target="_blank" rel="noopener noreferrer" className="underline text-[var(--frost)]">Community Partner Form</a> to get started.</div>
             </div>
           </div>
         </div>
@@ -201,16 +120,13 @@ export default function Sponsors() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {inKindSponsors.map((sponsor, index) => (
               <div key={index} className="panel p-6 rounded-lg text-center">
-                <div className="text-4xl mb-4">{sponsor.icon}</div>
+                <div className="text-4xl mb-4" aria-hidden="true">{sponsor.icon}</div>
                 <h3 className="font-semibold mb-2">{sponsor.type}</h3>
                 <p className="text-sm text-[var(--muted)]">{sponsor.description}</p>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Current Sponsors - Coming soon for 2026 - will be uncommented when secured */}
-        {/* Community Partners - Coming soon for 2026 - will be uncommented when secured */}
 
         {/* Why Sponsor */}
         <div className="mb-20">
@@ -221,7 +137,7 @@ export default function Sponsors() {
                 <Users size={48} className="mx-auto text-[var(--frost)] mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Reach Top Talent</h3>
                 <p className="text-[var(--muted)]">
-                  Connect with 10k+ passionate developers, from students to experienced professionals.
+                  Connect with thousands of passionate developers, from students to experienced professionals.
                 </p>
               </div>
               <div className="text-center">
@@ -248,12 +164,12 @@ export default function Sponsors() {
             <Building size={64} className="mx-auto text-[var(--frost)] mb-6" />
             <h2 className="text-3xl font-bold mb-4">Ready to Become a Sponsor?</h2>
             <p className="text-lg text-[var(--muted)] mb-8 max-w-2xl mx-auto">
-              Join industry leaders in supporting open source innovation. Let's build something amazing together.
+              Join industry leaders in supporting open source innovation. Let’s build something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
 
               <a
-                href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'codesocialcommunity@gmail.com'}`}
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="btn-secondary inline-flex items-center gap-2 border-2 border-[var(--frost)]"
               >
                 Become a Sponsor

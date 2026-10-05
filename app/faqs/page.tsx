@@ -1,4 +1,12 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'FAQs',
+  description: 'Answers to common questions about Winter of Code Social.',
+  alternates: { canonical: '/faqs' },
+};
+
 
 const faqs = [
   {
@@ -11,7 +19,7 @@ const faqs = [
   },
   {
     q: 'What’s the timeline?',
-    a: 'Contributor registration opens Oct 10. Coding period is Nov 1 – Jan 31.'
+    a: 'Registration opens Oct 1, 2026. The coding period runs Nov 1, 2026 – Jan 31, 2027.'
   },
   {
     q: 'What are the rewards?',

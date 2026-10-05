@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
-import { Code, Users, Award, Building, ExternalLink, ArrowRight } from 'lucide-react';
+import { Code, Users, Award, ExternalLink, ArrowRight } from 'lucide-react';
+import { FORM_CONTRIBUTOR, FORM_MENTOR, FORM_PROJECT, FORM_TEAM } from '@/lib/links';
 
 const tabs = [
   {
@@ -15,21 +16,23 @@ const tabs = [
       'Build your GitHub portfolio',
       'Connect with the global developer community'
     ],
-  formUrl: 'https://forms.gle/oi7tGi6jieeFDMxL9'
+    formUrl: FORM_CONTRIBUTOR,
+    cta: 'Register as Contributor'
   },
   {
     id: 'mentors',
     name: 'Mentors',
     icon: Users,
     title: 'Guide the Next Generation',
-    description: 'Share your expertise and help shape the future of open source. Guide builders for a few hours each week. You jus need to care enough to help someone ship.',
+    description: 'Share your expertise and help shape the future of open source. Guide builders for a few hours each week. You just need to care enough to help someone ship.',
     benefits: [
       'Share your knowledge and experience',
       'Build leadership skills',
       'Give back to the community',
       'Expand your professional network'
     ],
-  formUrl: 'https://forms.gle/ajbo3poma75onXWWA'
+    formUrl: FORM_MENTOR,
+    cta: 'Register as Mentor'
   },
   {
     id: 'project-admins',
@@ -43,7 +46,8 @@ const tabs = [
       'Gain project management experience',
       'Increase project visibility'
     ],
-  formUrl: 'https://forms.gle/28NPGQ65L6JJp7Du8'
+    formUrl: FORM_PROJECT,
+    cta: 'Register as Project Admin'
   }
 ];
 
@@ -66,10 +70,14 @@ export default function GetInvolved() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-12" role="tablist" aria-label="Choose your role">
           {tabs.map((tab) => (
             <button
               key={tab.id}
+              role="tab"
+              id={`tab-${tab.id}`}
+              aria-selected={activeTab === tab.id}
+              aria-controls="role-panel"
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 ${
                 activeTab === tab.id
@@ -77,14 +85,14 @@ export default function GetInvolved() {
                   : 'panel hover:frost-glow'
               }`}
             >
-              <tab.icon size={20} />
+              <tab.icon size={20} aria-hidden="true" />
               {tab.name}
             </button>
           ))}
         </div>
 
         {/* Tab Content */}
-        <div className="panel p-8 md:p-12 rounded-2xl">
+        <div id="role-panel" role="tabpanel" aria-labelledby={`tab-${currentTab.id}`} className="panel p-8 md:p-12 rounded-2xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div className="space-y-6">
@@ -98,7 +106,7 @@ export default function GetInvolved() {
               </p>
 
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold">What You'll Get:</h3>
+                <h3 className="text-xl font-semibold">What You’ll Get:</h3>
                 <ul className="space-y-3">
                   {currentTab.benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start gap-3">
@@ -116,7 +124,7 @@ export default function GetInvolved() {
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center gap-2 text-lg px-8 py-4"
                 >
-                  Register as {currentTab.name.slice(0, -1)}
+                  {currentTab.cta}
                   <ExternalLink size={18} />
                 </a>
               </div>
@@ -124,7 +132,7 @@ export default function GetInvolved() {
 
             {/* Visual Element */}
             <div className="flex items-center justify-center">
-              <div className="relative">
+              <div className="relative overflow-hidden p-8">
                 <div className="w-64 h-64 panel rounded-full flex items-center justify-center frost-glow">
                   <currentTab.icon size={80} className="text-[var(--frost)]" />
                 </div>
@@ -140,13 +148,12 @@ export default function GetInvolved() {
         {/* Join the Team CTA */}
         <div className="mt-16 text-center">
           <div className="panel p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold mb-4">Want to Join Our Team?</h3>
-            <p className="text-[varz(--muted)] mb-6 max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold mb-4">Want to Join Our Team?</h2>
+            <p className="text-[var(--muted)] mb-6 max-w-2xl mx-auto">
               Help us organize and run Winter of Code Social. Join our team of volunteers and make this event even better.
             </p>
               <a
-
-                href="https://forms.gle/WSFhJUNJzGxQ2ZfG8"
+                href={FORM_TEAM}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center gap-2"

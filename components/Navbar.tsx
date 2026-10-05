@@ -3,10 +3,15 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { CODE_SOCIAL_URL } from '@/lib/links';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/');
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -15,6 +20,7 @@ export default function Navbar() {
     { name: 'Resources', href: '/resources' },
     { name: 'Get Involved', href: '/get-involved' },
     { name: 'Sponsors', href: '/sponsors' },
+    { name: 'FAQs', href: '/faqs' },
   ];
 
   return (
@@ -28,18 +34,22 @@ export default function Navbar() {
               alt="Winter of Code Social Logo"
               width={340}
               height={180}
+              className="h-14 w-auto"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block w-full">
+          <div className="hidden lg:block w-full">
             <div className="flex items-baseline justify-evenly flex-nowrap whitespace-nowrap w-full">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-[var(--muted)] hover:text-[var(--frost)] text-base font-medium transition-colors duration-200 px-2 py-1 rounded-lg hover:bg-[var(--panel)]"
+                    aria-current={isActive(item.href) ? 'page' : undefined}
+                    className={`hover:text-[var(--frost)] text-base font-medium transition-colors duration-200 px-2 py-1 rounded-lg hover:bg-[var(--panel)] ${
+                      isActive(item.href) ? 'text-[var(--frost)]' : 'text-[var(--muted)]'
+                    }`}
                     style={{whiteSpace: 'nowrap'}}>
                     {item.name}
                   </Link>
@@ -48,7 +58,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex gap-4 items-center flex-nowrap whitespace-nowrap">
+          <div className="hidden lg:flex gap-4 items-center flex-nowrap whitespace-nowrap">
             <Link
               href="/leaderboard"
               className="btn-primary inline-flex items-center gap-2"
@@ -56,7 +66,7 @@ export default function Navbar() {
               View Leaderboard
             </Link>
             <a
-              href="https://codesocial.tech"
+              href={CODE_SOCIAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary inline-flex items-center gap-2 border border-[var(--frost)]"
@@ -66,11 +76,13 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-[var(--text)] hover:text-[var(--frost)] transition-colors duration-200"
               aria-label="Toggle menu"
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -80,13 +92,16 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden">
+        <div id="mobile-menu" className="lg:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 panel border-t border-[rgba(154,215,255,0.12)]">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 text-[var(--muted)] hover:text-[var(--frost)] transition-colors duration-200"
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                className={`block px-3 py-2 hover:text-[var(--frost)] transition-colors duration-200 ${
+                  isActive(item.href) ? 'text-[var(--frost)]' : 'text-[var(--muted)]'
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
@@ -100,6 +115,16 @@ export default function Navbar() {
               >
                 View Leaderboard
               </Link>
+            </div>
+            <div className="px-3 pb-2">
+              <a
+                href={CODE_SOCIAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex items-center gap-2 w-full justify-center border border-[var(--frost)]"
+              >
+                Join Code Social
+              </a>
             </div>
           </div>
         </div>

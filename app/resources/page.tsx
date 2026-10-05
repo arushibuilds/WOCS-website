@@ -1,5 +1,14 @@
 import Link from 'next/link';
+import { CODE_SOCIAL_URL, DISCORD_INVITE } from '@/lib/links';
 import { BookOpen, FileText, Linkedin, Video, Users, Gift } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Resources',
+  description: 'Guides, templates and curated learning resources for open source contributors.',
+  alternates: { canonical: '/resources' },
+};
+
 
 const resources = [
   {
@@ -23,8 +32,8 @@ const resources = [
   {
     title: 'Community',
     icon: Users,
-    link: 'https://discord.gg/MSTNyRSPYW',
-    desc: 'Join our Discord & YouTube community.',
+    link: DISCORD_INVITE,
+    desc: 'Join our Discord community.',
     cta: 'Join Discord',
     external: true,
   }
@@ -68,7 +77,7 @@ export default function Resources() {
           <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">
             <h3 className="text-lg font-semibold mb-2">CS50x (Harvard)</h3>
             <p className="text-[var(--muted)] mb-4">Legendary intro to computer science, free online.</p>
-            <a href="https://cs50.harvard.edu/x/2023/" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Visit CS50x</a>
+            <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Visit CS50x</a>
           </div>
           <div className="panel rounded-xl p-6 flex flex-col items-center text-center shadow-md">
             <h3 className="text-lg font-semibold mb-2">MDN Web Docs</h3>
@@ -95,7 +104,7 @@ export default function Resources() {
 
             <div className="mt-8 text-center">
         <span className="text-lg text-[var(--muted)]">Looking for more resources?&nbsp;
-          <a href="https://codesocial.tech" target="_blank" rel="noopener noreferrer" className="underline text-[var(--frost)] font-semibold">Check Code Social!</a>
+          <a href={CODE_SOCIAL_URL} target="_blank" rel="noopener noreferrer" className="underline text-[var(--frost)] font-semibold">Check Code Social!</a>
         </span>
       </div>
 

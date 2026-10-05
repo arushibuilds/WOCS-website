@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { MessageCircle, Mail } from 'lucide-react';
 import Image from "next/image";
+import { CODE_SOCIAL_URL, CONTACT_EMAIL, DISCORD_INVITE } from '@/lib/links';
 
 export default function Footer() {
   const resources = [
@@ -34,7 +35,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-[var(--text)]">Resources</h4>
+            <h2 className="font-semibold text-[var(--text)]">Resources</h2>
             <ul className="space-y-2">
               {resources.map((item) => (
                 <li key={item.name}>
@@ -51,10 +52,10 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-[var(--text)]">Get in Touch</h4>
+            <h2 className="font-semibold text-[var(--text)]">Get in Touch</h2>
             <div className="space-y-3">
               <a
-                href="https://discord.gg/MSTNyRSPYW"
+                href={DISCORD_INVITE}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary inline-flex items-center gap-2 w-full sm:w-auto"
@@ -63,7 +64,7 @@ export default function Footer() {
                 Open Discord
               </a>
               <a
-                href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'codesocialcommunity@gmail.com'}`}
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="btn-secondary inline-flex items-center gap-2 w-full sm:w-auto"
               >
                 <Mail size={18} />
@@ -75,7 +76,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-[rgba(154,215,255,0.12)] text-center">
           <a
-            href="https://codesocial.tech"
+            href={CODE_SOCIAL_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-flex items-center gap-2 mb-4 border border-[var(--frost)]"
@@ -83,7 +84,7 @@ export default function Footer() {
             Join Code Social
           </a>
           <p className="text-[var(--muted)]">
-            &copy; 2026 Code Social Community. Made with ❄️ for the community.
+            &copy; {new Date().getFullYear()} Code Social Community. Made with ❄️ for the community.
           </p>
         </div>
       </div>

@@ -4,7 +4,7 @@ WEBSITE - https://woc.codesocial.tech/
 
 ## Run locally
 
-Requires [Node.js](https://nodejs.org/) 18 or newer.
+Requires [Node.js](https://nodejs.org/) 20 or newer.
 
 **1. Clone the repository**
 

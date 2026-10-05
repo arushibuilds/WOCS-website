@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 interface Sponsor {
   name: string;
@@ -22,16 +21,19 @@ const communityPartners: Partner[] = [
 ];
 
 export default function LogoWall() {
+  // Nothing to show until 2026 sponsors are confirmed.
+  if (sponsors.length === 0) return null;
+
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4">Trusted by Industry Leaders</h2>
+        <h2 className="text-3xl font-bold mb-4">Our Sponsors</h2>
         <p className="text-[var(--muted)] mb-16 max-w-2xl mx-auto">
           Join the companies and organizations supporting the next generation of open source developers.
         </p>
 
         {/* Sponsors Section */}
-        {sponsors.length > 0 && (
+        {(
           <div className="mb-16">
             <h3 className="text-2xl font-semibold mb-8 text-[var(--frost)]">Sponsors</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
@@ -66,40 +68,5 @@ export default function LogoWall() {
         {/* Community Partners Section intentionally omitted on homepage */}
       </div>
     </section>
-  );
-}
-
-export function HomePage() {
-  return (
-    <div>
-      {/* Register Now Dropdown */}
-      <div className="relative inline-block text-left">
-        <button className="btn-dropdown">
-          Register Now
-        </button>
-        <div className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-          <div className="py-1">
-            <Link
-              href="https://forms.gle/oi7tGi6jieeFDMxL9"
-              className="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            >
-              Contributors
-            </Link>
-            <Link
-              href="https://forms.gle/ajbo3poma75onXWWA"
-              className="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            >
-              Mentors
-            </Link>
-            <Link
-              href="https://forms.gle/28NPGQ65L6JJp7Du8"
-              className="dropdown-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            >
-              Project Admins
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }

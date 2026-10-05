@@ -1,19 +1,28 @@
 "use client";
-import { useState } from 'react';
-import { ChevronDown, ExternalLink, Users, Code, Award, Building } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ChevronDown, ExternalLink, Users, Code, Award } from 'lucide-react';
 import Image from "next/image";
 import Link from 'next/link';
 import AnimatedCounter from './AnimatedCounter';
+import { FORM_CONTRIBUTOR, FORM_MENTOR, FORM_PROJECT } from '@/lib/links';
 
 export default function Hero() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const roles = [
-    { name: 'Contributors', href: process.env.NEXT_PUBLIC_FORM_CONTRIBUTOR || '#', icon: Code },
-    { name: 'Mentors', href: process.env.NEXT_PUBLIC_FORM_MENTOR || '#', icon: Users },
-    { name: 'Project Admins', href: process.env.NEXT_PUBLIC_FORM_PROJECT || '#', icon: Award },
-    { name: 'Sponsors', href: process.env.NEXT_PUBLIC_FORM_SPONSOR || '#', icon: Building },
+    { name: 'Contributors', href: FORM_CONTRIBUTOR, icon: Code },
+    { name: 'Mentors', href: FORM_MENTOR, icon: Users },
+    { name: 'Project Admins', href: FORM_PROJECT, icon: Award },
   ];
+
+  useEffect(() => {
+    if (!isDropdownOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsDropdownOpen(false);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [isDropdownOpen]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -26,7 +35,7 @@ export default function Hero() {
             width={350}
             height={120}
             priority
-            className="mx-auto h-auto w-72 md:w-128"
+            className="mx-auto h-auto w-72 md:w-[32rem]"
           />
           <p className="text-xl md:text-2xl text-[var(--muted)] max-w-3xl mx-auto leading-relaxed">
             Whether you’re a beginner or a pro, this winter is your chance to dive into open source, team up, and make an impact.
@@ -58,6 +67,7 @@ export default function Hero() {
               className="btn-primary inline-flex items-center gap-2"
               aria-expanded={isDropdownOpen}
               aria-haspopup="true"
+              aria-controls="register-menu"
             >
               Register Now
               <ChevronDown 
@@ -70,59 +80,28 @@ export default function Hero() {
 
             {/* Dropdown Menu */}
             {isDropdownOpen && (
-              <div className="absolute top-full mt-2 w-64 panel rounded-lg shadow-xl z-50">
+              <div id="register-menu" className="absolute top-full mt-2 w-64 panel rounded-lg shadow-xl z-50">
               <div className="p-2">
-                {/* Contributor Form Link */}
-                <a
-                href="https://forms.gle/oi7tGi6jieeFDMxL9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[var(--bg)] transition-colors duration-200 group"
-                onClick={() => setIsDropdownOpen(false)}
-                >
-                <Code size={18} className="text-[var(--frost)]" />
-                <span className="text-[var(--text)] group-hover:text-[var(--frost)]">
-                  Contributors
-                </span>
-                <ExternalLink 
-                  size={14} 
-                  className="ml-auto text-[var(--muted)] group-hover:text-[var(--frost)]" 
-                />
-                </a>
-                {/* Mentor Form Link */}
-                <a
-                href="https://forms.gle/ajbo3poma75onXWWA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[var(--bg)] transition-colors duration-200 group"
-                onClick={() => setIsDropdownOpen(false)}
-                >
-                <Users size={18} className="text-[var(--frost)]" />
-                <span className="text-[var(--text)] group-hover:text-[var(--frost)]">
-                  Mentors
-                </span>
-                <ExternalLink 
-                  size={14} 
-                  className="ml-auto text-[var(--muted)] group-hover:text-[var(--frost)]" 
-                />
-                </a>
-                {/* Project Admin Form Link */}
-                <a
-                href="https://forms.gle/28NPGQ65L6JJp7Du8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[var(--bg)] transition-colors duration-200 group"
-                onClick={() => setIsDropdownOpen(false)}
-                >
-                <Award size={18} className="text-[var(--frost)]" />
-                <span className="text-[var(--text)] group-hover:text-[var(--frost)]">
-                  Project Admins
-                </span>
-                <ExternalLink 
-                  size={14} 
-                  className="ml-auto text-[var(--muted)] group-hover:text-[var(--frost)]" 
-                />
-                </a>
+                {roles.map((role) => (
+                  <a
+                    key={role.name}
+                    href={role.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-[var(--bg)] transition-colors duration-200 group"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    <role.icon size={18} className="text-[var(--frost)]" aria-hidden="true" />
+                    <span className="text-[var(--text)] group-hover:text-[var(--frost)]">
+                      {role.name}
+                    </span>
+                    <ExternalLink
+                      size={14}
+                      className="ml-auto text-[var(--muted)] group-hover:text-[var(--frost)]"
+                      aria-hidden="true"
+                    />
+                  </a>
+                ))}
               </div>
               </div>
             )}
@@ -138,6 +117,7 @@ export default function Hero() {
         </div>
 
         {/* Impact Stats */}
+        <p className="text-sm text-[var(--muted)] -mb-4">Our impact so far</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
           <div className="stat-pill flex-col">
             <div className="text-2xl font-bold text-[var(--frost)]">
@@ -170,6 +150,7 @@ export default function Hero() {
       {isDropdownOpen && (
         <div 
           className="fixed inset-0 z-40"
+          aria-hidden="true"
           onClick={() => setIsDropdownOpen(false)}
         />
       )}

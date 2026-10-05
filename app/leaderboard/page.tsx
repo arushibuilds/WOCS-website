@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { DISCORD_INVITE } from '@/lib/links';
 import { Search, Trophy, ExternalLink } from 'lucide-react';
 
 interface Contributor {
@@ -109,7 +110,7 @@ export default function Leaderboard() {
                   placeholder="Search contributors..."
                   aria-label="Search contributors"
                   className="w-full panel rounded-lg pl-12 pr-4 py-3 text-[var(--text)] placeholder:text-[var(--muted)]
-                             focus:outline-none focus:border-[var(--frost)] focus:frost-glow transition-all duration-300"
+                             focus:outline-none focus:border-[var(--frost)] focus:shadow-[0_0_20px_rgba(154,215,255,0.15)] transition-all duration-300"
                 />
               </div>
               <div className="flex gap-2">
@@ -120,6 +121,7 @@ export default function Leaderboard() {
                   <button
                     key={option.id}
                     onClick={() => setSortBy(option.id)}
+                    aria-pressed={sortBy === option.id}
                     className={`px-6 py-3 rounded-lg transition-all duration-300 ${
                       sortBy === option.id
                         ? 'bg-[var(--frost)] text-[var(--bg)] shadow-lg'
@@ -192,9 +194,9 @@ export default function Leaderboard() {
 
               {visible.length === 0 && (
                 <div className="text-center py-12 px-6">
-                  <h3 className="text-xl font-semibold mb-2">No contributors found</h3>
+                  <h2 className="text-xl font-semibold mb-2">No contributors found</h2>
                   <p className="text-[var(--muted)] mb-6">
-                    Try a different name or username to find who you're looking for.
+                    Try a different name or username to find who you’re looking for.
                   </p>
                   <button onClick={() => setSearchTerm('')} className="btn-primary">
                     Clear Search
@@ -230,7 +232,7 @@ export default function Leaderboard() {
 
         {/* How Points Work */}
         <div className="mt-16 panel p-8 rounded-2xl">
-          <h3 className="text-2xl font-bold mb-2 text-center">How Points Work</h3>
+          <h2 className="text-2xl font-bold mb-2 text-center">How Points Work</h2>
           <p className="text-[var(--muted)] text-center max-w-2xl mx-auto mb-8">
             Points are awarded for merged pull requests, scaled by issue difficulty. Standings are
             reviewed by mentors and refreshed weekly.
@@ -252,7 +254,7 @@ export default function Leaderboard() {
 
         {/* CTA */}
         <div className="mt-8 panel p-8 md:p-12 rounded-2xl text-center space-y-6">
-          <h3 className="text-2xl md:text-3xl font-bold">Want to See Your Name Here?</h3>
+          <h2 className="text-2xl md:text-3xl font-bold">Want to See Your Name Here?</h2>
           <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto">
             Register as a contributor, pick up an issue, and start shipping. Every merged PR moves
             you up the board.
@@ -262,7 +264,7 @@ export default function Leaderboard() {
               Register Now
             </Link>
             <a
-              href="https://discord.gg/MSTNyRSPYW"
+              href={DISCORD_INVITE}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary inline-flex items-center gap-2"
