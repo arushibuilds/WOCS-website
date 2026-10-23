@@ -40,7 +40,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:block w-full">
+          <div className="hidden xl:block w-full">
             <div className="flex items-baseline justify-evenly flex-nowrap whitespace-nowrap w-full">
                 {navItems.map((item) => (
                   <Link
@@ -58,7 +58,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden lg:flex gap-4 items-center flex-nowrap whitespace-nowrap">
+          <div className="hidden xl:flex gap-4 items-center flex-nowrap whitespace-nowrap">
             <Link
               href="/leaderboard"
               className="btn-primary inline-flex items-center gap-2"
@@ -76,7 +76,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-[var(--text)] hover:text-[var(--frost)] transition-colors duration-200"
@@ -92,7 +92,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div id="mobile-menu" className="lg:hidden">
+        <div id="mobile-menu" className="xl:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 panel border-t border-[rgba(154,215,255,0.12)]">
             {navItems.map((item) => (
               <Link

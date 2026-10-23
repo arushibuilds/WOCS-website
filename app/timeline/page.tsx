@@ -1,12 +1,21 @@
 import TimelineList from '@/components/TimelineList';
+import EventsSection from '@/components/EventsSection';
+import { keyDates } from '@/lib/program';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Timeline',
-  description: 'Key dates for Winter of Code Social: registration, coding period, leaderboard launch and certificates.',
+  description: 'Key dates for Winter of Code Social: registration, project announcements, coding period, leaderboard launch, certificates, and upcoming sessions.',
   alternates: { canonical: '/timeline' },
 };
 
+const importantDates = [
+  { label: 'Registrations', value: keyDates.registration },
+  { label: 'Projects Announced', value: keyDates.projectsLive },
+  { label: 'Coding Period', value: keyDates.codingPeriod },
+  { label: 'Leaderboard Live', value: keyDates.leaderboardLive },
+  { label: 'Certificates & Winners', value: keyDates.certificates },
+];
 
 export default function Timeline() {
   return (
@@ -28,20 +37,19 @@ export default function Timeline() {
         <div className="mt-16 panel p-8 rounded-xl">
           <h2 className="text-2xl font-bold mb-6 text-center">Important Dates</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <div className="font-semibold text-[var(--frost)]">Registration Phase</div>
-              <div className="text-[var(--muted)]">October 1 - December 31, 2026</div>
-            </div>
-            <div className="space-y-2">
-              <div className="font-semibold text-[var(--frost)]">Coding Period</div>
-              <div className="text-[var(--muted)]">November 1, 2026 - January 31, 2027</div>
-            </div>
-            <div className="space-y-2">
-              <div className="font-semibold text-[var(--frost)]">Certificates & Winners</div>
-              <div className="text-[var(--muted)]">February 10, 2027</div>
-            </div>
+            {importantDates.map((item) => (
+              <div key={item.label} className="space-y-2">
+                <div className="font-semibold text-[var(--frost)]">{item.label}</div>
+                <div className="text-[var(--muted)]">{item.value}</div>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
+
+      {/* Upcoming sessions & workshops */}
+      <div className="mt-8">
+        <EventsSection />
       </div>
     </div>
   );

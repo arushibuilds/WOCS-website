@@ -45,8 +45,7 @@ export default function Hero() {
         {/* Event Dates */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-[var(--muted)]">
           <div className="stat-pill">
-            <span className="text-[var(--frost)]">Registration:</span>
-            Oct 1 - Dec 31, 2026
+            <span className="text-[var(--frost)]">Registrations Open</span>
           </div>
           <div className="stat-pill">
             <span className="text-[var(--frost)]">Coding Period:</span>

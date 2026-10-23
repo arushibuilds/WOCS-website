@@ -1,5 +1,9 @@
 import Hero from '@/components/Hero';
+import HowItWorks from '@/components/HowItWorks';
+import EventsSection from '@/components/EventsSection';
+import CommunityImpact from '@/components/CommunityImpact';
 import LogoWall from '@/components/LogoWall';
+import SupportPathway from '@/components/SupportPathway';
 import Testimonials from '@/components/Testimonials';
 import { MessageCircle } from 'lucide-react';
 import { DISCORD_INVITE } from '@/lib/links';
@@ -11,34 +15,14 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Sessions / Workshops - Coming Soon */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="panel rounded-2xl p-8 md:p-12 text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Sessions & Workshops <span className="text-[var(--frost)]">Coming Soon</span>
-            </h2>
-            <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto">
-              We’re preparing an exciting lineup of sessions and workshops featuring industry experts. Stay tuned for announcements about learning opportunities and mentorship from the community.
-            </p>
-            <div className="text-[var(--frost)] font-semibold">
-              Check back soon for session details and registration!
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* What WOCS is + the six-step participant journey */}
+      <HowItWorks />
+
+      {/* Sessions / Workshops (shows "Coming Soon" until events are added in lib/program.ts) */}
+      <EventsSection />
 
       {/* Code Social Impact */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Code Social <span className="text-[var(--frost)]">Impact</span>
-          </h2>
-          <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-            Building community, fostering collaboration, and creating meaningful impact through open source development.
-          </p>
-        </div>
-      </section>
+      <CommunityImpact />
 
       {/* Sponsor Logo Rail */}
       <LogoWall />
@@ -68,6 +52,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Where to get help */}
+      <SupportPathway />
 
       {/* Testimonials from last year */}
       <Testimonials />

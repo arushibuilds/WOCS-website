@@ -5,8 +5,9 @@ export default function Snowfall() {
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mql.matches) return;
+    // With reduced motion the snow is drawn once and stays still, so it is
+    // always visible but never animates for people who opted out of motion.
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const canvas = ref.current!;
     const ctx = canvas.getContext("2d")!;
@@ -21,13 +22,27 @@ export default function Snowfall() {
       c: Math.random() < 0.12 ? "frost" : "white",
     }));
 
-    const resize = () => { 
-      W = canvas.width = window.innerWidth; 
-      H = canvas.height = window.innerHeight; 
+    const resize = () => {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+      if (reduceMotion) paint();
+    };
+
+    const paint = () => {
+      ctx.clearRect(0, 0, W, H);
+      for (const f of flakes) {
+        ctx.beginPath();
+        ctx.arc(f.x * W, f.y * H, f.r, 0, Math.PI * 2);
+        ctx.fillStyle = f.c === "white" ? "rgba(255,255,255,0.9)" : "rgba(154,215,255,0.95)";
+        ctx.fill();
+      }
     };
     
-    resize(); 
+    resize();
     window.addEventListener("resize", resize);
+    if (reduceMotion) {
+      return () => window.removeEventListener("resize", resize);
+    }
 
     const draw = () => {
       ctx.clearRect(0, 0, W, H);

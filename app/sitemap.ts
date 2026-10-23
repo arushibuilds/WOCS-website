@@ -9,6 +9,7 @@ const routes = [
   '/projects',
   '/resources',
   '/get-involved',
+  '/guidelines',
   '/sponsors',
   '/leaderboard',
   '/faqs',

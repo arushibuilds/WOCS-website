@@ -1,8 +1,9 @@
 "use client";
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { DISCORD_INVITE } from '@/lib/links';
-import { Search, Trophy, ExternalLink } from 'lucide-react';
+import { CONTACT_EMAIL, DISCORD_INVITE } from '@/lib/links';
+import { getLevelColor, keyDates, pointsSystem } from '@/lib/program';
+import { Search, Trophy, ExternalLink, BarChart3, GitMerge, RefreshCw, Flag, CalendarDays } from 'lucide-react';
 
 interface Contributor {
   username: string;
@@ -34,20 +35,28 @@ const sampleContributors: Contributor[] = [
 
 const contributors: Contributor[] = SHOW_SAMPLE_DATA ? sampleContributors : [];
 
-const pointsSystem = [
-  { level: 'Beginner', points: '2 pts', description: 'Docs, typo fixes, and good-first-issue PRs' },
-  { level: 'Intermediate', points: '5 pts', description: 'Bug fixes, tests, and small feature work' },
-  { level: 'Advanced', points: '11 pts', description: 'Major features, refactors, and architecture work' },
+const aboutRankings = [
+  {
+    icon: BarChart3,
+    title: 'What the rankings show',
+    body: 'Contributors ranked by total points earned from merged pull requests to participating WOCS 2026 projects. Rank always follows points.',
+  },
+  {
+    icon: GitMerge,
+    title: 'Which contributions count',
+    body: `Merged pull requests to participating projects during the coding period (${keyDates.codingPeriod}). Unmerged or closed PRs don’t earn points.`,
+  },
+  {
+    icon: RefreshCw,
+    title: 'When rankings update',
+    body: `The leaderboard goes live on ${keyDates.leaderboardLive}. After that, your points and rank update within about 10–15 minutes after your pull request is merged.`,
+  },
+  {
+    icon: Flag,
+    title: 'Reporting inaccuracies',
+    body: 'If a merged PR is missing or your points look wrong, contact the organizing team with your GitHub username and links to the PRs.',
+  },
 ];
-
-const getLevelColor = (level: string) => {
-  switch (level) {
-    case 'Beginner': return 'text-green-400 bg-green-400/20';
-    case 'Intermediate': return 'text-yellow-400 bg-yellow-400/20';
-    case 'Advanced': return 'text-red-400 bg-red-400/20';
-    default: return 'text-[var(--muted)] bg-[var(--muted)]/20';
-  }
-};
 
 const getInitials = (name: string) =>
   name
@@ -90,7 +99,7 @@ export default function Leaderboard() {
             Contributor <span className="text-[var(--frost)]">Leaderboard</span>
           </h1>
           <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-            Every merged pull request earns points. Track how the community is working together during Winter of Code Social.
+            Every merged pull request earns points. Track how the community is working together during Winter of Code Social 2026.
           </p>
         </div>
 
@@ -215,11 +224,11 @@ export default function Leaderboard() {
               </h2>
               <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
                 The leaderboard will be available on{' '}
-                <strong>November 5, 2026</strong>. Register early, find a project, and get your
+                <strong>{keyDates.leaderboardLive}</strong>. Register early, find a project, and get your
                 first pull request ready.
               </p>
-              <p className="text-lg text-[var(--frost)] font-semibold">
-                📅 Live from November 5, 2026
+              <p className="text-lg text-[var(--frost)] font-semibold inline-flex items-center gap-2">
+                <CalendarDays size={20} aria-hidden="true" /> Live from {keyDates.leaderboardLive}
               </p>
               <div className="pt-4">
                 <Link href="/projects" className="btn-primary inline-flex items-center gap-2">
@@ -230,12 +239,42 @@ export default function Leaderboard() {
           </div>
         )}
 
+        {/* About the rankings */}
+        <div className="mt-16 panel p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold mb-8 text-center">How the Leaderboard Works</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {aboutRankings.map((item) => (
+              <div key={item.title} className="space-y-2">
+                <div className="flex items-center gap-3">
+                  <item.icon size={20} className="text-[var(--frost)]" aria-hidden="true" />
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                </div>
+                <p className="text-[var(--muted)]">{item.body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-[var(--muted)] text-center mt-8">
+            Full rules are in the{' '}
+            <Link href="/guidelines#leaderboard-rules" className="text-[var(--frost)] hover:underline">
+              contribution &amp; leaderboard guidelines
+            </Link>
+            . Found an error? Report it on{' '}
+            <a href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer" className="text-[var(--frost)] hover:underline">
+              Discord
+            </a>{' '}
+            or email{' '}
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[var(--frost)] hover:underline">
+              {CONTACT_EMAIL}
+            </a>{' '}
+            with your GitHub username and PR links.
+          </p>
+        </div>
+
         {/* How Points Work */}
         <div className="mt-16 panel p-8 rounded-2xl">
           <h2 className="text-2xl font-bold mb-2 text-center">How Points Work</h2>
           <p className="text-[var(--muted)] text-center max-w-2xl mx-auto mb-8">
-            Points are awarded for merged pull requests, scaled by issue difficulty. Standings are
-            reviewed by mentors and refreshed weekly.
+            Points are awarded for merged pull requests, scaled by issue difficulty.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {pointsSystem.map((tier) => (

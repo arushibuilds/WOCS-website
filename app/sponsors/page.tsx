@@ -1,4 +1,4 @@
-import { Users, Building, Heart, Star, Check } from 'lucide-react';
+import { Users, Building, Heart, Star, Check, Cloud, Wrench, Gift, BookOpen, Mail, FileText } from 'lucide-react';
 import { CONTACT_EMAIL, FORM_COMMUNITY_PARTNER } from '@/lib/links';
 import type { Metadata } from 'next';
 
@@ -40,22 +40,22 @@ const inKindSponsors = [
   {
     type: 'Cloud Credits',
     description: 'AWS, GCP, Azure credits for project hosting',
-    icon: '☁️'
+    icon: Cloud
   },
   {
     type: 'Development Tools',
     description: 'IDE licenses, monitoring tools, CI/CD platforms',
-    icon: '🛠️'
+    icon: Wrench
   },
   {
     type: 'Swag & Prizes',
     description: 'T-shirts, stickers, books, hardware for winners',
-    icon: '🎁'
+    icon: Gift
   },
   {
     type: 'Learning Resources',
     description: 'Course subscriptions, certification vouchers',
-    icon: '📚'
+    icon: BookOpen
   }
 ];
 
@@ -106,10 +106,10 @@ export default function Sponsors() {
             <p className="text-lg font-semibold mb-2">We welcome <span className="text-[var(--frost)]">In-Kind Sponsors</span>, <span className="text-[var(--frost)]">Monetary Sponsors</span>, and <span className="text-[var(--frost)]">Community Partners</span> to support Winter of Code Social.</p>
             <p className="mb-4 text-[var(--muted)]">Your support helps us empower thousands of contributors worldwide.</p>
             <div className="text-left md:text-center space-y-2">
-              <div><span aria-hidden="true">👉</span> <span className="font-medium">Interested in sponsoring?</span></div>
-              <div><span aria-hidden="true">📩</span> Reach out directly at <a href={`mailto:${CONTACT_EMAIL}`} className="underline text-[var(--frost)]">{CONTACT_EMAIL}</a></div>
-              <div><span aria-hidden="true">👉</span> <span className="font-medium">Want to collaborate as a community partner?</span></div>
-              <div><span aria-hidden="true">📝</span> Fill out our <a href={FORM_COMMUNITY_PARTNER} target="_blank" rel="noopener noreferrer" className="underline text-[var(--frost)]">Community Partner Form</a> to get started.</div>
+              <div className="font-medium">Interested in sponsoring?</div>
+              <div className="flex md:justify-center items-center gap-2"><Mail size={16} className="text-[var(--frost)] flex-shrink-0" aria-hidden="true" /><span>Reach out directly at <a href={`mailto:${CONTACT_EMAIL}`} className="underline text-[var(--frost)]">{CONTACT_EMAIL}</a></span></div>
+              <div className="font-medium pt-2">Want to collaborate as a community partner?</div>
+              <div className="flex md:justify-center items-center gap-2"><FileText size={16} className="text-[var(--frost)] flex-shrink-0" aria-hidden="true" /><span>Fill out our <a href={FORM_COMMUNITY_PARTNER} target="_blank" rel="noopener noreferrer" className="underline text-[var(--frost)]">Community Partner Form</a> to get started.</span></div>
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function Sponsors() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {inKindSponsors.map((sponsor, index) => (
               <div key={index} className="panel p-6 rounded-lg text-center">
-                <div className="text-4xl mb-4" aria-hidden="true">{sponsor.icon}</div>
+                <sponsor.icon size={36} className="text-[var(--frost)] mb-4" aria-hidden="true" />
                 <h3 className="font-semibold mb-2">{sponsor.type}</h3>
                 <p className="text-sm text-[var(--muted)]">{sponsor.description}</p>
               </div>

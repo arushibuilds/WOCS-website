@@ -1,55 +1,25 @@
 "use client";
 import { useEffect, useState } from 'react';
-import { Calendar, Users, Code, Award, Trophy } from 'lucide-react';
+import { Calendar, Users, Code, Award, Trophy, FolderOpen } from 'lucide-react';
+import { milestones, TBA, type Milestone } from '@/lib/program';
 
-const timelineEvents = [
-  {
-    date: 'October 1, 2026',
-    start: '2026-10-01',
-    title: 'Registration Opens',
-    description: 'Contributors, mentors, and project admins can start registering.',
-    icon: Users,
-  },
-  {
-    date: 'November 1, 2026',
-    start: '2026-11-01',
-    title: 'Coding Period Begins',
-    description: 'The official coding period starts and projects go live. Let the collaboration begin!',
-    icon: Code,
-  },
-  {
-    date: 'November 5, 2026',
-    start: '2026-11-05',
-    title: 'Leaderboard Goes Live',
-    description: 'Track contributions and see how you rank across the community.',
-    icon: Trophy,
-  },
-  {
-    date: 'January 31, 2027',
-    start: '2027-01-31',
-    title: 'Coding Period Ends',
-    description: 'Final submissions and project evaluations',
-    icon: Calendar,
-  },
-  {
-    date: 'February 10, 2027',
-    start: '2027-02-10',
-    title: 'Certificates & Winners Announced',
-    description: 'Recognition and certificates distributed to participants, and top contributors announced',
-    icon: Award,
-  },
-];
+const icons = { users: Users, code: Code, trophy: Trophy, calendar: Calendar, award: Award, folder: FolderOpen };
+
+// Undated (to-be-announced) milestones never affect the status of the others.
+const dated = milestones.filter((m): m is Milestone & { start: string } => m.start !== null);
 
 type Status = 'completed' | 'active' | 'upcoming';
 
 // An event is "completed" once the next one has started, "active" once it has
 // started itself, and "upcoming" before that.
-function getStatus(index: number, now: number): Status {
-  const startsAt = (i: number) => new Date(timelineEvents[i].start + 'T00:00:00').getTime();
+function getStatus(milestone: Milestone, now: number): Status {
+  const index = dated.findIndex((m) => m === milestone);
+  if (index === -1) return 'upcoming';
+  const startsAt = (i: number) => new Date(dated[i].start + 'T00:00:00').getTime();
   if (now < startsAt(index)) return 'upcoming';
-  const next = timelineEvents[index + 1];
+  const next = dated[index + 1];
   if (next && now >= startsAt(index + 1)) return 'completed';
-  return index === timelineEvents.length - 1 ? 'completed' : 'active';
+  return index === dated.length - 1 ? 'completed' : 'active';
 }
 
 export default function TimelineList() {
@@ -57,9 +27,10 @@ export default function TimelineList() {
   // statically exported and would otherwise show the status from build time.
   const [now, setNow] = useState<number | null>(null);
   useEffect(() => setNow(Date.now()), []);
-  const events = timelineEvents.map((event, index) => ({
+  const events = milestones.map((event) => ({
     ...event,
-    status: now === null ? 'upcoming' : getStatus(index, now),
+    Icon: icons[event.icon],
+    status: now === null ? 'upcoming' : getStatus(event, now),
   }));
 
   return (
@@ -76,7 +47,7 @@ export default function TimelineList() {
                   event.status === 'active' ? 'bg-[var(--panel)] border-2 border-[var(--frost)] text-[var(--frost)]' :
                   'bg-[var(--panel)] border border-[var(--muted)] text-[var(--muted)]'
                 }`}>
-                  <event.icon size={24} aria-hidden="true" />
+                  <event.Icon size={24} aria-hidden="true" />
                 </div>
 
                 {/* Content */}
@@ -90,7 +61,7 @@ export default function TimelineList() {
                       event.status === 'active' ? 'bg-[var(--frost)]/20 text-[var(--frost)]' :
                       'bg-[var(--muted)]/20 text-[var(--muted)]'
                     }`}>
-                      {event.date}
+                      {event.date ?? TBA}
                     </div>
                   </div>
                   <p className="text-[var(--muted)]">

@@ -68,6 +68,7 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
+          {/* Site-wide snow effect: part of the WOCS brand. Keep it on every page; do not remove. */}
           <Snowfall />
           <Navbar />
           <main id="main-content" tabIndex={-1} className="relative z-10 outline-none">

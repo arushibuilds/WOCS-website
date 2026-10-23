@@ -1,11 +1,12 @@
 import Link from 'next/link';
-import { MessageCircle, Mail } from 'lucide-react';
+import { MessageCircle, Mail, Snowflake, ArrowRight } from 'lucide-react';
 import Image from "next/image";
-import { CODE_SOCIAL_URL, CONTACT_EMAIL, DISCORD_INVITE } from '@/lib/links';
+import { CODE_SOCIAL_URL, CONTACT_EMAIL, DISCORD_INVITE, FORM_TEAM } from '@/lib/links';
 
 export default function Footer() {
   const resources = [
     { name: 'Resources', href: '/resources' },
+    { name: 'Guidelines', href: '/guidelines' },
     { name: 'FAQs', href: '/faqs' },
     { name: 'Code of Conduct', href: '/code-of-conduct' },
   { name: 'Privacy Policy', href: '/privacy-policy' },
@@ -71,6 +72,14 @@ export default function Footer() {
                 Email Us
               </a>
             </div>
+            <a
+              href={FORM_TEAM}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-sm text-[var(--muted)] hover:text-[var(--frost)] transition-colors duration-200"
+            >
+              Want to help organize WOCS? Join the team<ArrowRight size={14} className="inline-block ml-1 -mt-0.5" aria-hidden="true" />
+            </a>
           </div>
         </div>
 
@@ -84,7 +93,7 @@ export default function Footer() {
             Join Code Social
           </a>
           <p className="text-[var(--muted)]">
-            &copy; {new Date().getFullYear()} Code Social Community. Made with ❄️ for the community.
+            &copy; {new Date().getFullYear()} Code Social Community. Made with <Snowflake size={16} className="inline-block -mt-0.5 text-[var(--frost)]" aria-label="snow" /> for the community.
           </p>
         </div>
       </div>
