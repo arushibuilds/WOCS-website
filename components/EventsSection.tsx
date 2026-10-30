@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { CalendarDays, Clock, MapPin, Ticket, PlayCircle } from 'lucide-react';
 import { events, type ProgramEvent } from '@/lib/program';
 
+const CALENDAR_EMBED_URL =
+  'https://calendar.google.com/calendar/embed?src=9365dc46515ee05fecadd380002a268dc2ed3e53b18cd761ddd514516c7e0d0c%40group.calendar.google.com&ctz=America%2FChicago';
+
 function EventCard({ event, past }: { event: ProgramEvent; past: boolean }) {
   return (
     <div className={`panel rounded-2xl p-6 md:p-10 grid gap-8 items-center ${event.poster ? 'md:grid-cols-2' : ''}`}>
@@ -114,15 +117,17 @@ export default function EventsSection() {
     <section id="sessions" className="py-16 px-4 sm:px-6 lg:px-8 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
         {events.length === 0 ? (
-          <div className="panel rounded-2xl p-8 md:p-12 text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Sessions & Workshops <span className="text-[var(--frost)]">Coming Soon</span>
+          <div className="panel rounded-2xl p-4 md:p-8 space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center">
+              Sessions & <span className="text-[var(--frost)]">Workshops</span>
             </h2>
-            <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto">
-              We’re preparing an exciting lineup of sessions and workshops featuring industry experts. Stay tuned for announcements about learning opportunities and mentorship from the community.
-            </p>
-            <div className="text-[var(--frost)] font-semibold">
-              Check back soon for session details and registration!
+            <div className="rounded-xl overflow-hidden bg-white">
+              <iframe
+                src={CALENDAR_EMBED_URL}
+                title="WOCS sessions and workshops calendar"
+                className="w-full h-[600px] border-0"
+                loading="lazy"
+              />
             </div>
           </div>
         ) : (
