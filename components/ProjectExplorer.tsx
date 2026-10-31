@@ -135,7 +135,7 @@ export default function ProjectExplorer({ projects }: { projects: Project[] }) {
               </span>
             </div>
 
-            <p className="text-[var(--muted)] mb-4 line-clamp-3">{project.description}</p>
+            <p className="text-[var(--muted)] mb-4">{project.description}</p>
 
             <div className="flex flex-wrap gap-1 mb-4">
               {project.tags.map((tag) => (
@@ -149,7 +149,6 @@ export default function ProjectExplorer({ projects }: { projects: Project[] }) {
             </div>
 
             <div className="space-y-1 mb-4 flex-1">
-              <People label="Maintainers" people={project.maintainers} />
               <People label="Mentors" people={project.mentors} />
             </div>
 
