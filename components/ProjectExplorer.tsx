@@ -1,6 +1,6 @@
 'use client';
 import { useMemo, useState } from 'react';
-import { Search, ExternalLink, BookOpen, Users } from 'lucide-react';
+import { Search, ExternalLink, BookOpen } from 'lucide-react';
 import type { Project } from '@/lib/projects';
 
 const DIFFICULTIES = ['All', 'Beginner', 'Intermediate', 'Advanced'] as const;
@@ -13,32 +13,6 @@ const getDifficultyColor = (difficulty: string) => {
     default: return 'text-[var(--muted)] bg-[var(--muted)]/20';
   }
 };
-
-const githubUrl = (handle: string) => `https://github.com/${handle}`;
-
-function People({ label, people }: { label: string; people?: { name: string; github?: string }[] }) {
-  if (!people || people.length === 0) return null;
-  return (
-    <div className="flex items-start gap-2 text-sm text-[var(--muted)]">
-      <Users size={14} className="text-[var(--frost)] mt-0.5 flex-shrink-0" aria-hidden="true" />
-      <span>
-        {label}:{' '}
-        {people.map((person, i) => (
-          <span key={person.name}>
-            {i > 0 && ', '}
-            {person.github ? (
-              <a href={githubUrl(person.github)} target="_blank" rel="noopener noreferrer" className="text-[var(--frost)] hover:underline">
-                {person.name}
-              </a>
-            ) : (
-              person.name
-            )}
-          </span>
-        ))}
-      </span>
-    </div>
-  );
-}
 
 export default function ProjectExplorer({ projects }: { projects: Project[] }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -148,9 +122,7 @@ export default function ProjectExplorer({ projects }: { projects: Project[] }) {
               ))}
             </div>
 
-            <div className="space-y-1 mb-4 flex-1">
-              <People label="Mentors" people={project.mentors} />
-            </div>
+            <div className="mb-4 flex-1" />
 
             <div className="flex flex-col gap-2">
               <a
