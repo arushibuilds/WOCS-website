@@ -18,5 +18,8 @@ export const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'codesocialcommunity@gmail.com';
 export const CODE_SOCIAL_URL = 'https://codesocial.tech';
 
+export const LEADERBOARD_API =
+  process.env.NEXT_PUBLIC_LEADERBOARD_API || 'https://web-production-9ca3e.up.railway.app/leaderboard/4';
+
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://woc.codesocial.tech').replace(/\/$/, '');
 export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-DS7XFCSFE5';

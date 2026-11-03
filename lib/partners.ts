@@ -33,6 +33,14 @@ export const sponsors: Organization[] = [
     logo: '/SuperPlane-sign-black-on-orange.png',
     description: 'Open source factory for one-shot engineering.',
   },
+  {
+    name: 'Neon',
+    role: 'Open Source Partner',
+    url: 'https://neon.com/',
+    logo: '/neon-logo-dark-color.png',
+    logoWide: true,
+    description: 'Serverless Postgres that scales to zero, with instant branching for every developer.',
+  },
 ];
 
 export const communityPartners: Organization[] = [

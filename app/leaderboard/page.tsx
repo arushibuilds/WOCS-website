@@ -1,39 +1,20 @@
 "use client";
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { CONTACT_EMAIL, DISCORD_INVITE } from '@/lib/links';
+import { CONTACT_EMAIL, DISCORD_INVITE, LEADERBOARD_API } from '@/lib/links';
 import { getLevelColor, keyDates, pointsSystem } from '@/lib/program';
-import { Search, Trophy, ExternalLink, BarChart3, GitMerge, RefreshCw, Flag, CalendarDays } from 'lucide-react';
+import { Search, Trophy, ExternalLink, BarChart3, GitMerge, RefreshCw, Flag } from 'lucide-react';
 
 interface Contributor {
   username: string;
-  name: string;
-  projects: number;
-  prs: number;
   points: number;
 }
 
-/**
- * The full leaderboard UI below is kept intact but hidden until the real
- * standings are connected. Flip this to true (and swap `sampleContributors`
- * for the live data) when the leaderboard goes live on November 5, 2026.
- */
-const SHOW_SAMPLE_DATA = false;
-
-const sampleContributors: Contributor[] = [
-  { username: 'contributor-one', name: 'Contributor One', projects: 4, prs: 21, points: 460 },
-  { username: 'contributor-two', name: 'Contributor Two', projects: 3, prs: 18, points: 425 },
-  { username: 'contributor-three', name: 'Contributor Three', projects: 3, prs: 16, points: 390 },
-  { username: 'contributor-four', name: 'Contributor Four', projects: 2, prs: 14, points: 320 },
-  { username: 'contributor-five', name: 'Contributor Five', projects: 3, prs: 12, points: 295 },
-  { username: 'contributor-six', name: 'Contributor Six', projects: 2, prs: 11, points: 260 },
-  { username: 'contributor-seven', name: 'Contributor Seven', projects: 2, prs: 9, points: 225 },
-  { username: 'contributor-eight', name: 'Contributor Eight', projects: 1, prs: 8, points: 180 },
-  { username: 'contributor-nine', name: 'Contributor Nine', projects: 1, prs: 6, points: 145 },
-  { username: 'contributor-ten', name: 'Contributor Ten', projects: 1, prs: 5, points: 110 },
-];
-
-const contributors: Contributor[] = SHOW_SAMPLE_DATA ? sampleContributors : [];
+/** Shape returned by the leaderboard API. */
+interface ApiEntry {
+  contributor: string;
+  points: number;
+}
 
 const aboutRankings = [
   {
@@ -49,7 +30,7 @@ const aboutRankings = [
   {
     icon: RefreshCw,
     title: 'When rankings update',
-    body: `The leaderboard goes live on ${keyDates.leaderboardLive}. After that, your points and rank update within about 10–15 minutes after your pull request is merged.`,
+    body: 'Your points and rank update within about 10–15 minutes after your pull request is merged. Refresh the page to see the latest standings.',
   },
   {
     icon: Flag,
@@ -58,37 +39,44 @@ const aboutRankings = [
   },
 ];
 
-const getInitials = (name: string) =>
-  name
-    .split(' ')
-    .map((part) => part[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase();
-
 export default function Leaderboard() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortBy, setSortBy] = useState<'points' | 'prs'>('points');
+  const [contributors, setContributors] = useState<Contributor[]>([]);
+  const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
 
-  // Official rank always follows points, even when the table is sorted by PRs.
-  const ranked = useMemo(
-    () =>
-      [...contributors]
-        .sort((a, b) => b.points - a.points)
-        .map((contributor, index) => ({ ...contributor, rank: index + 1 })),
-    []
-  );
+  useEffect(() => {
+    let cancelled = false;
+    fetch(LEADERBOARD_API)
+      .then((res) => {
+        if (!res.ok) throw new Error(`Leaderboard request failed: ${res.status}`);
+        return res.json() as Promise<ApiEntry[]>;
+      })
+      .then((data) => {
+        if (cancelled) return;
+        setContributors(data.map((entry) => ({ username: entry.contributor, points: entry.points })));
+        setStatus('ready');
+      })
+      .catch(() => {
+        if (!cancelled) setStatus('error');
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Contributors with equal points share a rank (1, 2, 2, 4).
+  const ranked = useMemo(() => {
+    const sorted = [...contributors].sort((a, b) => b.points - a.points);
+    return sorted.map((contributor) => ({
+      ...contributor,
+      rank: sorted.findIndex((c) => c.points === contributor.points) + 1,
+    }));
+  }, [contributors]);
 
   const visible = useMemo(() => {
     const term = searchTerm.toLowerCase();
-    return ranked
-      .filter(
-        (contributor) =>
-          contributor.name.toLowerCase().includes(term) ||
-          contributor.username.toLowerCase().includes(term)
-      )
-      .sort((a, b) => (sortBy === 'points' ? b.points - a.points : b.prs - a.prs));
-  }, [ranked, searchTerm, sortBy]);
+    return ranked.filter((contributor) => contributor.username.toLowerCase().includes(term));
+  }, [ranked, searchTerm]);
 
   return (
     <div className="min-h-screen pt-20 pb-16">
@@ -103,11 +91,20 @@ export default function Leaderboard() {
           </p>
         </div>
 
-        {ranked.length > 0 ? (
+        {status === 'loading' ? (
+          <div className="flex justify-center py-24 text-[var(--muted)]" role="status">
+            Loading leaderboard…
+          </div>
+        ) : status === 'error' ? (
+          <div className="panel rounded-2xl text-center py-16 px-6">
+            <h2 className="text-xl font-semibold mb-2">Couldn’t load the leaderboard</h2>
+            <p className="text-[var(--muted)]">Please refresh the page or try again in a few minutes.</p>
+          </div>
+        ) : ranked.length > 0 ? (
           <>
-            {/* Search and Sort */}
-            <div className="flex flex-col md:flex-row gap-4 mb-8">
-              <div className="relative flex-1">
+            {/* Search */}
+            <div className="mb-8">
+              <div className="relative">
                 <Search
                   size={18}
                   className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--muted)]"
@@ -122,25 +119,6 @@ export default function Leaderboard() {
                              focus:outline-none focus:border-[var(--frost)] focus:shadow-[0_0_20px_rgba(154,215,255,0.15)] transition-all duration-300"
                 />
               </div>
-              <div className="flex gap-2">
-                {([
-                  { id: 'points', label: 'Points' },
-                  { id: 'prs', label: 'Merged PRs' },
-                ] as const).map((option) => (
-                  <button
-                    key={option.id}
-                    onClick={() => setSortBy(option.id)}
-                    aria-pressed={sortBy === option.id}
-                    className={`px-6 py-3 rounded-lg transition-all duration-300 ${
-                      sortBy === option.id
-                        ? 'bg-[var(--frost)] text-[var(--bg)] shadow-lg'
-                        : 'panel hover:frost-glow'
-                    }`}
-                  >
-                    {option.label}
-                  </button>
-                ))}
-              </div>
             </div>
 
             {/* Rankings */}
@@ -148,16 +126,14 @@ export default function Leaderboard() {
               {/* Column headers */}
               <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-4 border-b border-[rgba(154,215,255,0.12)] text-sm font-semibold text-[var(--muted)]">
                 <div className="col-span-1">Rank</div>
-                <div className="col-span-5">Contributor</div>
-                <div className="col-span-2 text-center">Projects</div>
-                <div className="col-span-2 text-center">Merged PRs</div>
-                <div className="col-span-2 text-right">Points</div>
+                <div className="col-span-8">Contributor</div>
+                <div className="col-span-3 text-right">Points</div>
               </div>
 
               {visible.map((contributor) => (
                 <div
                   key={contributor.username}
-                  className="grid grid-cols-2 md:grid-cols-12 gap-4 px-6 py-4 items-center
+                  className="grid grid-cols-[auto_1fr_auto] md:grid-cols-12 gap-4 px-6 py-4 items-center
                              border-b border-[rgba(154,215,255,0.12)] last:border-b-0
                              hover:bg-[var(--bg)] transition-colors duration-200"
                 >
@@ -173,29 +149,26 @@ export default function Leaderboard() {
                     </span>
                   </div>
 
-                  <div className="col-span-2 md:col-span-5 flex items-center gap-3 order-first md:order-none">
-                    <div className="w-10 h-10 rounded-full frost-border bg-[var(--bg)] flex items-center justify-center text-sm font-semibold text-[var(--frost)] flex-shrink-0">
-                      {getInitials(contributor.name)}
-                    </div>
-                    <div className="min-w-0">
-                      <div className="font-semibold truncate">{contributor.name}</div>
-                      <div className="text-sm text-[var(--muted)] truncate">
-                        @{contributor.username}
-                      </div>
-                    </div>
+                  <div className="md:col-span-8 flex items-center gap-3 min-w-0">
+                    <img
+                      src={`https://github.com/${contributor.username}.png?size=80`}
+                      alt=""
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      className="w-10 h-10 rounded-full frost-border bg-[var(--bg)] flex-shrink-0"
+                    />
+                    <a
+                      href={`https://github.com/${contributor.username}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold truncate hover:text-[var(--frost)] hover:underline"
+                    >
+                      @{contributor.username}
+                    </a>
                   </div>
 
-                  <div className="md:col-span-2 md:text-center text-[var(--muted)]">
-                    <span className="md:hidden text-sm">Projects: </span>
-                    {contributor.projects}
-                  </div>
-
-                  <div className="md:col-span-2 md:text-center text-[var(--muted)]">
-                    <span className="md:hidden text-sm">PRs: </span>
-                    {contributor.prs}
-                  </div>
-
-                  <div className="col-span-2 md:col-span-2 md:text-right font-bold text-[var(--frost)]">
+                  <div className="md:col-span-3 text-right font-bold text-[var(--frost)] whitespace-nowrap">
                     {contributor.points} pts
                   </div>
                 </div>
@@ -215,20 +188,16 @@ export default function Leaderboard() {
             </div>
           </>
         ) : (
-          /* Coming Soon */
+          /* No merged PRs yet */
           <div className="flex flex-col items-center justify-center py-24">
             <div className="text-center space-y-6">
               <Trophy size={64} className="mx-auto text-[var(--frost)]" />
               <h2 className="text-4xl md:text-5xl font-bold">
-                Leaderboard Coming <span className="text-[var(--frost)]">Soon</span>
+                No Points <span className="text-[var(--frost)]">Yet</span>
               </h2>
               <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-                The leaderboard will be available on{' '}
-                <strong>{keyDates.leaderboardLive}</strong>. Register early, find a project, and get your
-                first pull request ready.
-              </p>
-              <p className="text-lg text-[var(--frost)] font-semibold inline-flex items-center gap-2">
-                <CalendarDays size={20} aria-hidden="true" /> Live from {keyDates.leaderboardLive}
+                The leaderboard is live. Rankings appear here as soon as the first pull requests are
+                merged. Find a project and get yours in.
               </p>
               <div className="pt-4">
                 <Link href="/projects" className="btn-primary inline-flex items-center gap-2">

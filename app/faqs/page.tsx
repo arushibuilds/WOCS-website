@@ -75,7 +75,7 @@ const faqGroups: { title: string; faqs: { q: string; a: React.ReactNode }[] }[] 
       },
       {
         q: 'How will the leaderboard work?',
-        a: <>Points for contributions/PRs. Your points and rank update within about 10–15 minutes after your pull request is merged. The <Link href="/leaderboard" className={inline}>leaderboard</Link> goes live on {keyDates.leaderboardLive}.</>
+        a: <>Points for contributions/PRs. Your points and rank update within about 10–15 minutes after your pull request is merged. The <Link href="/leaderboard" className={inline}>leaderboard</Link> is live now.</>
       },
       {
         q: 'What are the rewards?',

@@ -36,8 +36,8 @@ export const milestones: Milestone[] = [
   },
   {
     title: 'Leaderboard Goes Live',
-    date: 'November 5, 2026',
-    start: '2026-11-05',
+    date: 'November 1, 2026',
+    start: '2026-11-01',
     description: 'Track contributions and see how you rank across the community.',
     icon: 'trophy',
   },
@@ -62,7 +62,7 @@ export const keyDates = {
   registration: 'Open',
   codingPeriod: 'November 1, 2026 – January 31, 2027',
   projectsLive: 'November 1, 2026',
-  leaderboardLive: 'November 5, 2026',
+  leaderboardLive: 'November 1, 2026',
   certificates: 'February 10, 2027',
   projectSubmissionDeadline: null as string | null, // TODO(organizers)
 };

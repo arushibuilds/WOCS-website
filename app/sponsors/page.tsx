@@ -1,5 +1,7 @@
 import { Users, Building, Heart, Star, Check, Cloud, Wrench, Gift, BookOpen, Mail, FileText } from 'lucide-react';
 import { CONTACT_EMAIL, FORM_COMMUNITY_PARTNER } from '@/lib/links';
+import { communityPartners, sponsors } from '@/lib/partners';
+import { Group } from '@/components/LogoWall';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -59,9 +61,6 @@ const inKindSponsors = [
   }
 ];
 
-// TODO: add 2026 sponsors and community partners here once secured, then render
-// them above "Why Sponsor". 2025 logos are still in /public (ccl.png, sp1-sp10).
-
 export default function Sponsors() {
   return (
     <div className="min-h-screen pt-20 pb-16">
@@ -75,6 +74,14 @@ export default function Sponsors() {
             Partner with us to support the next generation of open source developers and showcase your commitment to innovation.
           </p>
         </div>
+
+        {/* Current sponsors and community partners (same cards as the homepage) */}
+        {(sponsors.length > 0 || communityPartners.length > 0) && (
+          <div className="mb-20 text-center space-y-12">
+            <Group title="Sponsors" orgs={sponsors} />
+            <Group title="Community Partners" orgs={communityPartners} />
+          </div>
+        )}
 
         {/* Sponsor Tiers */}
         <div className="mb-20">

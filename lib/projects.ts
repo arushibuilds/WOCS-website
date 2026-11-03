@@ -117,4 +117,13 @@ export const projects: Project[] = [
     repository: 'https://github.com/Code-Social/linkedin-copilot-main',
     maintainers: [{ name: 'Code Social', github: 'Code-Social' }],
   },
+  {
+    id: '11',
+    title: 'Kinetic',
+    description: 'Funding that rewards real engineering. Score open-source work by its complexity and impact, not green squares.',
+    tags: ['JavaScript', 'Web', 'Blockchain'],
+    difficulty: 'Advanced',
+    repository: 'https://github.com/namish18/Kinetic',
+    maintainers: [{ name: 'Namish Kumar Sahu', github: 'namish07' }],
+  },
 ];

@@ -59,7 +59,7 @@ function OrganizationCard({ org }: { org: Organization }) {
   );
 }
 
-function Group({ title, orgs }: { title: string; orgs: Organization[] }) {
+export function Group({ title, orgs }: { title: string; orgs: Organization[] }) {
   if (orgs.length === 0) return null;
   return (
     <div className="space-y-6">

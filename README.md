@@ -22,7 +22,7 @@ The aim is to teach how open source actually works: reading an unfamiliar codeba
 | ---------------------------------- | ---------------------------- |
 | Registrations open                 | Open now                     |
 | Projects announced, coding begins  | November 1, 2026             |
-| Leaderboard goes live              | November 5, 2026             |
+| Leaderboard goes live              | November 1, 2026             |
 | Coding period ends                 | January 31, 2027             |
 | Certificates and winners announced | February 10, 2027            |
 
