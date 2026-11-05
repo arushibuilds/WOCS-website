@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { CODE_SOCIAL_URL, DISCORD_INVITE } from '@/lib/links';
-import { BookOpen, Linkedin, Users, ExternalLink, ArrowRight } from 'lucide-react';
+import { BUILDERS_TRIBE_OPPORTUNITIES, CODE_SOCIAL_URL, DISCORD_INVITE, FORM_TEAM } from '@/lib/links';
+import { BookOpen, Briefcase, Linkedin, Users, ExternalLink, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLevelColor } from '@/lib/program';
 
@@ -193,7 +193,28 @@ export default function Resources() {
         ))}
       </div>
 
-
+      {/* Internships */}
+      <section id="internships" className="mt-8 panel rounded-xl p-6 md:p-8 shadow-md scroll-mt-24">
+        <div className="flex flex-col md:flex-row md:items-center gap-6">
+          <div className="flex-1 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
+              <Briefcase size={32} className="text-[var(--frost)]" aria-hidden="true" />
+              <h2 className="text-xl font-semibold">Internships</h2>
+            </div>
+            <p className="text-[var(--muted)]">
+              Browse internship and job openings from our community partner Builders Tribe, or join the Code Social team and help run programs like WOCS.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row md:flex-col gap-3 md:w-64">
+            <a href={BUILDERS_TRIBE_OPPORTUNITIES} target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">
+              Builders Tribe Opportunities
+            </a>
+            <a href={FORM_TEAM} target="_blank" rel="noopener noreferrer" className="btn-secondary w-full text-center">
+              Join the Code Social Team
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* WOCS Contributor Guides */}
       <div className="mt-16">

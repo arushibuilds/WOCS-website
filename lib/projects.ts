@@ -126,4 +126,23 @@ export const projects: Project[] = [
     repository: 'https://github.com/namish18/Kinetic',
     maintainers: [{ name: 'Namish Kumar Sahu', github: 'namish07' }],
   },
+  {
+    id: '12',
+    title: 'JUGNU',
+    description: 'A desktop AI assistant with a friendly robot mascot. A Python chat app powered by Llama 3.2 through Ollama.',
+    tags: ['Python', 'AI/ML'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/kismatkumari56/MyPersonalAssistant',
+    maintainers: [{ name: 'Kismat Kumari', github: 'kismatkumari56' }],
+  },
+  {
+    id: '13',
+    title: 'Messline',
+    description: 'Book your hostel mess plate before it runs out. See the menu, plates left and prices, then review the food.',
+    tags: ['TypeScript', 'Web'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/sanjana2505006/Messline',
+    contributingGuide: 'https://github.com/sanjana2505006/Messline/blob/main/CONTRIBUTING.md',
+    maintainers: [{ name: 'Sanjana', github: 'sanjana2505006' }],
+  },
 ];

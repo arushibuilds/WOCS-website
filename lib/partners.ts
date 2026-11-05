@@ -41,6 +41,14 @@ export const sponsors: Organization[] = [
     logoWide: true,
     description: 'Serverless Postgres that scales to zero, with instant branching for every developer.',
   },
+  {
+    name: 'JetBrains',
+    role: 'IDE Partner',
+    url: 'https://www.jetbrains.com/',
+    logo: '/jetbrains-mono-white.png',
+    logoWide: true,
+    description: 'Makers of professional developer tools and IDEs, including IntelliJ IDEA, PyCharm, and WebStorm.',
+  },
 ];
 
 export const communityPartners: Organization[] = [

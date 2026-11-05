@@ -17,6 +17,8 @@ export const DISCORD_INVITE =
 export const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'codesocialcommunity@gmail.com';
 export const CODE_SOCIAL_URL = 'https://codesocial.tech';
+export const BUILDERS_TRIBE_OPPORTUNITIES =
+  process.env.NEXT_PUBLIC_BUILDERS_TRIBE_OPPORTUNITIES || 'https://builderstribe.xyz/';
 
 export const LEADERBOARD_API =
   process.env.NEXT_PUBLIC_LEADERBOARD_API || 'https://web-production-9ca3e.up.railway.app/leaderboard/4';
