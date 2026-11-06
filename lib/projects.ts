@@ -156,4 +156,15 @@ export const projects: Project[] = [
     maintainers: [{ name: 'Gianluca Bavelloni', github: 'GianlucaBave' }],
     mentors: [{ name: 'Gianluca Bavelloni', github: 'GianlucaBave' }],
   },
+  {
+    id: '15',
+    title: 'WorkSphere',
+    description: 'Find your next workspace. AI agents rank cafes, coworking spaces and libraries by WiFi, outlets, noise and open seats.',
+    tags: ['TypeScript', 'Web', 'AI/ML', 'Blockchain'],
+    difficulty: 'Beginner',
+    repository: 'https://github.com/SatyamPandey-07/WorkSphere',
+    contributingGuide: 'https://github.com/SatyamPandey-07/WorkSphere/blob/main/CONTRIBUTING.md',
+    maintainers: [{ name: 'Satyam Pandey', github: 'SatyamPandey-07' }],
+    mentors: [{ name: 'Satyam Pandey', github: 'SatyamPandey-07' }],
+  },
 ];
