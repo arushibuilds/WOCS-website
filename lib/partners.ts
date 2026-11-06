@@ -8,7 +8,7 @@ export interface Organization {
   role?: string;
   /** Optional logo in /public, e.g. '/truvigil.png'. */
   logo?: string;
-  /** 'white' puts the logo on a white circle (for logos on a white background). */
+  /** 'white' puts the logo on a white circle, or a white box if logoWide (for logos on a white background, or dark logos). */
   logoBg?: 'white';
   /** Wide logos are shown in a wide box instead of a circle. */
   logoWide?: boolean;
@@ -73,5 +73,22 @@ export const communityPartners: Organization[] = [
     url: 'https://washuxclub.com/designathon',
     logo: '/washux-logo.png',
     description: 'Designs human-centered digital products through interdisciplinary collaboration.',
+  },
+  {
+    name: 'ThinkChicago',
+    url: 'https://linktr.ee/thinkchicago',
+    logo: '/thinkchicago.jpg',
+    logoWide: true,
+    description:
+      'A national STEM talent attraction and retention program led by World Business Chicago, in partnership with the City of Chicago, the University of Illinois System, and the City Colleges of Chicago.',
+  },
+  {
+    name: 'Discovery Partners Institute',
+    url: 'https://dpi.illinois.edu/',
+    logo: '/Dpi-under-black-green.png',
+    logoBg: 'white',
+    logoWide: true,
+    description:
+      'A University of Illinois System hub in Chicago focused on tech workforce development, applied research, and business growth.',
   },
 ];

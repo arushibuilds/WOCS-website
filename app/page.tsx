@@ -15,6 +15,9 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
+      {/* Sponsor Logo Rail */}
+      <LogoWall />
+
       {/* What WOCS is + the six-step participant journey */}
       <HowItWorks />
 
@@ -23,9 +26,6 @@ export default function Home() {
 
       {/* Code Social Impact */}
       <CommunityImpact />
-
-      {/* Sponsor Logo Rail */}
-      <LogoWall />
 
       {/* Discord Forum Callout */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">

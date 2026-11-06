@@ -21,8 +21,16 @@ function OrganizationCard({ org }: { org: Organization }) {
       className="group panel p-6 rounded-lg hover:frost-glow transition-all duration-300 flex flex-col items-center text-center w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
     >
       {org.logo && org.logoWide ? (
-        <div className="h-16 w-44 mb-4 relative flex-shrink-0">
-          <Image src={org.logo} alt="" fill sizes="176px" className="object-contain" />
+        <div
+          className={`h-16 w-44 mb-4 relative flex-shrink-0 ${org.logoBg === 'white' ? 'bg-white rounded-lg' : ''}`}
+        >
+          <Image
+            src={org.logo}
+            alt=""
+            fill
+            sizes="176px"
+            className={org.logoBg === 'white' ? 'object-contain p-1' : 'object-contain'}
+          />
         </div>
       ) : org.logo ? (
         <div

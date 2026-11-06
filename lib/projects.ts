@@ -145,4 +145,15 @@ export const projects: Project[] = [
     contributingGuide: 'https://github.com/sanjana2505006/Messline/blob/main/CONTRIBUTING.md',
     maintainers: [{ name: 'Sanjana', github: 'sanjana2505006' }],
   },
+  {
+    id: '14',
+    title: 'Murmury',
+    description: 'A Mac app for video calls. It hears questions on Zoom, Meet or Teams and shows short answers from your own documents.',
+    tags: ['Python', 'Swift', 'AI/ML', 'macOS'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/GianlucaBave/murmury',
+    contributingGuide: 'https://github.com/GianlucaBave/murmury/blob/main/CONTRIBUTING.md',
+    maintainers: [{ name: 'Gianluca Bavelloni', github: 'GianlucaBave' }],
+    mentors: [{ name: 'Gianluca Bavelloni', github: 'GianlucaBave' }],
+  },
 ];
