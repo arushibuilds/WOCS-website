@@ -4,6 +4,7 @@ import { FORM_PROJECT } from '@/lib/links';
 import { projects } from '@/lib/projects';
 import { keyDates } from '@/lib/program';
 import ProjectExplorer from '@/components/ProjectExplorer';
+import SessionBanner from '@/components/SessionBanner';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -17,6 +18,8 @@ export default function Projects() {
   return (
     <div className="min-h-screen pt-20 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SessionBanner />
+
         {/* Header */}
         <div className="text-center space-y-4 mb-12">
           <h1 className="text-4xl md:text-5xl font-bold">

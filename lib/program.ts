@@ -4,6 +4,8 @@
 // confirmed. Anything not yet decided stays `null` (or an empty list) and the
 // site renders a "To be announced" state instead of a made-up value.
 
+import { CODE_SOCIAL_URL } from './links';
+
 export const EDITION = 'WOCS 2026';
 
 /* ------------------------------------------------------------------ Dates */
@@ -106,9 +108,21 @@ export interface ProgramEvent {
   recordingUrl?: string;
 }
 
-// Add confirmed sessions here. While the list is empty the site shows the
-// "Sessions & Workshops Coming Soon" state.
-export const events: ProgramEvent[] = [];
+// Add confirmed sessions here. They show as cards above the embedded
+// sessions calendar, which is always shown.
+export const events: ProgramEvent[] = [
+  {
+    title: 'Code Social Office Hours',
+    dateTime: 'Fri, 13 Nov 2026',
+    startsAt: '2026-11-13T10:00:00-06:00',
+    description:
+      'Stuck on where to start? Bring any question about careers, projects, open source, or Winter of Code Social. No agenda, no pressure. We’ll figure it out together.',
+    host: { name: 'Code Social', url: CODE_SOCIAL_URL },
+    location: 'Zoom',
+    poster: { src: '/office-hours.png', alt: 'Code Social Office Hours poster: bring any question, big or small. Fri, Nov 13. Free and online.' },
+    registrationUrl: 'https://luma.com/qnxtjl5q',
+  },
+];
 
 /* ------------------------------------------------------------- Leaderboard */
 

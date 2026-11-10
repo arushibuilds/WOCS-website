@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import SessionBanner from '@/components/SessionBanner';
 import { CONTACT_EMAIL, DISCORD_INVITE, LEADERBOARD_API } from '@/lib/links';
 import { getLevelColor, keyDates, pointsSystem } from '@/lib/program';
 import { Search, Trophy, ExternalLink, BarChart3, GitMerge, RefreshCw, Flag } from 'lucide-react';
@@ -81,6 +82,8 @@ export default function Leaderboard() {
   return (
     <div className="min-h-screen pt-20 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SessionBanner />
+
         {/* Header */}
         <div className="text-center space-y-4 mb-12">
           <h1 className="text-4xl md:text-5xl font-bold">

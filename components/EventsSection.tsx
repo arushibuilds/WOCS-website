@@ -11,15 +11,15 @@ function EventCard({ event, past }: { event: ProgramEvent; past: boolean }) {
   return (
     <div className={`panel rounded-2xl p-6 md:p-10 grid gap-8 items-center ${event.poster ? 'md:grid-cols-2' : ''}`}>
       {event.poster && (
-        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-xl">
-          <Image
-            src={event.poster.src}
-            alt={event.poster.alt}
-            fill
-            className="object-cover"
-            sizes="(min-width: 1024px) 480px, 100vw"
-          />
-        </div>
+        // Shown at the poster's own shape (no cropping), capped in size.
+        <Image
+          src={event.poster.src}
+          alt={event.poster.alt}
+          width={1080}
+          height={1080}
+          className="w-full h-auto max-w-md mx-auto rounded-xl shadow-xl"
+          sizes="(min-width: 768px) 448px, 100vw"
+        />
       )}
 
       <div className="space-y-4">
@@ -116,11 +116,23 @@ export default function EventsSection() {
   return (
     <section id="sessions" className="py-16 px-4 sm:px-6 lg:px-8 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
-        {events.length === 0 ? (
-          <div className="panel rounded-2xl p-4 md:p-8 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center">
-              Sessions & <span className="text-[var(--frost)]">Workshops</span>
-            </h2>
+        <div className="space-y-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center">
+            Sessions & <span className="text-[var(--frost)]">Workshops</span>
+          </h2>
+          {upcoming.map((event) => (
+            <EventCard key={event.title + event.startsAt} event={event} past={false} />
+          ))}
+          {past.length > 0 && (
+            <>
+              <h3 className="text-2xl font-semibold text-center pt-4">Past Sessions</h3>
+              {past.map((event) => (
+                <EventCard key={event.title + event.startsAt} event={event} past />
+              ))}
+            </>
+          )}
+          {/* Full calendar of sessions, always shown below the cards */}
+          <div className="panel rounded-2xl p-4 md:p-8">
             <div className="rounded-xl overflow-hidden bg-white">
               <iframe
                 src={CALENDAR_EMBED_URL}
@@ -130,24 +142,7 @@ export default function EventsSection() {
               />
             </div>
           </div>
-        ) : (
-          <div className="space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center">
-              Sessions & <span className="text-[var(--frost)]">Workshops</span>
-            </h2>
-            {upcoming.map((event) => (
-              <EventCard key={event.title + event.startsAt} event={event} past={false} />
-            ))}
-            {past.length > 0 && (
-              <>
-                <h3 className="text-2xl font-semibold text-center pt-4">Past Sessions</h3>
-                {past.map((event) => (
-                  <EventCard key={event.title + event.startsAt} event={event} past />
-                ))}
-              </>
-            )}
-          </div>
-        )}
+        </div>
       </div>
     </section>
   );
