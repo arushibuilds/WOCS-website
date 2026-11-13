@@ -3,6 +3,7 @@ import { BUILDERS_TRIBE_OPPORTUNITIES, CODE_SOCIAL_URL, DISCORD_INVITE, FORM_TEA
 import { BookOpen, Briefcase, Linkedin, Users, ExternalLink, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLevelColor } from '@/lib/program';
+import ProjectIdeas from '@/components/ProjectIdeas';
 
 export const metadata: Metadata = {
   title: 'Resources',
@@ -215,6 +216,9 @@ export default function Resources() {
           </div>
         </div>
       </section>
+
+      {/* Project ideas and open datasets */}
+      <ProjectIdeas className="mt-8" />
 
       {/* WOCS Contributor Guides */}
       <div className="mt-16">

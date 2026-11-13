@@ -167,4 +167,14 @@ export const projects: Project[] = [
     maintainers: [{ name: 'Satyam Pandey', github: 'SatyamPandey-07' }],
     mentors: [{ name: 'Satyam Pandey', github: 'SatyamPandey-07' }],
   },
+  {
+    id: '16',
+    title: 'QuantumBilling',
+    description: 'Open-source GST billing for Indian businesses. Create GST invoices, e-way bills and GSTR-1 exports, and collect UPI payments.',
+    tags: ['Elixir', 'Web'],
+    difficulty: 'Intermediate',
+    repository: 'https://github.com/phravins/QuantumBilling',
+    contributingGuide: 'https://github.com/phravins/QuantumBilling/blob/main/CONTRIBUTING.md',
+    maintainers: [{ name: 'Phravin', github: 'phravins' }],
+  },
 ];

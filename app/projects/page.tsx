@@ -5,6 +5,7 @@ import { projects } from '@/lib/projects';
 import { keyDates } from '@/lib/program';
 import ProjectExplorer from '@/components/ProjectExplorer';
 import SessionBanner from '@/components/SessionBanner';
+import ProjectIdeas from '@/components/ProjectIdeas';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -71,6 +72,9 @@ export default function Projects() {
             </div>
           </div>
         )}
+
+        {/* Project ideas and open datasets */}
+        <ProjectIdeas className="mt-16" />
       </div>
     </div>
   );
